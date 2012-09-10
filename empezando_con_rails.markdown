@@ -12,3 +12,20 @@ lo siguiente:
 
 *Esta guía está basada en Rails 4.0. Algunas partes del código que se
 muestran aquí no van a funcionar en nuevas versiones de Rails.*
+
+## Antes de empezar
+
+Esta guía está diseñada para principiantes que quiere comenzar con Rails
+desde cero. No asume que tú tienes alguna experiencia previa con Rails. Sin,
+embargo, para obtener el máximo de ésta, tú debes de tener los algunos
+pre-requisitos instalados:
+
+* Ruby 1.9.3 o una versión mayor.
+* El sistema de paquetes "RubyGems".
+* La base de datos "SQLite3".
+
+Rails es un framework para aplicaciones web que corre sobre el lenguaje
+de programación Ruby. Si no tienes ninguna experiencia con Ruby, existen
+algunos recursos gratis en la internet para aprender Ruby, incluyendo:
+
+* [Aprende a Programar con Ruby](http://aprendeaprogramar.pe/). *En español*.
