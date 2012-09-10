@@ -91,9 +91,7 @@ Rails comes with a number of generators that are designed to make your developme
 
 To use this generator, open a terminal, navigate to a directory where you have rights to create files, and type:
 
-<shell>
-$ rails new blog
-</shell>
+    $ rails new blog
 
 This will create a Rails application called Blog in a directory called blog and install the gem dependencies that are already mentioned in +Gemfile+ using +bundle install+.
 
@@ -102,9 +100,7 @@ application builder accepts by running +rails new -h+.
 
 After you create the blog application, switch to its folder to continue work directly in that application:
 
-<shell>
-$ cd blog
-</shell>
+    $ cd blog
 
 The +rails new blog+ command we ran above created a folder in your
 working directory called +blog+. The +blog+ directory has a number of
