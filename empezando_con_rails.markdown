@@ -11,4 +11,4 @@ lo siguiente:
 * Como generar rápidamente las primeras piezas de una aplicación Rails.
 
 *Esta guía está basada en Rails 4.0. Algunas partes del código que se
-muestra aquí no van a funcionar en nuevas versiones de Rails.*
+muestran aquí no van a funcionar en nuevas versiones de Rails.*
