@@ -15,9 +15,9 @@ muestran aquí no van a funcionar en nuevas versiones de Rails.*
 
 ## Antes de empezar
 
-Esta guía está diseñada para principiantes que quiere comenzar con Rails
+Esta guía está diseñada para principiantes que quieren comenzar con Rails
 desde cero. No asume que tú tienes alguna experiencia previa con Rails. Sin,
-embargo, para obtener el máximo de ésta, tú debes de tener los algunos
+embargo, para obtener el máximo de ésta, tú debes de tener algunos
 pre-requisitos instalados:
 
 * Ruby 1.9.3 o una versión mayor.
