@@ -67,26 +67,23 @@ make sure that you have Rails itself installed.
 
 TIP: The examples below use # and $ to denote superuser and regular user terminal prompts respectively in a UNIX-like OS. If you are using Windows, your prompt will look something like c:\source_code>
 
-h4. Installing Rails
+## Instalando Rails
 
-To install Rails, use the +gem install+ command provided by RubyGems:
+Para instalar Rails, usa el comando proporcionado por RubyGems `gem install`:
 
-<shell>
-# gem install rails
-</shell>
+    # gem install rails
 
-TIP. A number of tools exist to help you quickly install Ruby and Ruby
-on Rails on your system. Windows users can use "Rails
-Installer":http://railsinstaller.org, while Mac OS X users can use
-"Rails One Click":http://railsoneclick.com.
+**TIP.** Existen un número de herramientas que te ayudan a instalar Ruby y
+Ruby on Rails de una manera rápida. Si eres usuario de Windows puedes usar
+[Rails Installer](http://railsinstaller.org/). Si eres usuario de Mac OS X
+puedes usar [Rails One Click](http://railsoneclick.com/).
 
-To verify that you have everything installed correctly, you should be able to run the following:
+Para verificar que tú hayas instalado todo correctamente, tú deberías
+poder correr lo siguiente:
 
-<shell>
-$ rails --version
-</shell>
+    $ rails --version
 
-If it says something like "Rails 3.2.3" you are ready to continue.
+Si dice algo como "Rails 4.0", estás listo para continuar.
 
 h4. Creating the Blog Application
 
