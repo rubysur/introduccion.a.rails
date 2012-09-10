@@ -47,11 +47,14 @@ tremendous increase in productivity. If you persist in bringing old habits from
 other languages to your Rails development, and trying to use patterns you
 learned elsewhere, you may have a less happy experience.
 
-The Rails philosophy includes two major guiding principles:
+La filosofía de Rails incluye dos mayores principios:
 
-* DRY - "Don't Repeat Yourself" - suggests that writing the same code over and over again is a bad thing.
-* Convention Over Configuration - means that Rails makes assumptions about what you want to do and how you're going to
-do it, rather than requiring you to specify every little thing through endless configuration files.
+* DRY - "Don't Repeat Yourself" - sugiere que escribir el mismo código una y
+  otra vez es una mala práctica.
+* Convención sobre Configuración - significa que Rails hace algunas
+  suposiciones sobre lo que tú quieres hacer y cómo vas a hacerlo, en lugar
+  de requerir que especifiques cada pequeña cosa a través de un sin fin
+  de archivos de configuración.
 
 ## Creating a New Rails Project
 
