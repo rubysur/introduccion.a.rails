@@ -140,7 +140,7 @@ TIP: Compiling CoffeeScript to JavaScript requires a JavaScript runtime and the 
 
 This will fire up WEBrick, a webserver built into Ruby by default. To see your application in action, open a browser window and navigate to "http://localhost:3000":http://localhost:3000. You should see the Rails default information page:
 
-!images/rails_welcome.png(Welcome Aboard screenshot)!
+![Welcome Aboard screenshot](http://edgeguides.rubyonrails.org/images/rails_welcome.png)
 
 TIP: To stop the web server, hit Ctrl+C in the terminal window where it's running. In development mode, Rails does not generally require you to restart the server; changes you make in files will be automatically picked up by the server.
 
@@ -233,7 +233,7 @@ In the Blog application, you will now create a new _resource_. A resource is the
 
 In the next section, you will add the ability to create new posts in your application and be able to view them. This is the "C" and the "R" from CRUD: creation and reading. The form for doing this will look like this:
 
-!images/getting_started/new_post.png(The new post form)!
+![The new post form](http://edgeguides.rubyonrails.org/images/getting_started/new_post.png)
 
 It will look a little basic for now, but that's ok. We'll look at improving the styling for it afterwards.
 
