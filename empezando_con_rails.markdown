@@ -241,7 +241,7 @@ It will look a little basic for now, but that's ok. We'll look at improving the 
 
 The first thing that you are going to need to create a new post within the application is a place to do that. A great place for that would be at +/posts/new+. If you attempt to navigate to that now -- by visiting "http://localhost:3000/posts/new":http://localhost:3000/posts/new -- Rails will give you a routing error:
 
-!images/getting_started/routing_error_no_route_matches.png(A routing error, no route matches /posts/new)!
+![A routing error, no route matchers /posts/new](http://edgeguides.rubyonrails.org/getting_started/error_no_route_matches.png)
 
 This is because there is nowhere inside the routes for the application -- defined inside +config/routes.rb+ -- that defines this route. By default, Rails has no routes configured at all, besides the root route you defined earlier, and so you must define your routes as you need them.
 
@@ -255,7 +255,7 @@ This route is a super-simple route: it defines a new route that only responds to
 
 With the route defined, requests can now be made to +/posts/new+ in the application. Navigate to "http://localhost:3000/posts/new":http://localhost:3000/posts/new and you'll see another routing error:
 
-!images/getting_started/routing_error_no_controller.png(Another routing error, uninitialized constant PostsController)!
+![Another routing error, uninitialized constant PostsController](http://edgeguides.rubyonrails.org/getting_started/error_no_controller.png)
 
 This error is happening because this route need a controller to be defined. The route is attempting to find that controller so it can serve the request, but with the controller undefined, it just can't do that. The solution to this particular problem is simple: you need to create a controller called +PostsController+. You can do this by running this command:
 
