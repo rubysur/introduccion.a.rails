@@ -10,8 +10,8 @@ lo siguiente:
   Diseño RESTful.
 * Como generar rápidamente las primeras piezas de una aplicación Rails.
 
-*Esta guía está basada en Rails 4.0. Algunas partes del código que se
-muestran aquí no van a funcionar en nuevas versiones de Rails.*
+WARNING. Esta guía está basada en Rails 4.0. Algunas partes del código que se
+muestran aquí no van a funcionar en nuevas versiones de Rails.
 
 ## Antes de empezar
 
@@ -56,19 +56,21 @@ La filosofía de Rails incluye dos mayores principios:
   de requerir que especifiques cada pequeña cosa a través de un sin fin
   de archivos de configuración.
 
-## Creating a New Rails Project
+## Creando un nuevo proyecto Rails
 
-The best way to use this guide is to follow each step as it happens, no code or
-step needed to make this example application has been left out, so you can
-literally follow along step by step. You can get the complete code
-"here":https://github.com/lifo/docrails/tree/master/guides/code/getting_started.
+La mejor forma de usar esta guía es seguir cada paso como es el caso, no hay
+ningún código o paso para hacer este ejemplo de aplicación que haya quedado
+fuera, así que puedes literalmente seguirla paso a paso. Puedes tener el código
+completo [aquí](https://github.com/lifo/docrails/tree/master/guides/code/getting_started).
 
-By following along with this guide, you'll create a Rails project called
-+blog+, a
-(very) simple weblog. Before you can start building the application, you need to
-make sure that you have Rails itself installed.
+Al seguir esta guía, tú vas a crear un proyecto Rails llamado `blog`, un (muy)
+simple weblog. Antes de que puedas comenzar a crear la aplicación, necesitas
+estar seguro de tener Rails instalado.
 
-TIP: The examples below use # and $ to denote superuser and regular user terminal prompts respectively in a UNIX-like OS. If you are using Windows, your prompt will look something like c:\source_code>
+TIP: Los ejemplos que se muestran a continuación usan `#` y `$` para denotar un
+superuser y user regultar de una línea de comandos respectivamente en un sistema
+operativo tipo UNIX. Si estás usando Windows, tú línea de comandos se verá como
+`c:\source_code>`.
 
 ### Instalando Rails
 
