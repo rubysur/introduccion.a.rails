@@ -114,11 +114,11 @@ directamente en la aplicación:
 
     $ cd blog
 
-El comando `rails new blog` que acabamos de ejecutar, creó un falder en tu
+El comando `rails new blog` que acabamos de ejecutar, creó una carpeta en tu
 directorio de trabajo llamado `blog`. El directorio `blog` tiene un número
 de archivos auto generados y carpetas que conforman la estructura de una
 aplicación Rails. La mayoría del trabajo en este tutorial se llevará a cabo en
-la carpeta `app/`, pero aca hay una explicación básica de las funciones de
+la carpeta `app/`, pero acá hay una explicación básica de las funciones de
 cada archivo y carpetas que Rails creó por defecto:
 
 <table>
@@ -139,7 +139,8 @@ cada archivo y carpetas que Rails creó por defecto:
       <td>config/</td>
       <td>Configura las reglas de ejecución de la aplicación, rutas, base de
        datos y más. Este tema es cubierto en mayor detalle en
-      [Configurando Aplicaciones Rails](http://edgeguides.rubyonrails.org/configuring.html)
+      <a href='http://edgeguides.rubyonrails.org/configuring.html'>Configurando
+      Aplicaciones Rails</a>
       </td>
     </tr>
     <tr>
@@ -150,21 +151,22 @@ cada archivo y carpetas que Rails creó por defecto:
     <tr>
       <td>db/</td>
       <td>Contiene el esquema actual de tu base de datos, así como las
-      migraciónes de la base de datos.</td>
+      migraciones de la base de datos.</td>
     </tr>
     <tr>
       <td>doc/</td>
-      <td>Documentación detallada de tu aplicación</td>
+      <td>Documentación detallada de tu aplicación.</td>
     </tr>
     <tr>
       <td>Gemfile<br />Gemfile.lock</td>
       <td>Estos arhivos te permiten especificar que dependencias de gemas son
       necesitadas para tu aplicación Rails. Estos archivos son usados por la
-      gema Bundler, ver [Sitio web de Bundler](http://gembundler.com)</td>
+      gema Bundler, ver <a href='http://gembundler.com'>Sitio web de Bundler</a>.
+      </td>
     </tr>
     <tr>
       <td>lib/</td>
-      <td>Módulos extendidos para tu aplicación</td>
+      <td>Módulos extendidos para tu aplicación.</td>
     </tr>
     <tr>
       <td>log/</td>
@@ -180,12 +182,12 @@ cada archivo y carpetas que Rails creó por defecto:
       <td>Este archivo localiza y carga tareas que pueden ser ejecutadas desde
       la línea de comandos. La lista de tareas son definidas a través de los
       componentes de Rails. En vez de cambiar el Rakefile, deberías agregar tus
-      propias tareas, añadiendo archivos al directorio lib/tasks de tu
+      propias tareas, añadiendo archivos al directorio <code>lib/tasks</code> de tu
       aplicación.</td>
     </tr>
     <tr>
       <td>README.rdoc</td>
-      <td>Esta es un breve manual de instrucciones para tu aplicación. Deberías
+      <td>Este es un breve manual de instrucciones para tu aplicación. Deberías
       editar este archivo para comunicar a otros lo que tu aplicación hace, como
       configurala y demás.</td>
     </tr>
@@ -197,12 +199,13 @@ cada archivo y carpetas que Rails creó por defecto:
     <tr>
       <td>test/</td>
       <td>Pruebas unitarias, fixtures, y otras pruebas. Estos son cubiertos en
-      [Testeando Aplicaciones Rails](http://edgeguides.rubyonrails.org/testing.html)
+      <a href='http://edgeguides.rubyonrails.org/testing.html'>Testeando
+      Aplicaciones Rails</a>
       </td>
     </tr>
     <tr>
       <td>tmp/</td>
-      <td>Archivos temporales (como caché, pid y archivos de sesiones)</td>
+      <td>Archivos temporales (como caché, pid y archivos de sesiones).</td>
     </tr>
     <tr>
       <td>vendor/</td>
