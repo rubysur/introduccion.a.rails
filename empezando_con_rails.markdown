@@ -131,27 +131,34 @@ cada archivo y carpetas que Rails creó por defecto:
   <tbody>
     <tr>
       <td>app/</td>
-      <td>Contiene los controllers, models, views, helpers, mailers y assets
-      para tu aplicación. Te centrarás en esta carpeta por el resto de esta
-      guía.</td>
+      <td>
+        Contiene los controllers, models, views, helpers, mailers y assets
+        para tu aplicación. Te centrarás en esta carpeta por el resto de esta
+        guía.
+      </td>
     </tr>
     <tr>
       <td>config/</td>
-      <td>Configura las reglas de ejecución de la aplicación, rutas, base de
-       datos y más. Este tema es cubierto en mayor detalle en
-      <a href='http://edgeguides.rubyonrails.org/configuring.html'>Configurando
-      Aplicaciones Rails</a>
+      <td>
+        Configura las reglas de ejecución de la aplicación, rutas, base de
+        datos y más. Este tema es cubierto en mayor detalle en
+        <a href='http://edgeguides.rubyonrails.org/configuring.html'>Configurando
+        Aplicaciones Rails</a>.
       </td>
     </tr>
     <tr>
       <td>config.ru</td>
-      <td>Configuración Rack para servidores basados en Rack usados para iniciar
-      la aplicación.</td>
+      <td>
+        Configuración Rack para servidores basados en Rack usados para iniciar
+        la aplicación.
+      </td>
     </tr>
     <tr>
       <td>db/</td>
-      <td>Contiene el esquema actual de tu base de datos, así como las
-      migraciones de la base de datos.</td>
+      <td>
+        Contiene el esquema actual de tu base de datos, así como las
+        migraciones de la base de datos.
+      </td>
     </tr>
     <tr>
       <td>doc/</td>
@@ -159,9 +166,10 @@ cada archivo y carpetas que Rails creó por defecto:
     </tr>
     <tr>
       <td>Gemfile<br />Gemfile.lock</td>
-      <td>Estos arhivos te permiten especificar que dependencias de gemas son
-      necesitadas para tu aplicación Rails. Estos archivos son usados por la
-      gema Bundler, ver <a href='http://gembundler.com'>Sitio web de Bundler</a>.
+      <td>
+        Estos arhivos te permiten especificar que dependencias de gemas son
+        necesitadas para tu aplicación Rails. Estos archivos son usados por la
+        gema Bundler, ver <a href='http://gembundler.com'>Sitio web de Bundler</a>.
       </td>
     </tr>
     <tr>
@@ -170,37 +178,46 @@ cada archivo y carpetas que Rails creó por defecto:
     </tr>
     <tr>
       <td>log/</td>
-      <td>Archivos Log de tu aplicación</td>
+      <td>Archivos Log de tu aplicación.</td>
     </tr>
     <tr>
       <td>public/</td>
-      <td>El único folder visto por el mundo tal como es. Contiene los archivos
-      estáticos y assets compilados.</td>
+      <td>
+        El único folder visto por el mundo tal como es. Contiene los archivos
+        estáticos y assets compilados.
+      </td>
     </tr>
     <tr>
       <td>Rakefile</td>
-      <td>Este archivo localiza y carga tareas que pueden ser ejecutadas desde
-      la línea de comandos. La lista de tareas son definidas a través de los
-      componentes de Rails. En vez de cambiar el Rakefile, deberías agregar tus
-      propias tareas, añadiendo archivos al directorio <code>lib/tasks</code> de tu
-      aplicación.</td>
+      <td>
+        Este archivo localiza y carga tareas que pueden ser ejecutadas desde
+        la línea de comandos. La lista de tareas son definidas a través de los
+        componentes de Rails. En vez de cambiar el Rakefile, deberías agregar tus
+        propias tareas, añadiendo archivos al directorio <code>lib/tasks</code> de
+        tu aplicación.
+      </td>
     </tr>
     <tr>
       <td>README.rdoc</td>
-      <td>Este es un breve manual de instrucciones para tu aplicación. Deberías
-      editar este archivo para comunicar a otros lo que tu aplicación hace, como
-      configurala y demás.</td>
+      <td>
+        Este es un breve manual de instrucciones para tu aplicación. Deberías
+        editar este archivo para comunicar a otros lo que tu aplicación hace, como
+        configurala y demás.
+      </td>
     </tr>
     <tr>
       <td>script/</td>
-      <td>Contiene el script de Rails que inicia tu aplicación y contiene otros
-      scripts usados para deployar o correr tu aplicación.</td>
+      <td>
+        Contiene el script de Rails que inicia tu aplicación y contiene otros
+        scripts usados para deployar o correr tu aplicación.
+      </td>
     </tr>
     <tr>
       <td>test/</td>
-      <td>Pruebas unitarias, fixtures, y otras pruebas. Estos son cubiertos en
-      <a href='http://edgeguides.rubyonrails.org/testing.html'>Testeando
-      Aplicaciones Rails</a>
+      <td>
+        Pruebas unitarias, fixtures, y otras pruebas. Estos son cubiertos en
+        <a href='http://edgeguides.rubyonrails.org/testing.html'>Testeando
+        Aplicaciones Rails</a>.
       </td>
     </tr>
     <tr>
