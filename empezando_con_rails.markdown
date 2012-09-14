@@ -135,9 +135,10 @@ application. Most of the work in this tutorial will happen in the +app/+ folder,
 |tmp/|Temporary files (like cache, pid and session files)|
 |vendor/|A place for all third-party code. In a typical Rails application, this includes Ruby Gems and the Rails source code (if you optionally install it into your project).|
 
-## Hello, Rails!
+## Hola, Rails!
 
-To begin with, let's get some text up on screen quickly. To do this, you need to get your Rails application server running.
+Para comenzar, vamos a obtener un poco de texto en la pantalla rápidamente. Para
+hacer ésto, necesitas tener tu servidor de aplicación Rails corriendo.
 
 ### Starting up the Web Server
 
