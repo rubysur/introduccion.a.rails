@@ -109,31 +109,108 @@ el comando `bundle install`.
 **TIP:** Puedes ver todas las opciones que el generador de nuevas aplicaciones
 provee, ejecutando `rails new -h`.
 
-After you create the blog application, switch to its folder to continue work directly in that application:
+Después de crear la aplicación, ingresa a su directorio para continuar trabajando
+directamente en la aplicación:
 
     $ cd blog
 
-The +rails new blog+ command we ran above created a folder in your
-working directory called +blog+. The +blog+ directory has a number of
-auto-generated files and folders that make up the structure of a Rails
-application. Most of the work in this tutorial will happen in the +app/+ folder, but here's a basic rundown on the function of each of the files and folders that Rails created by default:
+El comando `rails new blog` que acabamos de ejecutar, creó un falder en tu
+directorio de trabajo llamado `blog`. El directorio `blog` tiene un número
+de archivos auto generados y carpetas que conforman la estructura de una
+aplicación Rails. La mayoría del trabajo en este tutorial se llevará a cabo en
+la carpeta `app/`, pero aca hay una explicación básica de las funciones de
+cada archivo y carpetas que Rails creó por defecto:
 
-|_.File/Folder|_.Purpose|
-|app/|Contains the controllers, models, views, helpers, mailers and assets for your application. You'll focus on this folder for the remainder of this guide.|
-|config/|Configure your application's runtime rules, routes, database, and more.  This is covered in more detail in "Configuring Rails Applications":configuring.html|
-|config.ru|Rack configuration for Rack based servers used to start the application.|
-|db/|Contains your current database schema, as well as the database migrations.|
-|doc/|In-depth documentation for your application.|
-|Gemfile<br />Gemfile.lock|These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see "the Bundler website":http://gembundler.com |
-|lib/|Extended modules for your application.|
-|log/|Application log files.|
-|public/|The only folder seen to the world as-is. Contains the static files and compiled assets.|
-|Rakefile|This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.|
-|README.rdoc|This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.|
-|script/|Contains the rails script that starts your app and can contain other scripts you use to deploy or run your application.|
-|test/|Unit tests, fixtures, and other test apparatus. These are covered in "Testing Rails Applications":testing.html|
-|tmp/|Temporary files (like cache, pid and session files)|
-|vendor/|A place for all third-party code. In a typical Rails application, this includes Ruby Gems and the Rails source code (if you optionally install it into your project).|
+<table>
+  <thead>
+    <tr>
+      <td>Archivo/Carpeta</td>
+      <td>Propósito</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>app/</td>
+      <td>Contiene los controllers, models, views, helpers, mailers y assets
+      para tu aplicación. Te centrarás en esta carpeta por el resto de esta
+      guía.</td>
+    </tr>
+    <tr>
+      <td>config/</td>
+      <td>Configura las reglas de ejecución de la aplicación, rutas, base de
+       datos y más. Este tema es cubierto en mayor detalle en
+      [Configurando Aplicaciones Rails](http://edgeguides.rubyonrails.org/configuring.html)
+      </td>
+    </tr>
+    <tr>
+      <td>config.ru</td>
+      <td>Configuración Rack para servidores basados en Rack usados para iniciar
+      la aplicación.</td>
+    </tr>
+    <tr>
+      <td>db/</td>
+      <td>Contiene el esquema actual de tu base de datos, así como las
+      migraciónes de la base de datos.</td>
+    </tr>
+    <tr>
+      <td>doc/</td>
+      <td>Documentación detallada de tu aplicación</td>
+    </tr>
+    <tr>
+      <td>Gemfile<br />Gemfile.lock</td>
+      <td>Estos arhivos te permiten especificar que dependencias de gemas son
+      necesitadas para tu aplicación Rails. Estos archivos son usados por la
+      gema Bundler, ver [Sitio web de Bundler](http://gembundler.com)</td>
+    </tr>
+    <tr>
+      <td>lib/</td>
+      <td>Módulos extendidos para tu aplicación</td>
+    </tr>
+    <tr>
+      <td>log/</td>
+      <td>Archivos Log de tu aplicación</td>
+    </tr>
+    <tr>
+      <td>public/</td>
+      <td>El único folder visto por el mundo tal como es. Contiene los archivos
+      estáticos y assets compilados.</td>
+    </tr>
+    <tr>
+      <td>Rakefile</td>
+      <td>Este archivo localiza y carga tareas que pueden ser ejecutadas desde
+      la línea de comandos. La lista de tareas son definidas a través de los
+      componentes de Rails. En vez de cambiar el Rakefile, deberías agregar tus
+      propias tareas, añadiendo archivos al directorio lib/tasks de tu
+      aplicación.</td>
+    </tr>
+    <tr>
+      <td>README.rdoc</td>
+      <td>Esta es un breve manual de instrucciones para tu aplicación. Deberías
+      editar este archivo para comunicar a otros lo que tu aplicación hace, como
+      configurala y demás.</td>
+    </tr>
+    <tr>
+      <td>script/</td>
+      <td>Contiene el script de Rails que inicia tu aplicación y contiene otros
+      scripts usados para deployar o correr tu aplicación.</td>
+    </tr>
+    <tr>
+      <td>test/</td>
+      <td>Pruebas unitarias, fixtures, y otras pruebas. Estos son cubiertos en
+      [Testeando Aplicaciones Rails](http://edgeguides.rubyonrails.org/testing.html)
+      </td>
+    </tr>
+    <tr>
+      <td>tmp/</td>
+      <td>Archivos temporales (como caché, pid y archivos de sesiones)</td>
+    </tr>
+    <tr>
+      <td>vendor/</td>
+      <td>Lugar para código de terceros. En una típica aplicación Rails, esta
+      incluye librerías y plugins.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Hola, Rails!
 
