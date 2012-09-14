@@ -10,8 +10,8 @@ lo siguiente:
   Diseño RESTful.
 * Como generar rápidamente las primeras piezas de una aplicación Rails.
 
-WARNING. Esta guía está basada en Rails 4.0. Algunas partes del código que se
-muestran aquí no van a funcionar en nuevas versiones de Rails.
+**WARNING.** Esta guía está basada en Rails 4.0. Algunas partes del código que
+se muestran aquí no van a funcionar en nuevas versiones de Rails.
 
 ## Antes de empezar
 
@@ -67,7 +67,7 @@ Al seguir esta guía, tú vas a crear un proyecto Rails llamado `blog`, un (muy)
 simple weblog. Antes de que puedas comenzar a crear la aplicación, necesitas
 estar seguro de tener Rails instalado.
 
-TIP: Los ejemplos que se muestran a continuación usan `#` y `$` para denotar un
+**TIP:** Los ejemplos que se muestran a continuación usan `#` y `$` para denotar un
 superuser y user regultar de una línea de comandos respectivamente en un sistema
 operativo tipo UNIX. Si estás usando Windows, tú línea de comandos se verá como
 `c:\source_code>`.
@@ -90,18 +90,24 @@ poder correr lo siguiente:
 
 Si dice algo como "Rails 4.0", estás listo para continuar.
 
-### Creating the Blog Application
+### Creando nuestro Blog
 
-Rails comes with a number of generators that are designed to make your development life easier. One of these is the new application generator, which will provide you with the foundation of a Rails application so that you don't have to write it yourself.
+Rails viene con un número de generadores que están diseñados para hacer tu ciclo
+de desarrollo más fácil. Uno de esos es el generador de nuevas aplicaciones, el
+cual te proveerá con la estructura base de una aplicación Rails, así tú ya no
+tienes que escribirla.
 
-To use this generator, open a terminal, navigate to a directory where you have rights to create files, and type:
+Para usar este generador, abre la terminal, navega hacia el directorio en donde
+tienes permiso para crear archivo, y escribe:
 
     $ rails new blog
 
-This will create a Rails application called Blog in a directory called blog and install the gem dependencies that are already mentioned in +Gemfile+ using +bundle install+.
+Esto creará una aplicación Rails llamada `Blog` en un directorio llamado `blog`
+e instalará las dependencias (gemas) que están mencionadas en el `Gemfile` usando
+el comando `bundle install`.
 
-TIP: You can see all of the command line options that the Rails
-application builder accepts by running +rails new -h+.
+**TIP:** Puedes ver todas las opciones que el generador de nuevas aplicaciones
+provee, ejecutando `rails new -h`.
 
 After you create the blog application, switch to its folder to continue work directly in that application:
 
