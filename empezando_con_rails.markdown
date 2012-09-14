@@ -94,8 +94,8 @@ Si dice algo como "Rails 4.0", estás listo para continuar.
 
 Rails viene con un número de generadores que están diseñados para hacer tu ciclo
 de desarrollo más fácil. Uno de esos es el generador de nuevas aplicaciones, el
-cual te proveerá con la estructura base de una aplicación Rails, así tú ya no
-tienes que escribirla.
+cual te proveerá con la estructura base de una aplicación Rails, así ya no
+tienes que escribirla por ti mismo.
 
 Para usar este generador, abre la terminal, navega hacia el directorio en donde
 tienes permiso para crear archivo, y escribe:
