@@ -177,7 +177,7 @@ TIP: Compiling CoffeeScript to JavaScript requires a JavaScript runtime and the 
 
 This will fire up WEBrick, a webserver built into Ruby by default. To see your application in action, open a browser window and navigate to [http://localhost:3000](http://localhost:3000). You should see the Rails default information page:
 
-![Welcome Aboard screenshot](images/rails_welcome.png)
+![Welcome Aboard screenshot](http://edgeguides.rubyonrails.org/images/rails_welcome.png)
 
 TIP: To stop the web server, hit Ctrl+C in the terminal window where it's running. In development mode, Rails does not generally require you to restart the server; changes you make in files will be automatically picked up by the server.
 
@@ -271,7 +271,7 @@ In the Blog application, you will now create a new _resource_. A resource is the
 
 In the next section, you will add the ability to create new posts in your application and be able to view them. This is the "C" and the "R" from CRUD: creation and reading. The form for doing this will look like this:
 
-![The new post form](images/getting_started/new_post.png)
+![The new post form](http://edgeguides.rubyonrails.org/images/getting_started/new_post.png)
 
 It will look a little basic for now, but that's ok. We'll look at improving the styling for it afterwards.
 
@@ -279,7 +279,7 @@ It will look a little basic for now, but that's ok. We'll look at improving the 
 
 The first thing that you are going to need to create a new post within the application is a place to do that. A great place for that would be at `/posts/new`. If you attempt to navigate to that now -- by visiting [http://localhost:3000/posts/new](http://localhost:3000/posts/new) -- Rails will give you a routing error:
 
-![A routing error, no route matches /posts/new](images/getting_started/routing_error_no_route_matches.png)
+![A routing error, no route matches /posts/new](http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_route_matches.png)
 
 This is because there is nowhere inside the routes for the application -- defined inside `config/routes.rb` -- that defines this route. By default, Rails has no routes configured at all, besides the root route you defined earlier, and so you must define your routes as you need them.
 
@@ -293,7 +293,7 @@ This route is a super-simple route: it defines a new route that only responds to
 
 With the route defined, requests can now be made to `/posts/new` in the application. Navigate to [http://localhost:3000/posts/new](http://localhost:3000/posts/new) and you'll see another routing error:
 
-![Another routing error, uninitialized constant PostsController](images/getting_started/routing_error_no_controller.png)
+![Another routing error, uninitialized constant PostsController](http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_controller.png)
 
 This error is happening because this route need a controller to be defined. The route is attempting to find that controller so it can serve the request, but with the controller undefined, it just can't do that. The solution to this particular problem is simple: you need to create a controller called `PostsController`. You can do this by running this command:
 
@@ -312,7 +312,7 @@ A controller is simply a class that is defined to inherit from `ApplicationContr
 
 If you refresh [http://localhost:3000/posts/new](http://localhost:3000/posts/new) now, you'll get a new error:
 
-![Unknown action new for PostsController!](images/getting_started/unknown_action_new_for_posts.png)
+![Unknown action new for PostsController!](http://edgeguides.rubyonrails.org/images/getting_started/unknown_action_new_for_posts.png)
 
 This error indicates that Rails cannot find the `new` action inside the `PostsController` that you just generated. This is because when controllers are generated in Rails they are empty by default, unless you tell it you wanted actions during the generation process.
 
@@ -325,7 +325,7 @@ end
 
 With the `new` method defined in `PostsController`, if you refresh [http://localhost:3000/posts/new](http://localhost:3000/posts/new) you'll see another error:
 
-![Template is missing for posts/new](images/getting_started/template_is_missing_posts_new.png)
+![Template is missing for posts/new](http://edgeguides.rubyonrails.org/images/getting_started/template_is_missing_posts_new.png)
 
 You're getting this error now because Rails expects plain actions like this one to have views associated with them to display their information. With no view available, Rails errors out.
 
@@ -407,7 +407,7 @@ By using the `post` method rather than the `get` method, Rails will define a rou
 
 With the form and its associated route defined, you will be able to fill in the form and then click the submit button to begin the process of creating a new post, so go ahead and do that. When you submit the form, you should see a familiar error:
 
-![Unknown action create for PostsController](images/getting_started/unknown_action_create_for_posts.png)
+![Unknown action create for PostsController](http://edgeguides.rubyonrails.org/images/getting_started/unknown_action_create_for_posts.png)
 
 You now need to create the `create` action within the `PostsController` for this to work.
 
@@ -604,7 +604,7 @@ Finally, if you now go to
 [http://localhost:3000/posts/new](http://localhost:3000/posts/new) you'll
 be able to create a post. Try it!
 
-![Show action for posts](images/getting_started/show_action_for_posts.png)
+![Show action for posts](http://edgeguides.rubyonrails.org/images/getting_started/show_action_for_posts.png)
 
 ### Listing all posts
 
@@ -833,7 +833,7 @@ standout.
 Now you'll get a nice error message when saving a post without title when you
 attempt to do just that on the [new post form (http://localhost:3000/posts/new)](http://localhost:3000/posts/new).
 
-![Form With Errors](images/getting_started/form_with_errors.png)
+![Form With Errors](http://edgeguides.rubyonrails.org/images/getting_started/form_with_errors.png)
 
 ### Updating Posts
 
@@ -972,7 +972,7 @@ the template:
 
 And here's how our app looks so far:
 
-![Index action with edit link](images/getting_started/index_action_with_edit_link.png)
+![Index action with edit link](http://edgeguides.rubyonrails.org/images/getting_started/index_action_with_edit_link.png)
 
 ### Using partials to clean up duplication in views
 
@@ -1065,7 +1065,7 @@ Point your browser to [http://localhost:3000/posts/new](http://localhost:3000/po
 try creating a new post. Everything still works. Now try editing the
 post and you'll receive the following error:
 
-![Undefined method post_path](images/getting_started/undefined_method_post_path.png)
+![Undefined method post_path](http://edgeguides.rubyonrails.org/images/getting_started/undefined_method_post_path.png)
 
 To understand this error, you need to understand how `form_for` works.
 When you pass an object to `form_for` and you don't specify a `:url`
@@ -1181,7 +1181,7 @@ This is done via the JavaScript file `jquery_ujs` which is automatically include
 into your application's layout (`app/views/layouts/application.html.erb`) when you
 generated the application. Without this file, the confirmation dialog box wouldn't appear.
 
-![Confirm Dialog](images/getting_started/confirm_dialog.png)
+![Confirm Dialog](http://edgeguides.rubyonrails.org/images/getting_started/confirm_dialog.png)
 
 Congratulations, you can now create, show, list, update and destroy
 posts. In the next section will see how Rails can aid us when creating
@@ -1512,7 +1512,7 @@ template. This is where we want the comment to show, so let's add that to the
 Now you can add posts and comments to your blog and have them show up in the
 right places.
 
-![Post with Comments](images/getting_started/post_with_comments.png)
+![Post with Comments](http://edgeguides.rubyonrails.org/images/getting_started/post_with_comments.png)
 
 Refactoring
 -----------
@@ -1746,7 +1746,7 @@ class CommentsController < ApplicationController
 Now if you try to create a new post, you will be greeted with a basic HTTP
 Authentication challenge
 
-![Basic HTTP Authentication Challenge](images/challenge.png)
+![Basic HTTP Authentication Challenge](http://edgeguides.rubyonrails.org/images/challenge.png)
 
 What's Next?
 ------------
