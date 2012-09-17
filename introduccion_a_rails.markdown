@@ -1,4 +1,4 @@
-# Empezando con Rails
+# Introducción a Rails
 
 Esta guía cubre ¿cómo comenzar con Ruby on Rails? Luego de leerla, aprenderás
 lo siguiente:
