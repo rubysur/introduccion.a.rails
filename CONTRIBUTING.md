@@ -8,10 +8,9 @@ animamos a apoyarnos en seguir avanzando con esta meta.
 Introducción a Rails
 --------------------
 
-El objetivo de este proyecto es brindar una guía para comenzar en Rails
-a la comunidad de habla hispana. Esta guía es la traducción al español
-de la guía oficial "Getting Started with Rails" que puedes encontrar
-en la dirección: <http://guides.rubyonrails.org/getting_started.html>.
+El objetivo de este proyecto es brindar una guía para comenzar en Rails a la
+comunidad de habla hispana. Esta guía es la traducción al español de la guía oficial
+["Getting Started with Rails"](http://guides.rubyonrails.org/getting_started.html).
 
 Contribuir es muy simple, puedes comenzar desde arreglar nuestros horrores
 gramaticales hasta traducir toda la guía.
