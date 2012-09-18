@@ -32,10 +32,10 @@ Aquí hay una lista de cosas que tienes que tener en cuenta:
 
 ### Información Adicional:
 
-Twitter: [@rubyperu](https://twitter.com/rubyperu).
-Facebook: [Ruby Perú](https://www.facebook.com/pages/Ruby-Perú/191872640917345).
-Chat: <http://chat.ruby.pe/>
-IRC Freenode: #rubyperu
+Twitter: [@rubyperu](https://twitter.com/rubyperu). <br />
+Facebook: [Ruby Perú](https://www.facebook.com/pages/Ruby-Perú/191872640917345). <br />
+Chat: <http://chat.ruby.pe/> <br />
+IRC Freenode: #rubyperu <br />
 Mailing List: [RubyPeru Google Group](https://groups.google.com/forum/?fromgroups#!forum/rubyperu).
 
 **Gracias!**
