@@ -200,21 +200,33 @@ La página "Welcome Aboard" es la primera prueba para una nueva aplicación Rail
 También puedes hacer click en el link _About your application's enviroment_ para ver
 un resumen del entorno de tu aplicación.
 
-### Say "Hello", Rails
+### Say "Hello to my little friend", Rails
 
-To get Rails saying "Hello", you need to create at minimum a _controller_ and a _view_.
+Para conseguir que Rails diga "Hola", necesitas crear como mínimo un _controlador_ y
+una _vista_.
 
-A controller's purpose is to receive specific requests for the application. _Routing_ decides which controller receives which requests. Often, there is more than one route to each controller, and different routes can be served by different _actions_. Each action's purpose is to collect information to provide it to a view.
+El propósito de un controlador es recibir peticiones específicas (requests) por la
+aplicación. El enrutamiento (_Routing_) decide que controlador recibe que petición.
+A menudo, hay más de una ruta para cada controlador, y diferentes rutas pueden
+ser servidas por diferentes acciones (_actions_). Cada propósito de la acción
+es recolectar información para posteriormente brindarla a la vista.
 
-A view's purpose is to display this information in a human readable format. An important distinction to make is that it is the _controller_, not the view, where information is collected. The view should just display that information. By default, view templates are written in a language called ERB (Embedded Ruby) which is converted by the request cycle in Rails before being sent to the user.
+El propósito de una vista es mostrar la información en un formato legible para
+los humanos. Una distinción importante que hacer es que es el _controlador_, y
+no la vista, donde la información es recolectada. La vista sólo debería mostrar
+la información. Por defecto, las plantillas de las vistas están escritas en un
+lenguaje llamado _ERB_ (Embedded Ruby), el cual es convertido por cada ciclo
+de un request en Rails antes de ser enviado al usuario.
 
-To create a new controller, you will need to run the "controller" generator and tell it you want a controller called "welcome" with an action called "index", just like this:
+Para crear un nuevo controlador, necesitas correr el generador de controladores
+y decirle que quieres un controlador llamado "welcome" con una acción llamada
+"index", casi como lo siguiente:
 
 ```bash
 $ rails generate controller welcome index
 ```
 
-Rails will create several files and a route for you.
+Rails creará una serie de archivos y añadirá una ruta por ti.
 
 ```bash
 create  app/controllers/welcome_controller.rb
@@ -235,9 +247,12 @@ invoke    scss
 create      app/assets/stylesheets/welcome.css.scss
 ```
 
-Most important of these are of course the controller, located at `app/controllers/welcome_controller.rb` and the view, located at `app/views/welcome/index.html.erb`.
+Los más importantes de éstos son por supuesto el controlador, localizado en
+`app/controllers/welcome_controller.rb` y la vista, localizado en
+`app/views/welcome/index.html.erb`.
 
-Open the `app/views/welcome/index.html.erb` file in your text editor and edit it to contain a single line of code:
+Abre el archivo `app/views/welcome/index.html.erb` en tu editor de texto
+y edítalo para que contenga sólo está línea de código:
 
 ```html
 <h1>Hello, Rails!</h1>
