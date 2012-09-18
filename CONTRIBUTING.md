@@ -1,10 +1,12 @@
-# Ruby Perú
+Ruby Perú
+=========
 
 Somos la comunidad oficial de Ruby en Perú. Esta comunidad se basa en puro esfuerzo
 voluntario. Nuestro principal objetivo es difundir el conocimiento sobre Ruby. Te
 animamos a apoyarnos en seguir avanzando con esta meta.
 
-## Introducción a Rails
+Introducción a Rails
+--------------------
 
 El objetivo de este proyecto es brindar una guía para comenzar en Rails
 a la comunidad de habla hispana. Esta guía es la traducción al español
@@ -33,6 +35,8 @@ Aquí hay una lista de cosas que tienes que tener en cuenta:
 **Gracias!**
 :heart: :heart: :heart: <br />
 [RubyPeru](https://github.com/rubyperu).
+
+--------------------------------------------------------------------------------
 
 ### Información Adicional:
 
