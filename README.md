@@ -1,8 +1,8 @@
-Y si traducimos Getting Started with Rails?
+# Introducción a Rails
 
-http://edgeguides.rubyonrails.org/getting_started.html
+Este proyecto nace con la idea de traducir al español la guía oficial
+["Getting Started with Rails"](http://guides.rubyonrails.org/getting_started.html).
 
-## Notas:
+# ¿Cómo contribuir?
 
-* Por las fechas de release, apuntar a Rails >=4.0.
-* Líneas no mayores de 80 carácteres.
+Por favor, lee ["¿Cómo contribuir con este proyecto?"](CONTRIBUTING.md).
