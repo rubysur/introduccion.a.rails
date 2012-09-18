@@ -165,23 +165,39 @@ Hola, Rails!
 Para comenzar, vamos a obtener un poco de texto en la pantalla rápidamente. Para
 hacer ésto, necesitas tener tu servidor de aplicación Rails corriendo.
 
-### Starting up the Web Server
+### Iniciando el Servidor Web
 
-You actually have a functional Rails application already. To see it, you need to start a web server on your development machine. You can do this by running:
+En realidad ya tienes una aplicación Rails funcional, Para verla, necesitas
+iniciar un servidor web en tu máquina de desarrollo. Puedes hacerlo ejecutando:
 
 ```bash
 $ rails server
 ```
 
-TIP: Compiling CoffeeScript to JavaScript requires a JavaScript runtime and the absence of a runtime will give you an `execjs` error. Usually Mac OS X and Windows come with a JavaScript runtime installed. Rails adds the `therubyracer` gem to Gemfile in a commented line for new apps and you can uncomment if you need it. `therubyrhino` is the recommended runtime for JRuby users and is added by default to Gemfile in apps generated under JRuby. You can investigate about all the supported runtimes at [ExecJS](https://github.com/sstephenson/execjs#readme).
+TIP: Compilando CoffeeScript a JavaScript require un JavaScript runtime y la
+ausencia de éste dará un error `execjs`. Usualmente Mac OS X y Windows vienen
+con un Javascript runtime instalado. Rails agrega la gema `therubyracer` al
+`Gemfile` en una línea comentada para nuevas aplicaciones y puedes descomentarla
+si la necesitas. `therubyrhino` es el runtime recomendado para usuarios de JRuby
+y es añadido por defecto al `Gemfile` en aplicaciones generadas bajo JRuby.
+Puedes investigar acerca de todos los runtimes soportados en
+[ExecJS](https://github.com/sstephenson/execjs#readme).
 
-This will fire up WEBrick, a webserver built into Ruby by default. To see your application in action, open a browser window and navigate to [http://localhost:3000](http://localhost:3000). You should see the Rails default information page:
+Esto lanzará WEBrick, un servidor web incoporador en Ruby por defecto. Para ver
+tu aplicación en acción, abre un navegador y anda a [http://localhost:3000](http://localhost:3000).
+Deberías ver la página de información por defecto de Rails.
 
 ![Welcome Aboard screenshot](http://edgeguides.rubyonrails.org/images/rails_welcome.png)
 
-TIP: To stop the web server, hit Ctrl+C in the terminal window where it's running. In development mode, Rails does not generally require you to restart the server; changes you make in files will be automatically picked up by the server.
+TIP: Para detener el servidor web, presiona Ctrl+C en la ventana del terminal
+donde se esta ejecutando. En modo de desarrollo, Rails generalmente no require
+reiniciar el servidor web; los cambios realizados serán tomados automáticamente
+por el servidor.
 
-The "Welcome Aboard" page is the _smoke test_ for a new Rails application: it makes sure that you have your software configured correctly enough to serve a page. You can also click on the _About your application’s environment_ link to see a summary of your application's environment.
+La página "Welcome Aboard" es la primera prueba para una nueva aplicación Rails:
+Esta segura que tienes el software configurado lo correctamente suficiente para
+servir una página. También puedes hacer click en el link _About your application's enviroment_
+para ver un resumen del entorno de tu aplicación.
 
 ### Say "Hello", Rails
 
