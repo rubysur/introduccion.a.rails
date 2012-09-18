@@ -16,11 +16,12 @@ Contribuir es muy simple, puedes comenzar desde arreglar nuestros horrores
 gramaticales hasta traducir toda la guía.
 
 Primero, Házle "Fork" al proyecto en github. Luego realiza los cambios
-en el archivo [introduccion_a_rails.md](https://github.com/rubyperu/introduccion.a.rails/blob/master/introduccion_a_rails.md)
-y envía un pull request con un buen comentario sobre lo que estás cambiando.
+en el archivo [introduccion_a_rails.md](introduccion_a_rails.md) y envía un
+[pull request](https://help.github.com/articles/using-pull-requests) con un
+comentario sobre lo que estás cambiando.
 
-Si estás pensando en hacer contribuciones de manera regular, puedes solicitar acceso
-al repositorio ingresando a <http://chat.ruby.pe/>.
+Si estás pensando en hacer contribuciones de manera regular, puedes solicitar
+acceso al repositorio ingresando a <http://chat.ruby.pe/>.
 
 Aquí hay una lista de cosas que tienes que tener en cuenta:
 
