@@ -463,32 +463,33 @@ If you re-submit the form one more time you'll now no longer get the missing tem
 
 This action is now displaying the parameters for the post that are coming in from the form. However, this isn't really all that helpful. Yes, you can see the parameters but nothing in particular is being done with them.
 
-### Creating the Post model
+### Creando el modelo Post
 
-Models in Rails use a singular name, and their corresponding database tables use
-a plural name. Rails provides a generator for creating models, which
-most Rails developers tend to use when creating new models.
-To create the new model, run this command in your terminal:
+Los Modelos en Rails usan un nombre en singular, y sus correspondientes tablas
+de base de datos usan un nombre en plural. Rails provee un generador para crear
+modelos, el cual la mayoría de desarrolladores en Rails tienden a usar para
+crear nuevos modelos:
 
 ```bash
 $ rails generate model Post title:string text:text
 ```
 
-With that command we told Rails that we want a `Post` model, together
-with a _title_ attribute of type string, and a _text_ attribute
-of type text. Those attributes are automatically added to the `posts`
-table in the database and mapped to the `Post` model.
+Con ese comando le decimos a Rails que nosotros queremos un modelo `Post`,
+junto con un atributo _title_ de tipo _string_, y un atributo _texto_ de tipo
+_text_. Esos atributos son automáticamente añadidos a la tabla `posts` en la
+base de datos y mapeados al modelo `Post`.
 
-Rails responded by creating a bunch of files. For
-now, we're only interested in `app/models/post.rb` and
-`db/migrate/20120419084633_create_posts.rb` (your name could be a bit
-different). The latter is responsible
-for creating the database structure, which is what we'll look at next.
+Rails respondió con la creación de un montón de archivos. Por ahora, nosotros
+sólo estamos interesados en `app/models/post.rb` y
+`db/migrate/20120419084633_create_posts.rb` (en tu caso puede ser un poco
+diferente). Este último es responsable de crear la estructura de la base
+de datos, que es lo que revisaremos luego.
 
-TIP: Active Record is smart enough to automatically map column names to
-model attributes, which means you don't have to declare attributes
-inside Rails models, as that will be done automatically by Active
-Record.
+TIP: Active Record es lo suficientemente inteligente para mapear
+automáticamente el nombre de las columnas a atributos del modelo,
+lo que significa que tú no tienes que declarar los atributos dentro
+de los modelos de Rails, ya que será realizado automáticamente por
+Active Record.
 
 ### Running a Migration
 
