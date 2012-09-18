@@ -17,8 +17,8 @@ gramaticales hasta traducir toda la guía.
 
 Primero, Házle "Fork" al proyecto en github. Luego realiza los cambios
 en el archivo [introduccion_a_rails.md](introduccion_a_rails.md) y envía un
-[pull request](https://help.github.com/articles/using-pull-requests) con un
-comentario sobre lo que estás cambiando.
+[pull request](https://github.com/rubyperu/rubyperu.github.com/wiki/Pull-Requests-en-Github)
+con un comentario sobre lo que estás cambiando.
 
 Si estás pensando en hacer contribuciones de manera regular, puedes solicitar
 acceso al repositorio ingresando a <http://chat.ruby.pe/>.
