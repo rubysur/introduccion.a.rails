@@ -195,7 +195,7 @@ reiniciar el servidor web; los cambios realizados serán tomados automáticament
 por el servidor.
 
 La página "Welcome Aboard" es la primera prueba para una nueva aplicación Rails:
-Esta segura que tienes el software configurado lo correctamente suficiente para
+Esta segura que tienes el software configurado lo suficientemente correcto para
 servir una página. También puedes hacer click en el link _About your application's enviroment_
 para ver un resumen del entorno de tu aplicación.
 
