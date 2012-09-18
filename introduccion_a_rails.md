@@ -17,7 +17,7 @@ WARNING. Esta guía está basada en Rails 4.0. Algunas partes del código que
 se muestran aquí no van a funcionar en nuevas versiones de Rails.
 
 Antes de Empezar
------------------
+----------------
 
 Esta guía está diseñada para principiantes que quieren comenzar con Rails
 desde cero. No asume que tú tienes alguna experiencia previa con Rails. Sin,
@@ -41,7 +41,7 @@ algunos recursos gratis en la internet para aprender Ruby, incluyendo:
 * [Why's (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/).
 
 Qué es Rails?
---------------
+-------------
 
 Rails es un framework de desarrollo de aplicaciones web escrito en el
 lenguaje de programación Ruby. Está diseñado para hacer que la programación
@@ -92,12 +92,12 @@ Para instalar Rails, usa el comando proporcionado por RubyGems `gem install`:
 # gem install rails
 ```
 
-TIP. Existen un número de herramientas que te ayudan a instalar Ruby y
+TIP. Existen un número de herramientas que te ayudarán a instalar Ruby y
 Ruby on Rails de una manera rápida. Si eres usuario de Windows puedes usar
 [Rails Installer](http://railsinstaller.org/). Si eres usuario de Mac OS X
 puedes usar [Rails One Click](http://railsoneclick.com/).
 
-Para verificar que tú hayas instalado todo correctamente, tú deberías
+Para verificar que tu instalación esté correcta, deberías
 poder correr lo siguiente:
 
 ```bash
