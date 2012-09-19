@@ -40,7 +40,7 @@ algunos recursos gratis en la internet para aprender Ruby, incluyendo:
 * [Programming Ruby](http://www.ruby-doc.org/docs/ProgrammingRuby/).
 * [Why's (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/).
 
-Qué es Rails?
+¿Qué es Rails?
 -------------
 
 Rails es un framework de desarrollo de aplicaciones web escrito en el
