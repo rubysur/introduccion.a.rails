@@ -1663,15 +1663,15 @@ the `app/views/comments` directory.
 The `@post` object is available to any partials rendered in the view because we
 defined it as an instance variable.
 
-Deleting Comments
------------------
+Eliminando Comentarios
+----------------------
 
-Another important feature of a blog is being able to delete spam comments. To do
-this, we need to implement a link of some sort in the view and a `DELETE` action
-in the `CommentsController`.
+Otra funcionalidad importante para un blog es poder eliminar comentarios spam.
+Para hacer esto, necesitamos implementar un enlace de algún tipo en la vista, y
+una acción `DELETE` en el `CommentsController`.
 
-So first, let's add the delete link in the
-`app/views/comments/_comment.html.erb` partial:
+Primero, agreguemos el enlace para eliminar en el parcial
+`app/views/comments/_comment.html.erb`:
 
 ```html+erb
 <p>
@@ -1685,16 +1685,16 @@ So first, let's add the delete link in the
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
+  <%= link_to 'Eliminar Comentario', [comment.post, comment],
                :method => :delete,
-               :data => { :confirm => 'Are you sure?' } %>
+               :data => { :confirm => '¿Estás seguro?' } %>
 </p>
 ```
 
-Clicking this new "Destroy Comment" link will fire off a `DELETE
-/posts/:id/comments/:id` to our `CommentsController`, which can then use
-this to find the comment we want to delete, so let's add a destroy action to our
-controller:
+Al hacer click en este nuevo enlace "Eliminar Comentario" se enviará un `DELETE
+/posts/:id/comments/:id` a nuestro `CommentsController`, que puede luego usar
+para ubicar el comentario que queremos eliminar, así que agreguemos una acción
+de eliminar a nuestro controlador:
 
 ```ruby
 class CommentsController < ApplicationController
@@ -1715,17 +1715,17 @@ class CommentsController < ApplicationController
 end
 ```
 
-The `destroy` action will find the post we are looking at, locate the comment
-within the `@post.comments` collection, and then remove it from the
-database and send us back to the show action for the post.
+La acción `destroy` encontrará el artículo que estamos viendo, luego el
+comentario en la colección `@post.comments`, para eliminarlo de la base de datos
+y enviarnos de vuelta a la acción `show` para el artículo.
 
 
-### Deleting Associated Objects
+### Eliminando Objetos Asociados
 
-If you delete a post then its associated comments will also need to be deleted.
-Otherwise they would simply occupy space in the database. Rails allows you to
-use the `dependent` option of an association to achieve this. Modify the Post
-model, `app/models/post.rb`, as follows:
+Si eliminas un artículo entonces sus comentarios asociados necesitas ser
+eliminados también. Si no lo haces simplemente van a ocupar espacio en la base
+de datos. Rails te permite usar la opción `dependent` en las asociaciones para
+lograrlo. Modifica el modelo Post, en `app/models/post.rb`, de esta manera:
 
 ```ruby
 class Post < ActiveRecord::Base
