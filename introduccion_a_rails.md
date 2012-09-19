@@ -1781,23 +1781,35 @@ Authentication challenge
 
 ![Basic HTTP Authentication Challenge](http://edgeguides.rubyonrails.org/images/challenge.png)
 
-What's Next?
-------------
+¿Qué sigue?
+-----------
 
-Now that you've seen your first Rails application, you should feel free to
-update it and experiment on your own. But you don't have to do everything
-without help. As you need assistance getting up and running with Rails, feel
-free to consult these support resources:
+Ahora que has visto tu primera aplicación en Rails, deberías sentir la libertad
+de actualizarla y experimentar por tu cueta. Pero no necesitas hacer todo sin
+ayuda. A medida que vayas necesitando ayuda mientras comienzas con Rails, puedes
+consultar estos recursos:
 
-* The [Ruby on Rails guides](index.html)
-* The [Ruby on Rails Tutorial](http://railstutorial.org/book)
-* The [Ruby on Rails mailing list](http://groups.google.com/group/rubyonrails-talk)
-* The [#rubyonrails](irc://irc.freenode.net/#rubyonrails) channel on irc.freenode.net
+**Inglés**
 
-Rails also comes with built-in help that you can generate using the rake command-line utility:
+* Las [guías de Ruby on Rails](http://guides.rubyonrails.org)
+* El [tutorial de Ruby on Rails](http://railstutorial.org/book)
+* La [lista de correo de Ruby on Rails](http://groups.google.com/group/rubyonrails-talk)
+* El canal en irc.freenode.net [#rubyonrails](irc://irc.freenode.net/#rubyonrails)
 
-* Running `rake doc:guides` will put a full copy of the Rails Guides in the `doc/guides` folder of your application. Open `doc/guides/index.html` in your web browser to explore the Guides.
-* Running `rake doc:rails` will put a full copy of the API documentation for Rails in the `doc/api` folder of your application. Open `doc/api/index.html` in your web browser to explore the API documentation.
+**Español**
+
+* El grupo [Ruby Perú](http://ruby.pe)
+* El grupo [Ruby Sur](http://rubysur.org)
+
+Rails viene con ayuda incorporada que puedes generar usando `rake` en la línea
+de comando:
+
+* Ejecuta `rake doc:guides` para generar una copia completa de las guías de
+Rails (en inglés) en la carpeta `doc/guides` dentro de tu aplicación. Abre
+`doc/guides/index.html` en tu navegador para explorar las guías.
+* Ejecuta `rake doc:rails` genera una copia completa de la documentación del API
+de Rails en la carpeta `doc/api` de tu aplicación. Abre `doc/api/index.html` en
+tu navegador para explorar la documentación del API.
 
 Errores Comunes de Configuración
 --------------------------------
