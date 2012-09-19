@@ -1323,10 +1323,10 @@ Este comando generará cuatro archivos:
 
 | Archivo                                      | Propósito                                                                                                |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------|
-| db/migrate/20100207235629_create_comments.rb | Migración para crear la tabla de comentarios en tu base de datos (en tu caso con un timestamp diferente) |
-| app/models/comment.rb                        | El modelo Comment                                                                                        |
-| test/unit/comment_test.rb                    | Prubas unitarias para el modelo de comentarios                                                           |
-| test/fixtures/comments.yml                   | Muestras de comentarios para usar de pruebas                                                             |
+| db/migrate/20100207235629_create_comments.rb | Migración para crear la tabla de comentarios en tu base de datos (en tu caso con un timestamp diferente).|
+| app/models/comment.rb                        | El modelo Comment.                                                                                       |
+| test/unit/comment_test.rb                    | Prubas unitarias para el modelo de comentarios.                                                          |
+| test/fixtures/comments.yml                   | Muestras de comentarios para usar de pruebas.                                                            |
 
 Primero, miremos `comment.rb`:
 
@@ -1337,7 +1337,7 @@ class Comment < ActiveRecord::Base
 end
 ```
 
-Esto es muy similar al modelo `post.rb` que vimos antes. La diferencia es la
+Ésto es muy similar al modelo `post.rb` que vimos antes. La diferencia es la
 línea `belongs_to :post`, que establece una asociación de Active Record.
 Vas a aprender un poco más sobre asociaciones en la siguiente sección de esta
 guía.
@@ -1363,14 +1363,14 @@ end
 
 La línea `t.references` establece una columna _foreign key_ para la asociación
 entre los dos modelos. La línea `add_index` establece un index para esta columna
-de asociación. Corre la migración:
+de la asociación. Corre la migración:
 
 ```bash
 $ rake db:migrate
 ```
 
-Rails es suficientemente listo para solo ejecutar las migraciones que no se han
-ejecutado todavía en la base de datos actual, así que en este caso solo verás:
+Rails es suficientemente listo para sólo ejecutar las migraciones que no se han
+ejecutado todavía en la base de datos actual, así que en este caso sólo verás:
 
 ```bash
 ==  CreateComments: migrating =================================================
@@ -1390,7 +1390,7 @@ relación de esta manera:
 * Cada comentario pertence a un artículo.
 * Un artículo puede tener muchos comentarios.
 
-De hecho, esto es muy cercando a la sintáxis que usa Rails para declarar esta
+De hecho, ésto es muy cercano a la sintáxis que usa Rails para declarar esta
 asociación. Ya has visto la línea de código en el modelo `Comment` que hace que
 cada comentario pertenezca a un artículo:
 
@@ -1423,7 +1423,7 @@ la guía [Active Record Associations](http://guides.rubyonrails.org/association_
 
 ### Agregando una Ruta para Comentarios
 
-Asi como con el controlador `welcome`, vamos a necesitar agregar una ruta para
+Así como con el controlador `welcome`, vamos a necesitar agregar una ruta para
 que Rails sepa donde queremos navegar para ver `comments`. Abre el archivo
 `config/routes.rb` nuevamente, y edítalo de la siguiente manera:
 
@@ -1433,7 +1433,7 @@ resources :posts do
 end
 ```
 
-Esto crea `comments` como un _recurso anidado_ dentro de `posts`. Esta es otra
+Ésto crea `comments` como un _recurso anidado_ dentro de `posts`. Esta es otra
 parte de capturar la relación jerárquica que existe entre artículos y
 comentarios.
 
@@ -1454,13 +1454,13 @@ Esto crea seis diferentes archivos y una carpeta vacía:
 
 | Archivo/Carpeta                             | Propósito                                   |
 | ------------------------------------------- | --------------------------------------------|
-| app/controllers/comments_controller.rb      | El controlador de Comments                  |
-| app/views/comments/                         | Donde se guardan las vistas del controlador |
-| test/functional/comments_controller_test.rb | Las pruebas funcionales del controlador     |
-| app/helpers/comments_helper.rb              | El helper de la vista                       |
-| test/unit/helpers/comments_helper_test.rb   | Las pruebas unitarias para el helper        |
-| app/assets/javascripts/comment.js.coffee    | CoffeeScript para el controlador            |
-| app/assets/stylesheets/comment.css.scss     | Hojas de estilo para el controlador         |
+| app/controllers/comments_controller.rb      | El controlador de Comments.                 |
+| app/views/comments/                         | Donde se guardan las vistas del controlador.|
+| test/functional/comments_controller_test.rb | Las pruebas funcionales del controlador.    |
+| app/helpers/comments_helper.rb              | El helper de la vista.                      |
+| test/unit/helpers/comments_helper_test.rb   | Las pruebas unitarias para el helper.       |
+| app/assets/javascripts/comment.js.coffee    | CoffeeScript para el controlador.           |
+| app/assets/stylesheets/comment.css.scss     | Hojas de estilo para el controlador.        |
 
 Como con cualquier blog, nuestros lectores crearán sus comentarios directamente
 después de leer el artículo, y una vez que agregaron su comentario, serán
@@ -1501,7 +1501,7 @@ Así que primero, vamos a armar la plantilla `show` del artículo
 <%= link_to 'Back to Posts', posts_path %>
 ```
 
-Esto agrega un formulario en la vista `show` del artítculo que crea un
+Ésto agrega un formulario en la vista `show` del artítculo que crea un
 comentario al llamar a la acción `create` en el `CommentsController`. Al llamar
 `form_for` se necesita pasar un arreglo, que construirá una ruta anidada,
 siguiendo el esquema `/posts/1/comments`.
@@ -1520,7 +1520,7 @@ end
 
 Verás un poco más de complejidad aquí comparado a lo visto en el controlador de
 artículos. Eso es un efecto secundario del anidado que estás usando. Cada vez
-que se crea un comentario es necesario saber a que artículo pertenecen. Por eso
+que se crea un comentario es necesario saber a que artículo pertenece. Por eso
 la primera llamada al método `find` del modelo `Post`, para ubicar el artículo
 en particular.
 
@@ -1531,7 +1531,7 @@ en particular.
 
 Una vez que hemos hecho el comentario nuevo, enviamos al usuario de vuelta al
 artículo original usando el helper `post_path(@post)`. Como hemos podido ver,
-esto luego llama a la acción `show` en el `PostsController` que hace render con
+ésto luego llama a la acción `show` en el `PostsController` que hace render con
 la plantilla `show.html.erb`. Aquí es donde queremos mostrar los comentarios,
 así que agreguemos `app/views/posts/show.html.erb`.
 
