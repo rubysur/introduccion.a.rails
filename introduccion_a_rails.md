@@ -262,8 +262,8 @@ y edítalo para que contenga sólo está línea de código:
 
 Ahora que hemos hecho el _controlador_ y la _vista_, necesitamos decirle a Rails
 cuando queremos que `Hello Rails` se muestre. En nuestro caso, deseamos mostrarlo
-al ingresar a la raíz de nuestro sitio, [http://localhost:3000](http://localhost:3000).
-Por el momento, sin embargo, la página "Welcome Aboard" está ocupando ese lugar.
+al ingresar a la raíz de nuestro sitio, <http://localhost:3000>. Por el momento,
+sin embargo, la página "Welcome Aboard" está ocupando ese lugar.
 
 Para arreglarlo, borramos el archivo `index.html` ubicado dentro de la carpeta
 `public` de la aplicación.
