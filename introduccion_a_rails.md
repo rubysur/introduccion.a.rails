@@ -41,7 +41,7 @@ algunos recursos gratis en la internet para aprender Ruby, incluyendo:
 * [Why's (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/).
 
 ¿Qué es Rails?
--------------
+--------------
 
 Rails es un framework de desarrollo de aplicaciones web escrito en el
 lenguaje de programación Ruby. Está diseñado para hacer que la programación
@@ -52,10 +52,10 @@ desarrolladores en Rails reportan que hace que el desarrollo de aplicaciones
 web sea más divertido.
 
 Rails es un software dogmático. Éste asume que existe una forma "mejor" de hacer
-las cosas, y esta diseñado para formentar esa forma - y en algunos casos para
+las cosas, y está diseñado para fomentar esa forma - y en algunos casos para
 desalentar alternativas. Si aprendes "El Modo Rails" probablemente descubrirás
-un tremendo incremento en productividad. Si persistes trayendo viejos hábitos
-de otros lenguajes a tu desarrollo Rails, e intentas usar patrones aprendidos en
+un tremendo incremento en tu productividad. Si persistes trayendo viejos hábitos
+de otros lenguajes a tu desarrollo en Rails, e intentas usar patrones aprendidos en
 otros lugares, podrías tener una experiencia menos agradable.
 
 La filosofía de Rails incluye dos mayores principios:
