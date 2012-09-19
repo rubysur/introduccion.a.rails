@@ -1552,11 +1552,11 @@ Haciendo Refactoring
 
 Ahora que tenemos los artículos y comentarios funcionando, dale una mirada a la
 plantilla `app/views/posts/show.html.erb`. Se está volviendo larga y complicada.
-Podemos usar parciales para simplificarla.
+Podemos usar parciales (_partials_) para simplificarla.
 
 ### Haciendo Render de Colecciones de Parciales
 
-Primero, hagamos el parcial de comentario para extraer el mostrar todos los
+Primero, creemos el parcial de comentario para extraer el mostrar de todos los
 comentarios del artículo. Crea el archivo `app/views/comments/_comment.html.erb`
 y coloca lo siguiente:
 
@@ -1608,7 +1608,7 @@ manera:
 <%= link_to 'Back to Posts', posts_path %>
 ```
 
-Esto hara que el parcial en `app/views/comments/_comment.html.erb` se haga
+Ésto hará que el parcial en `app/views/comments/_comment.html.erb` se haga
 render una vez por cada comentario en la colección `@post.comments`. A medida
 que el método `render` itera sobre la coleción `@post.comments`, asigna cada
 comentario a la variable local llamada igual que el parcial, en este caso
@@ -1635,7 +1635,7 @@ crea un archivo `app/views/comments/_form.html.erb` que contenga:
 <% end %>
 ```
 
-Luego has que `app/views/posts/show.html.erb` se vea de la siguiente manera:
+Luego haz que `app/views/posts/show.html.erb` se vea de la siguiente manera:
 
 ```html+erb
 <p>
@@ -1655,7 +1655,7 @@ Luego has que `app/views/posts/show.html.erb` se vea de la siguiente manera:
 <%= link_to 'Back to Posts', posts_path %>
 ```
 
-El segundo render solo define la plantilla parcial que queremos usar,
+El segundo render sólo define la plantilla parcial que queremos usar,
 `comments/form`. Rails es suficientemente inteligente para detectar el slash en
 el texto y darse cuenta que lo que quieres es hacer render del archivo
 `_form.html.erb` en la carpeta `app/views/comments`.
