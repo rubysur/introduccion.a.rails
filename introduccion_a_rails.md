@@ -1799,33 +1799,35 @@ Rails also comes with built-in help that you can generate using the rake command
 * Running `rake doc:guides` will put a full copy of the Rails Guides in the `doc/guides` folder of your application. Open `doc/guides/index.html` in your web browser to explore the Guides.
 * Running `rake doc:rails` will put a full copy of the API documentation for Rails in the `doc/api` folder of your application. Open `doc/api/index.html` in your web browser to explore the API documentation.
 
-Configuration Gotchas
----------------------
+Errores Comunes de Configuración
+--------------------------------
 
-The easiest way to work with Rails is to store all external data as UTF-8. If
-you don't, Ruby libraries and Rails will often be able to convert your native
-data into UTF-8, but this doesn't always work reliably, so you're better off
-ensuring that all external data is UTF-8.
+La forma más fácil de trabajar con Rails es guardando toda los datos externos
+como UTF-8. Si no lo haces, por lo general las librerías de Ruby y Rails van a
+ser capaces de convertir tus datos nativos a UTF-8, pero esto no funciona en
+todos los casos, así que lo ideal es asegurarte que todos tus datos externos
+usen UTF-8.
 
-If you have made a mistake in this area, the most common symptom is a black
-diamond with a question mark inside appearing in the browser. Another common
-symptom is characters like "Ã¼" appearing instead of "ü". Rails takes a number
-of internal steps to mitigate common causes of these problems that can be
-automatically detected and corrected. However, if you have external data that is
-not stored as UTF-8, it can occasionally result in these kinds of issues that
-cannot be automatically detected by Rails and corrected.
+Si has cometido un error de este tipo, el síntoma más común es un símbolo de un
+diamante negro con un signo de interrogación en vez de algunos caracteres en tu
+navegador. Otro síntoma común es ver caracteres como "Ã¼" apareciendo en vez de
+la "ü" por ejemplo. Rails realiza una serie de pasos internos para resolver
+casos comunes. Sin embargo, si tienes datos externos que no están guardados en
+UTF-8, puede resultar en este tipo de problemas al no ser automáticamente
+detectados y resueltos por Rails.
 
-Two very common sources of data that are not UTF-8:
+Dos fuentes comunes de datos que no están en UTF-8:
 
-* Your text editor: Most text editors (such as Textmate), default to saving files as
-  UTF-8. If your text editor does not, this can result in special characters that you
-  enter in your templates (such as é) to appear as a diamond with a question mark inside
-  in the browser. This also applies to your I18N translation files.
-  Most editors that do not already default to UTF-8 (such as some versions of
-  Dreamweaver) offer a way to change the default to UTF-8. Do so.
-* Your database. Rails defaults to converting data from your database into UTF-8 at
-  the boundary. However, if your database is not using UTF-8 internally, it may not
-  be able to store all characters that your users enter. For instance, if your database
-  is using Latin-1 internally, and your user enters a Russian, Hebrew, or Japanese
-  character, the data will be lost forever once it enters the database. If possible,
-  use UTF-8 as the internal storage of your database.
+* Tu editor de texto: La mayoría de editores de texto (como TextMate, o Sublime
+  Text), guardan los archivos en UTF-8 por defecto. Si tu editor no lo hace,
+  esto puede resultar en los problemas mencionados arriba. Esto tambien aplica
+  a los archivos de traducción para I18n.
+  La mayoría de editores que no usan UTF-8 por defecto (como algunas versiones
+  de Dreamweaver) tienen la opción establecer la opción manualmente. Hazlo.
+* Tu base de datos. Rails convierte los datos que intercambia con tu base de
+  datos a UTF-8 por defecto. Sin embargo, si tu base de datos no está usando
+  UTF-8 internamente, puede no ser capaz de guardar todos los datos que ingresen
+  tus usuarios. Por ejemplo, si tu base de datos está usando Latin-1
+  internamente, y tus usuarios ingresan caracteres rusos, hebreos o japoneses,
+  esos datos serán perdidos para siempre una vez que entren a la base de datos.
+  Si es posible, usa UTF-8 internamente para el almacenamiento de datos.
