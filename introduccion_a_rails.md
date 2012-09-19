@@ -736,7 +736,7 @@ and restart the web server when a change is made.
 
 ### Permitiendo la actualización de campos
 
-El archivo de modelo `app/models/post.rb` es tan simple como:
+El archivo del modelo `app/models/post.rb` es tan simple como:
 
 ```ruby
 class Post < ActiveRecord::Base
@@ -745,9 +745,10 @@ end
 
 No hay mucho en ese archivo - pero noten que la clase `Post` hereda de
 `ActiveRecord::Base`. Active Record provee una gran cantidad de funcionalidad a los
-modelos de Rails en forma sencilla, incluyendo las operaciones básicas CRUD (del inglés Create, Read, Update,
-Destroy) de base de datos, validación de datos así como el soporte a búsquedas soficticadas 
-y la habilidad de relacionar múltiples modelos entre sí.
+modelos de Rails de forma sencilla, incluyendo las operaciones básicas CRUD (del
+inglés Create, Read, Update, Destroy) de base de datos, validación de datos así
+como el soporte a búsquedas sofisticadas y la habilidad de relacionar múltiples
+modelos entre sí.
 
 Rails incluye métodos que ayudaran a asegurar los campos de tu modelo.
 Abra el archivo `app/models/post.rb` y complete según se indica:
@@ -758,12 +759,12 @@ class Post < ActiveRecord::Base
 end
 ```
 
-Este cambio asegura que todos los cambios realizados a través de formularios HTML 
+Este cambio asegura que todos los cambios realizados a través de formularios HTML
 puedan editar los campos `text` y `title`.
-No será posible definir la edición de otro campo diferente a traves de formularios.
+No será posible definir la edición de otro campo diferente a través de formularios.
 Por supuesto aún será posible definirlo usando el método `field=`.
-La accesabilidad de los atributos y el problema de la asignación masiva es cubierto en detalle en
-[Security guide](security.html#mass-assignment)
+La accesibilidad de los atributos y el problema de la asignación masiva es cubierto
+en detalle en [Security guide](security.html#mass-assignment).
 
 ### Adding Some Validation
 
