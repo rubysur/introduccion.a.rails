@@ -5,4 +5,4 @@ Este proyecto nace con la idea de traducir al español la guía oficial
 
 # ¿Cómo contribuir?
 
-Por favor, lee ["¿Cómo contribuir con este proyecto?"](CONTRIBUTING.md).
+Por favor, lee ["¿Cómo contribuir con este proyecto?"](https://github.com/rubyperu/introduccion.a.rails/blob/master/CONTRIBUTING.md).
