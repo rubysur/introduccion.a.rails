@@ -734,23 +734,23 @@ TIP: In development mode (which is what you're working in by default), Rails
 reloads your application with every browser request, so there's no need to stop
 and restart the web server when a change is made.
 
-### Allowing the update of fields
+### Permitiendo la actualización de campos
 
-The model file, `app/models/post.rb` is about as simple as it can get:
+El archivo de modelo `app/models/post.rb` es tan simple como:
 
 ```ruby
 class Post < ActiveRecord::Base
 end
 ```
 
-There isn't much to this file - but note that the `Post` class inherits from
-`ActiveRecord::Base`. Active Record supplies a great deal of functionality to
-your Rails models for free, including basic database CRUD (Create, Read, Update,
-Destroy) operations, data validation, as well as sophisticated search support
-and the ability to relate multiple models to one another.
+No hay mucho en ese archivo - pero noten que la clase `Post` hereda de
+`ActiveRecord::Base`. Active Record provee una gran cantidad de funcionalidad a los
+modelos de Rails en forma sencilla, incluyendo las operaciones básicas CRUD (del inglés Create, Read, Update,
+Destroy) de base de datos, validación de datos así como el soporte a búsquedas soficticadas 
+y la habilidad de relacionar múltiples modelos entre sí.
 
-Rails includes methods to help you secure some of your model fields.
-Open the `app/models/post.rb` file and edit it:
+Rails incluye métodos que ayudaran a asegurar los campos de tu modelo.
+Abra el archivo `app/models/post.rb` y complete según se indica:
 
 ```ruby
 class Post < ActiveRecord::Base
@@ -758,9 +758,12 @@ class Post < ActiveRecord::Base
 end
 ```
 
-This change will ensure that all changes made through HTML forms can edit the content of the text and title fields.
-It will not be possible to define any other field value through forms. You can still define them by calling the `field=` method of course.
-Accessible attributes and the mass assignment problem is covered in details in the [Security guide](security.html#mass-assignment)
+Este cambio asegura que todos los cambios realizados a través de formularios HTML 
+puedan editar los campos `text` y `title`.
+No será posible definir la edición de otro campo diferente a traves de formularios.
+Por supuesto aún será posible definirlo usando el método `field=`.
+La accesabilidad de los atributos y el problema de la asignación masiva es cubierto en detalle en
+[Security guide](security.html#mass-assignment)
 
 ### Adding Some Validation
 
