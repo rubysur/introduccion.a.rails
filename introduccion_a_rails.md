@@ -51,12 +51,12 @@ accomplishing more than many other languages and frameworks. Además, expertos
 desarrolladores en Rails reportan que hace que el desarrollo de aplicaciones
 web sea más divertido.
 
-Rails is opinionated software. It makes the assumption that there is a "best"
-way to do things, and it's designed to encourage that way - and in some cases to
-discourage alternatives. If you learn "The Rails Way" you'll probably discover a
-tremendous increase in productivity. If you persist in bringing old habits from
-other languages to your Rails development, and trying to use patterns you
-learned elsewhere, you may have a less happy experience.
+Rails es un software dogmático. Éste asume que existe una forma "mejor" de hacer
+las cosas, y esta diseñado para formentar esa forma - y en algunos casos para
+desalentar alternativas. Si aprendes "El Modo Rails" probablemente descubrirás
+un tremendo incremento en productividad. Si persistes trayendo viejos hábitos
+de otros lenguajes a tu desarrollo Rails, e intentas usar patrones aprendidos en
+otros lugares, podrías tener una experiencia menos agradable.
 
 La filosofía de Rails incluye dos mayores principios:
 
