@@ -1735,23 +1735,23 @@ class Post < ActiveRecord::Base
 end
 ```
 
-Security
---------
+Seguridad
+---------
 
-If you were to publish your blog online, anybody would be able to add, edit and
-delete posts or delete comments.
+Si fueras a publicar tu blog en línea, cualquier persona podría agregar, editar
+y eliminar artículos o eliminar comentarios.
 
-Rails provides a very simple HTTP authentication system that will work nicely in
-this situation.
+Rails provee un sistema muy simple de autenticación por HTTP que funcionaría muy
+bien en esta situación.
 
-In the `PostsController` we need to have a way to block access to the various
-actions if the person is not authenticated, here we can use the Rails
-`http_basic_authenticate_with` method, allowing access to the requested
-action if that method allows it.
+Necesitamos una forma de bloquear acceso a ciertas acciones en el
+`PostsController` si la persona no está autenticada, aquí podemos usar el método
+de Rails `http_basic_authenticate_with`, que permite acceso a la acción
+solicitada si el método retorna `true`.
 
-To use the authentication system, we specify it at the top of our
-`PostsController`, in this case, we want the user to be authenticated on every
-action, except for `index` and `show`, so we write that:
+Para usar el sistema de autenticación, lo especificamos en la parte inicial de
+`PostsController`, en este caso, queremos autenticar al usuario en cada una de
+las acciones, excepto `index` y `show`, así lo escribimos:
 
 ```ruby
 class PostsController < ApplicationController
@@ -1760,11 +1760,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-# snipped for brevity
+# cortado por brevedad
 ```
-
-We also only want to allow authenticated users to delete comments, so in the
-`CommentsController` we write:
+También queremos limitar eliminar comentarios a los usuarios autenticados, así
+que en `CommentsController` escribimos:
 
 ```ruby
 class CommentsController < ApplicationController
@@ -1773,13 +1772,13 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-# snipped for brevity
+# cortado por brevedad
 ```
 
-Now if you try to create a new post, you will be greeted with a basic HTTP
-Authentication challenge
+Ahora si intentamos crear un nuevo artículo, vas a ser recibido con una ventana
+de diálogo de autenticación HTTP básica
 
-![Basic HTTP Authentication Challenge](http://edgeguides.rubyonrails.org/images/challenge.png)
+![Ventana de diálogo de autenticación HTTP básica](http://edgeguides.rubyonrails.org/images/challenge.png)
 
 ¿Qué sigue?
 -----------
