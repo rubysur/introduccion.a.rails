@@ -1547,18 +1547,18 @@ right places.
 
 ![Post with Comments](http://edgeguides.rubyonrails.org/images/getting_started/post_with_comments.png)
 
-Refactoring
------------
+Haciendo Refactoring
+--------------------
 
-Now that we have posts and comments working, take a look at the
-`app/views/posts/show.html.erb` template. It is getting long and awkward. We can
-use partials to clean it up.
+Ahora que tenemos los artículos y comentarios funcionando, dale una mirada a la
+plantilla `app/views/posts/show.html.erb`. Se está volviendo larga y complicada.
+Podemos usar parciales para simplificarla.
 
-### Rendering Partial Collections
+### Haciendo Render de Colecciones de Parciales
 
-First, we will make a comment partial to extract showing all the comments for the
-post. Create the file `app/views/comments/_comment.html.erb` and put the
-following into it:
+Primero, hagamos el parcial de comentario para extraer el mostrar todos los
+comentarios del artículo. Crea el archivo `app/views/comments/_comment.html.erb`
+y coloca lo siguiente:
 
 ```html+erb
 <p>
@@ -1572,8 +1572,8 @@ following into it:
 </p>
 ```
 
-Then you can change `app/views/posts/show.html.erb` to look like the
-following:
+Luego puedes cambiar `app/views/posts/show.html.erb` para que se vea de esta
+manera:
 
 ```html+erb
 <p>
@@ -1608,16 +1608,16 @@ following:
 <%= link_to 'Back to Posts', posts_path %>
 ```
 
-This will now render the partial in `app/views/comments/_comment.html.erb` once
-for each comment that is in the `@post.comments` collection. As the `render`
-method iterates over the `@post.comments` collection, it assigns each
-comment to a local variable named the same as the partial, in this case
-`comment` which is then available in the partial for us to show.
+Esto hara que el parcial en `app/views/comments/_comment.html.erb` se haga
+render una vez por cada comentario en la colección `@post.comments`. A medida
+que el método `render` itera sobre la coleción `@post.comments`, asigna cada
+comentario a la variable local llamada igual que el parcial, en este caso
+`comment` que luego está disponible en el parcial para que la usemos.
 
-### Rendering a Partial Form
+### Haciendo Render de un Parcial de Formulario
 
-Let us also move that new comment section out to its own partial. Again, you
-create a file `app/views/comments/_form.html.erb` containing:
+Movamos también la sección de comentarios nuevos a su propio parcial. De nuevo,
+crea un archivo `app/views/comments/_form.html.erb` que contenga:
 
 ```html+erb
 <%= form_for([@post, @post.comments.build]) do |f| %>
@@ -1635,7 +1635,7 @@ create a file `app/views/comments/_form.html.erb` containing:
 <% end %>
 ```
 
-Then you make the `app/views/posts/show.html.erb` look like the following:
+Luego has que `app/views/posts/show.html.erb` se vea de la siguiente manera:
 
 ```html+erb
 <p>
@@ -1655,13 +1655,13 @@ Then you make the `app/views/posts/show.html.erb` look like the following:
 <%= link_to 'Back to Posts', posts_path %>
 ```
 
-The second render just defines the partial template we want to render,
-`comments/form`. Rails is smart enough to spot the forward slash in that
-string and realize that you want to render the `_form.html.erb` file in
-the `app/views/comments` directory.
+El segundo render solo define la plantilla parcial que queremos usar,
+`comments/form`. Rails es suficientemente inteligente para detectar el slash en
+el texto y darse cuenta que lo que quieres es hacer render del archivo
+`_form.html.erb` en la carpeta `app/views/comments`.
 
-The `@post` object is available to any partials rendered in the view because we
-defined it as an instance variable.
+El objeto `@post` está disponible a cualquier parcial al que se le haga render
+en la vista porque lo hemos definido como una variable de instancia.
 
 Eliminando Comentarios
 ----------------------
