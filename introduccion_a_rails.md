@@ -258,17 +258,28 @@ y edítalo para que contenga sólo está línea de código:
 <h1>Hello, Rails!</h1>
 ```
 
-### Setting the Application Home Page
+### Estableciendo la página principal de la aplicación
 
-Now that we have made the controller and view, we need to tell Rails when we want [Hello Rails!" to show up. In our case, we want it to show up when we navigate to the root URL of our site, "http://localhost:3000](http://localhost:3000). At the moment, however, the "Welcome Aboard" smoke test is occupying that spot.
+Ahora que hemos hecho el _controlador_ y la _vista_, necesitamos decirle a Rails
+cuando queremos que `Hello Rails` se muestre. En nuestro caso, deseamos mostrarlo
+al ingresar a la raíz de nuestro sitio, [http://localhost:3000](http://localhost:3000).
+Por el momento, sin embargo, la página "Welcome Aboard" está ocupando ese lugar.
 
-To fix this, delete the `index.html` file located inside the `public` directory of the application.
+Para arreglarlo, borramos el archivo `index.html` ubicado dentro de la carpeta
+`public` de la aplicación.
 
-You need to do this because Rails will serve any static file in the `public` directory that matches a route in preference to any dynamic content you generate from the controllers. The `index.html` file is special: it will be served if a request comes in at the root route, e.g. http://localhost:3000. If another request such as http://localhost:3000/welcome happened, a static file at `public/welcome.html` would be served first, but only if it existed.
+Necesitas hacer esto debido a que Rails servirá cualquier archivo estático en la
+carpeta `public` que coincida con una ruta, en preferencia a cualquier contenido
+que puedas generar desde los _controladores_. El archivo `index.html` es
+especial: éste será servido si una petición llega a la ruta raíz, por ejemplo
+http://localhost:3000. Si otra petición tal como http://localhost:3000/welcome
+ocurriera, un archivo estático en `public/welcome.html` sería servido primero,
+pero sólo si existiera.
 
-Next, you have to tell Rails where your actual home page is located.
+A continuación, tienes que indicarle a Rails donde tu página principal esta
+ubicada.
 
-Open the file `config/routes.rb` in your editor.
+Abre el archivo `config/routes` en tu editor.
 
 ```ruby
 Blog::Application.routes.draw do
@@ -282,17 +293,33 @@ Blog::Application.routes.draw do
   # root :to => "welcome#index"
 ```
 
-This is your application's _routing file_ which holds entries in a special DSL (domain-specific language) that tells Rails how to connect incoming requests to controllers and actions. This file contains many sample routes on commented lines, and one of them actually shows you how to connect the root of your site to a specific controller and action. Find the line beginning with `root :to` and uncomment it. It should look something like the following:
+Éste es el _archivo de enrutamiento_ de tu aplicación el cual mantiene entradas
+con un DSL especial (domain-specific language) que le dicen a Rails como conectar
+peticiones entrantes a _controladores_ y _acciones_. Este archivo contiene muchos
+rutas de ejemplo en líneas comentadas, y una de ellas en realidad muestra como
+conectar la raíz de tu sitio a un _controlador_ y _acción_ específico. Encuentra
+la línea iniciando con `root :to` y descoméntala. Debería verse como lo siguiente:
 
 ```ruby
 root :to => "welcome#index"
 ```
 
-The `root :to => "welcome#index"` tells Rails to map requests to the root of the application to the welcome controller's index action and `get "welcome/index"` tells Rails to map requests to [http://localhost:3000/welcome/index](http://localhost:3000/welcome/index) to the welcome controller's index action. This was created earlier when you ran the controller generator (`rails generate controller welcome index`).
+El `root :to => "welcome#index"` le indica a Rails mapear peticiones de la raíz
+de la aplicación a la _acción_ `index` del _controlador_ `welcome` y
+`get "welcome/index"` le indica a Rails mapear peticiones de
+[http://localhost:3000/welcome/index](http://localhost:3000/welcome/index)
+a la _acción_ `index` del _controlador_ `welcome`. Esto fue creado al inicio cuando
+ejecutaste el generador del _controlador_
+(`rails generate controller welcome index`).
 
-If you navigate to [http://localhost:3000](http://localhost:3000) in your browser, you'll see the `Hello, Rails!` message you put into `app/views/welcome/index.html.erb`, indicating that this new route is indeed going to `WelcomeController`'s `index` action and is rendering the view correctly.
+Si ingresas a la dirección [http://localhost:3000](http://localhost:3000) en tu
+navegador, verás el mensaje `Hello, Rails!` que colocaste dentro de
+`app/views/welcome/index.html.erb`, indicando que esta nueva ruta esta en
+realidad pasando a la _acción_ `index` del _controlador_ `Welcome` y esta
+renderizando la vista correctamente.
 
-NOTE. For more information about routing, refer to [Rails Routing from the Outside In](routing.html).
+NOTA: Para mayor información acerca del enrutamiento, ir a
+[Enrutamiento en Rails de Afuera hacia dentro](http://edgeguides.rubyonrails.org/routing.html).
 
 Getting Up and Running
 ----------------------
