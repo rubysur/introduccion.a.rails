@@ -719,7 +719,7 @@ The `link_to` method is one of Rails' built-in view helpers. It creates a
 hyperlink based on text to display and where to go - in this case, to the path
 for posts.
 
-Let's add links to the other views as well, starting with adding this "New Post" link to `app/views/posts/index.html.erb`, placing it above the `<table>` tag:
+Let's add links to the other views as well, starting with adding this "New Post" link to `app/views/posts/index.html.erb`, placing it above the `<!-- <table> -->` tag:
 
 ```erb
 <%= link_to 'New post', :action => :new %>
@@ -1172,27 +1172,26 @@ you'll be able to update posts again.
 NOTE: The `:as` option is available on the `post`, `put`, `delete` and `match`
 routing methods also.
 
-### Deleting Posts
+### Eliminando artículos
 
-We're now ready to cover the "D" part of CRUD, deleting posts from the
-database. Following the REST convention, we're going to add a route for
-deleting posts to `config/routes.rb`:
+Ahora estamos listos para cubrir la parte "D" del acrónimo CRUD: eliminar artículos
+en la base de datos. Siguiendo la convención REST, vamos a agregar una ruta para la
+eliminación de artículos a `config/routes.rb`:
 
 ```ruby
 delete "posts/:id" => "posts#destroy"
 ```
-
-The `delete` routing method should be used for routes that destroy
-resources. If this was left as a typical `get` route, it could be possible for
-people to craft malicious URLs like this:
+El método de enrutamiento `delete` debe ser usada para métodos que destruyen recursos.
+Si se deja como un típico comando de ruteo `get`, es posible que se puedan enviar 
+URLs malientencionadas como estas:
 
 ```html
 <a href='http://yoursite.com/posts/1/destroy'>look at this cat!</a>
 ```
 
-We use the `delete` method for destroying resources, and this route is mapped to
-the `destroy` action inside `app/controllers/posts_controller.rb`, which doesn't exist yet, but is
-provided below:
+Nosotros usamos el método `delete` para destruir recursos y este ruteo esta asociado
+con la acción `destroy` dentro de `app/controllers/posts_controller.rb`, la cual no existe
+aún pero que se muestra a continuación:
 
 ```ruby
 def destroy
@@ -1203,13 +1202,12 @@ def destroy
 end
 ```
 
-You can call `destroy` on Active Record objects when you want to delete
-them from the database. Note that we don't need to add a view for this
-action since we're redirecting to the `index` action.
+Puedes llamar a `destroy` en objetos Active Record cuando desees eliminarlo de la
+base de datos. Tener que cuenta que no necesitas agregar una vista para esta acción ya que
+estammos siendo redireccionados a la acción `index`.
 
-Finally, add a 'destroy' link to your `index` action template
-(`app/views/posts/index.html.erb`) to wrap everything
-together.
+Finalmente, agregamos una relación a la plantilla de la acción `index` 
+(`app/views/posts/index.html.erb`) para completar todo.
 
 ```html+erb
 <h1>Listing Posts</h1>
@@ -1233,22 +1231,22 @@ together.
 <% end %>
 </table>
 ```
-
-Here we're using `link_to` in a different way. We wrap the
-`:action` and `:id` attributes in a hash so that we can pass those two keys in
-first as one argument, and then the final two keys as another argument. The `:method` and `:'data-confirm'`
-options are used as HTML5 attributes so that when the link is clicked,
-Rails will first show a confirm dialog to the user, and then submit the link with method `delete`.
-This is done via the JavaScript file `jquery_ujs` which is automatically included
-into your application's layout (`app/views/layouts/application.html.erb`) when you
-generated the application. Without this file, the confirmation dialog box wouldn't appear.
+Usaremos aquí `link_to` de diferente manera. Empaquetaremos los atributos
+`:action` y `:id` en un hash de manera que podamos pasar las dos claves como uno 
+en un solo argumento y finalmente las otras dos claves como otro argumento.
+Las opciones `:method` y `:'data-confirm'` son usadas como atributos HTML de manera de que cuando 
+se hace clic en el enlace Rails mostrará un diálogo de confirmación al usuario 
+y luego direccionará al enlace con el método `delete`.
+Esto es realizado a través de un archivo JavaScript `jquery_ujs` el cual fue automáticamente
+incluido dentro del diseño de tu aplicación (`app/views/layouts/application.html.erb`) cuando
+la aplicación fue generada. Sin este archivo el diálogo de confirmación no aparecerá.
 
 ![Confirm Dialog](http://edgeguides.rubyonrails.org/images/getting_started/confirm_dialog.png)
 
-Congratulations, you can now create, show, list, update and destroy
-posts. In the next section will see how Rails can aid us when creating
-REST applications, and how we can refactor our Blog app to take
-advantage of it.
+Felicitaciones, ahora puedes crear, mostrar, enumerar, actualizar y eliminar
+artículos. En la siguiente sección veremos cómo Rails puede ayudarnos en la creación de
+aplicaciones REST, y cómo podemos refactorizar nuestro Blog  para tomar 
+ventaja de ello.
 
 ### Going Deeper into REST
 
