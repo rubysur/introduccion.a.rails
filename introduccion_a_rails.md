@@ -1181,15 +1181,15 @@ eliminación de artículos a `config/routes.rb`:
 ```ruby
 delete "posts/:id" => "posts#destroy"
 ```
-El método de enrutamiento `delete` debe ser usada para métodos que destruyen recursos.
+El método de enrutamiento `delete` debe ser usado para métodos que destruyen recursos.
 Si se deja como un típico comando de ruteo `get`, es posible que se puedan enviar 
-URLs malientencionadas como estas:
+URLs malintencionadas como estas:
 
 ```html
 <a href='http://yoursite.com/posts/1/destroy'>look at this cat!</a>
 ```
 
-Nosotros usamos el método `delete` para destruir recursos y este ruteo esta asociado
+Nosotros usamos el método `delete` para destruir recursos y este ruteo está enlazado
 con la acción `destroy` dentro de `app/controllers/posts_controller.rb`, la cual no existe
 aún pero que se muestra a continuación:
 
@@ -1202,11 +1202,11 @@ def destroy
 end
 ```
 
-Puedes llamar a `destroy` en objetos Active Record cuando desees eliminarlo de la
-base de datos. Tener que cuenta que no necesitas agregar una vista para esta acción ya que
-estammos siendo redireccionados a la acción `index`.
+Puedes llamar a `destroy` en objetos Active Record cuando desees eliminarlos de la
+base de datos. Hay que tener en cuenta que no necesitas agregar una vista para esta acción ya que
+estamos siendo redireccionados a la acción `index`.
 
-Finalmente, agregamos una relación a la plantilla de la acción `index` 
+Finalmente, agregamos un enlace a la plantilla de la acción `index` 
 (`app/views/posts/index.html.erb`) para completar todo.
 
 ```html+erb
