@@ -1296,10 +1296,10 @@ edit_post GET    /posts/:id/edit(.:format) posts#edit
 Also, if you go through the motions of creating, updating and deleting
 posts the app still works as before.
 
-TIP: In general, Rails encourages the use of resources objects in place
-of declaring routes manually. It was only done in this guide as a learning
-exercise. For more information about routing, see
-[Rails Routing from the Outside In](routing.html).
+TIP: En general, Rails fomenta el uso de recursos (`resources`) en lugar
+de declarar las rutas manualmente. Se hizo solamente en esta guía como
+un ejercicio de aprendizaje. Para más información acerca de _routing_,
+mira [Rails Routing from the Outside In](http://guides.rubyonrails.org/routing.html).
 
 Agregando un Segundo Modelo
 ---------------------------
