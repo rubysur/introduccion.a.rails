@@ -1182,7 +1182,7 @@ eliminación de artículos a `config/routes.rb`:
 delete "posts/:id" => "posts#destroy"
 ```
 El método de enrutamiento `delete` debe ser usado para métodos que destruyen recursos.
-Si se deja como un típico comando de ruteo `get`, es posible que se puedan enviar 
+Si se deja como un típico comando de ruteo `get`, es posible que se puedan enviar
 URLs malintencionadas como estas:
 
 ```html
@@ -1206,7 +1206,7 @@ Puedes llamar a `destroy` en objetos Active Record cuando desees eliminarlos de 
 base de datos. Hay que tener en cuenta que no necesitas agregar una vista para esta acción ya que
 estamos siendo redireccionados a la acción `index`.
 
-Finalmente, agregamos un enlace a la plantilla de la acción `index` 
+Finalmente, agregamos un enlace a la plantilla de la acción `index`
 (`app/views/posts/index.html.erb`) para completar todo.
 
 ```html+erb
@@ -1232,10 +1232,10 @@ Finalmente, agregamos un enlace a la plantilla de la acción `index`
 </table>
 ```
 Usaremos aquí `link_to` de diferente manera. Empaquetaremos los atributos
-`:action` y `:id` en un hash de manera que podamos pasar las dos claves como uno 
+`:action` y `:id` en un hash de manera que podamos pasar las dos claves como uno
 en un solo argumento y finalmente las otras dos claves como otro argumento.
-Las opciones `:method` y `:'data-confirm'` son usadas como atributos HTML de manera de que cuando 
-se hace clic en el enlace Rails mostrará un diálogo de confirmación al usuario 
+Las opciones `:method` y `:'data-confirm'` son usadas como atributos HTML de manera de que cuando
+se hace clic en el enlace Rails mostrará un diálogo de confirmación al usuario
 y luego direccionará al enlace con el método `delete`.
 Esto es realizado a través de un archivo JavaScript `jquery_ujs` el cual fue automáticamente
 incluido dentro del diseño de tu aplicación (`app/views/layouts/application.html.erb`) cuando
@@ -1245,14 +1245,14 @@ la aplicación fue generada. Sin este archivo el diálogo de confirmación no ap
 
 Felicitaciones, ahora puedes crear, mostrar, enumerar, actualizar y eliminar
 artículos. En la siguiente sección veremos cómo Rails puede ayudarnos en la creación de
-aplicaciones REST, y cómo podemos refactorizar nuestro Blog  para tomar 
+aplicaciones REST, y cómo podemos refactorizar nuestro Blog  para tomar
 ventaja de ello.
 
-### Going Deeper into REST
+### Profundizando en REST
 
-We've now covered all the CRUD actions of a REST app. We did so by
-declaring separate routes with the appropriate verbs into
-`config/routes.rb`. Here's how that file looks so far:
+Ya hemos cubierto todas las acciones CRUD de una aplicación REST.
+Lo hicimos declarando rutas separadas con los verbos adecuados en
+`config/routes.rb`. Así es como se ve el archivo hasta ahora:
 
 ```ruby
 get "posts" => "posts#index"
@@ -1264,10 +1264,10 @@ put "posts/:id" => "posts#update"
 delete "posts/:id" => "posts#destroy"
 ```
 
-That's a lot to type for covering a single **resource**. Fortunately,
-Rails provides a `resources` method which can be used to declare a
-standard REST resource. Here's how `config/routes.rb` looks after the
-cleanup:
+Eso es un montón de código para cubrir un único **recurso**. Afortunadamente,
+Rails proporciona un método llamado `resources` el cual puede ser usado para
+declarar un recurso REST estándar. Así es como el archivo `config/routes.rb`
+se ve luego de utilizar `resources`:
 
 ```ruby
 Blog::Application.routes.draw do
@@ -1278,8 +1278,8 @@ Blog::Application.routes.draw do
 end
 ```
 
-If you run `rake routes`, you'll see that all the routes that we
-declared before are still available:
+Si ejecutas `rake routes`, podrás ver que todas las rutas que
+declaramos anteriormente aún están disponibles:
 
 ```bash
 # rake routes
@@ -1293,8 +1293,8 @@ edit_post GET    /posts/:id/edit(.:format) posts#edit
      root        /                         welcome#index
 ```
 
-Also, if you go through the motions of creating, updating and deleting
-posts the app still works as before.
+Además, si vas a través de las acciones de creación, actualización
+y eliminación de posts, la aplicación sigue funcionando como antes.
 
 TIP: En general, Rails fomenta el uso de recursos (`resources`) en lugar
 de declarar las rutas manualmente. Se hizo solamente en esta guía como
