@@ -791,10 +791,10 @@ Por supuesto aún será posible definirlo usando el método `field=`.
 La accesibilidad de los atributos y el problema de la asignación masiva es cubierto
 en detalle en [Security guide](security.html#mass-assignment).
 
-### Adding Some Validation
+### Agregando algunas validaciones
 
-Rails includes methods to help you validate the data that you send to models.
-Open the `app/models/post.rb` file and edit it:
+Rails incluye métodos para ayudarte a validar los datos que son enviados a los modelos.
+Abre el archivo `app/models/post.rb` y editalo de la siguiente manera:
 
 ```ruby
 class Post < ActiveRecord::Base
@@ -805,17 +805,17 @@ class Post < ActiveRecord::Base
 end
 ```
 
-These changes will ensure that all posts have a title that is at least five characters long.
-Rails can validate a variety of conditions in a model, including the presence or uniqueness of columns, their
-format, and the existence of associated objects. Validations are covered in detail
-in [Active Record Validations and Callbacks](active_record_validations_callbacks.html#validations-overview)
+Estos cambios asegurarán que todos los artículos tengan un título que sea al menos de cinco caracteres 
+de longitug. Rails puede validar una variedad de condiciones en un modelo, incluyendo la presencia o
+la unicidad de columnas, sus formatos y la existencia de objetos asociados. Las validaciones están cubiertas
+en detalle en [Active Record Validations and Callbacks](active_record_validations_callbacks.html#validations-overview)
 
-With the validation now in place, when you call `@post.save` on an invalid
-post, it will return `false`. If you open `app/controllers/posts_controller.rb`
-again, you'll notice that we don't check the result of calling `@post.save`
-inside the `create` action. If `@post.save` fails in this situation, we need to
-show the form back to the user. To do this, change the `new` and `create`
-actions inside `app/controllers/posts_controller.rb` to these:
+Con la validaciones agregadas, cuando llames a `@post.save` en un artículo inválido
+retornará `false`. Si abres el archivo `app/controllers/posts_controller.rb`
+otra vez, notarás que no verificamos el resultado de la llamada `@post.save`
+dentro de la acción `create`. Si `@post.save` falla en esta situación, necesitamos mostrar
+el formulario de regreso al usuario. Para hacer esto, cambiar las acciones `new` y `create`
+dentro de `app/controllers/posts_controller.rb` a esto:
 
 ```ruby
 def new
@@ -833,18 +833,19 @@ def create
 end
 ```
 
-The `new` action is now creating a new instance variable called `@post`, and
-you'll see why that is in just a few moments.
+La acción `new` está ahora creando una nueva instancia llamada `@post`, 
+y verás el motivo de ello en un momento.
 
-Notice that inside the `create` action we use `render` instead of `redirect_to` when `save`
-returns `false`. The `render` method is used so that the `@post` object is passed back to the `new` template when it is rendered. This rendering is done within the same request as the form submission, whereas the `redirect_to` will tell the browser to issue another request.
+Notas que dentro de la acción `create` usamos `render`en lugar de `redirect_to` cuando acción `save`
+retorna `false`. El método `render`es usado de manera que el objeto `@post`es regresado a la plantilla
+`new` cuando es interpretado. Esta interpretación se hace dentro de la misma solicitud que hace el envío
+del formulario, mientras que `redirect_to`le dirá al navegador para emitir una nueva solicitud.
 
-If you reload
-[http://localhost:3000/posts/new](http://localhost:3000/posts/new) and
-try to save a post without a title, Rails will send you back to the
-form, but that's not very useful. You need to tell the user that
-something went wrong. To do that, you'll modify
-`app/views/posts/new.html.erb` to check for error messages:
+Si recargas [http://localhost:3000/posts/new](http://localhost:3000/posts/new) y
+tratas de guardar un artículo sin título, Rails enviará de regreso un formulario
+pero que no es muy útil. Necesitas decirle al usuario que algo está mal.
+Para hacer esto hay que modificar el archivo`app/views/posts/new.html.erb` 
+para verificar los mensajes de error:
 
 ```html+erb
 <%= form_for :post, :url => { :action => :create } do |f| %>
@@ -877,23 +878,22 @@ something went wrong. To do that, you'll modify
 <%= link_to 'Back', :action => :index %>
 ```
 
-A few things are going on. We check if there are any errors with
-`@post.errors.any?`, and in that case we show a list of all
-errors with `@post.errors.full_messages`.
+Veamos que está pasando. Verificamos si hay errores con
+`@post.errors.any?` y en caso que los haya mostramos una lista de todos
+los errores con `@post.errors.full_messages`.
 
-`pluralize` is a rails helper that takes a number and a string as its
-arguments. If the number is greater than one, the string will be automatically pluralized.
+`pluralize` es un asistente de Rails que toma un número, un texto y sus argumentos.
+Si el número es mayor de 1, el texto será automáticamente pluralizado
 
-The reason why we added `@post = Post.new` in `posts_controller` is that
-otherwise `@post` would be `nil` in our view, and calling
-`@post.errors.any?` would throw an error.
+La razón de porque agregamos`@post = Post.new` en `posts_controller` es que de otra 
+manera `@post` será `nil` en tu vista y llamar a 
+`@post.errors.any?` mostrará un error.
 
-TIP: Rails automatically wraps fields that contain an error with a div
-with class `field_with_errors`. You can define a css rule to make them
-standout.
+CONSEJO: Rails automaticamente ajustará los campos que contienen error en un `div`
+dentro de la clase `field_with_errors`. Puedes definir una regla `css`para destacarlos.
 
-Now you'll get a nice error message when saving a post without title when you
-attempt to do just that on the [new post form (http://localhost:3000/posts/new)](http://localhost:3000/posts/new).
+Ahora enviarás un bonito mensaje de error cuando intentes guardar un artículo sin título
+en [new post form (http://localhost:3000/posts/new)](http://localhost:3000/posts/new).
 
 ![Form With Errors](http://edgeguides.rubyonrails.org/images/getting_started/form_with_errors.png)
 
