@@ -806,7 +806,7 @@ end
 ```
 
 Estos cambios asegurarán que todos los artículos tengan un título que sea al menos de cinco caracteres 
-de longitug. Rails puede validar una variedad de condiciones en un modelo, incluyendo la presencia o
+de longitud. Rails puede validar una variedad de condiciones en un modelo, incluyendo la presencia o
 la unicidad de columnas, sus formatos y la existencia de objetos asociados. Las validaciones están cubiertas
 en detalle en [Active Record Validations and Callbacks](active_record_validations_callbacks.html#validations-overview)
 
@@ -897,21 +897,20 @@ en [new post form (http://localhost:3000/posts/new)](http://localhost:3000/posts
 
 ![Form With Errors](http://edgeguides.rubyonrails.org/images/getting_started/form_with_errors.png)
 
-### Updating Posts
+### Actualizando artículos
 
-We've covered the "CR" part of CRUD. Now let's focus on the "U" part,
-updating posts.
+Hemos cubierto la parte "CR" del acrónimo CRUD. Ahora nos enfocaremos en la parte "U", actualización
+de artículos.
 
-The first step we'll take is adding a `edit` action to
-`posts_controller`.
+El primer paso será agregar la acción `edit` al `posts_controller`.
 
-Start by adding a route to `config/routes.rb`:
+Empecemos agregando una ruta a `config/routes.rb`:
 
 ```ruby
 get "posts/:id/edit" => "posts#edit"
 ```
 
-And then add the controller action:
+Y luego agregar la acción al controlador:
 
 ```ruby
 def edit
@@ -919,9 +918,9 @@ def edit
 end
 ```
 
-The view will contain a form similar to the one we used when creating
-new posts. Create a file called `app/views/posts/edit.html.erb` and make
-it look as follows:
+La vista contendrá un formulario similar al que usamos cuando creamos 
+nuevos artículos. Crea un archivo llamado `app/views/posts/edit.html.erb` que contenga 
+lo siguiente:
 
 ```html+erb
 <h1>Editing post</h1>
@@ -957,23 +956,24 @@ it look as follows:
 <%= link_to 'Back', :action => :index %>
 ```
 
-This time we point the form to the `update` action, which is not defined yet
-but will be very soon.
+Esta vez indicamos al formulario la acción `update`, la cual no está definido aún
+pero pronto lo estará.
 
-The `:method => :put` option tells Rails that we want this form to be
-submitted via the `PUT`, HTTP method which is the HTTP method you're expected to use to
-**update** resources according to the REST protocol.
+La opción `:method => :put` le dice a Rails que queremos que este formulario sea enviado
+a través del método HTTP `PUT`, el cual es el método que tú esperas que se use para
+**actualizar** recursos de acuerdo al protocolo REST.
 
-TIP: By default forms built with the +form_for_ helper are sent via `POST`.
+CONSEJO: Por omisión los formularios construidos con el asistente `+form_for_` son enviados 
+a través de `POST`.
 
-Next, we need to add the `update` action. The file
-`config/routes.rb` will need just one more line:
+A continuación, necesitamos agregar la acción `update`. El archivo
+`config/routes.rb` necesitará una línea más:
 
 ```ruby
 put "posts/:id" => "posts#update"
 ```
 
-And then create the `update` action in `app/controllers/posts_controller.rb`:
+Y luego crear la acción `update` en `app/controllers/posts_controller.rb`:
 
 ```ruby
 def update
@@ -987,19 +987,18 @@ def update
 end
 ```
 
-The new method, `update_attributes`, is used when you want to update a record
-that already exists, and it accepts a hash containing the attributes
-that you want to update. As before, if there was an error updating the
-post we want to show the form back to the user.
+El nuevo método `update_attributes`, es usado cuando deseas acualizar un registro
+que ya existe, y acepta un hash conteniendo los atributos que deseas actualizar.
+Como hicimos anteriormente, si hay un error actualizando el artículo queremos
+mostrar el formulario de regreso al usuario.
 
-TIP: you don't need to pass all attributes to `update_attributes`. For
-example, if you'd call `@post.update_attributes(:title => 'A new title')`
-Rails would only update the `title` attribute, leaving all other
-attributes untouched.
+CONSEJO: no necesitas enviar todos los atributos a `update_attributes`. Por
+ejemplo, si llamas a `@post.update_attributes(:title => 'A new title')`
+Rails solo actualizará el atributo `title` sin tocar los otros atributos.
 
-Finally, we want to show a link to the `edit` action in the list of all the
-posts, so let's add that now to `app/views/posts/index.html.erb` to make it
-appear next to the "Show" link:
+Finalmente, queremos mostrar un enlace a la acción `edit` en la lista de todos
+los artículos, de esta manera hacemos que ahora en `app/views/posts/index.html.erb` 
+aparezca un nuevo enlace adicional al enlace "Show":
 
 ```html+erb
 <table>
@@ -1021,9 +1020,8 @@ appear next to the "Show" link:
 </table>
 ```
 
-And we'll also add one to the `app/views/posts/show.html.erb` template as well,
-so that there's also an "Edit" link on a post's page. Add this at the bottom of
-the template:
+Y también la agregaremos en la plantilla `app/views/posts/show.html.erb` de manera que 
+haya un enlace "Edit" en la página del artículo. Agregar esto al final de tu plantilla: 
 
 ```html+erb
 ...
@@ -1032,7 +1030,7 @@ the template:
 | <%= link_to 'Edit', :action => :edit, :id => @post.id %>
 ```
 
-And here's how our app looks so far:
+Y así es como nuestra aplicación se ve hasta el momento
 
 ![Index action with edit link](http://edgeguides.rubyonrails.org/images/getting_started/index_action_with_edit_link.png)
 
