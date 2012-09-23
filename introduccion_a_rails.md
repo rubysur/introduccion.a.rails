@@ -703,29 +703,31 @@ And then finally a view for this action, located at `app/views/posts/index.html.
 
 Now if you go to `http://localhost:3000/posts` you will see a list of all the posts that you have created.
 
-### Adding links
+### Agregando enlaces
 
-You can now create, show, and list posts. Now let's add some links to
-navigate through pages.
+Hasta el momento puedes crear, mostrar y listar artículos. Ahora vamos a agregar
+algunos enlaces para navegar a través de las páginas. 
 
-Open `app/views/welcome/index.html.erb` and modify it as follows:
+Abra `app/views/welcome/index.html.erb` y modifiquelo como se indica a continuación:
 
 ```html+erb
 <h1>Hello, Rails!</h1>
 <%= link_to "My Blog", :controller => "posts" %>
 ```
 
-The `link_to` method is one of Rails' built-in view helpers. It creates a
-hyperlink based on text to display and where to go - in this case, to the path
-for posts.
+El método `link_to` es uno de los asistentes de la vista incorporados en Rails. Este método crea el
+hipervínculo mostrando un texto e indicando donde irá, en este caso a la ubicación `post`. 
 
-Let's add links to the other views as well, starting with adding this "New Post" link to `app/views/posts/index.html.erb`, placing it above the `<!-- <table> -->` tag:
+Vamos a agregar enlaces a las otras vistas, empezando por agregar a "New Post" el enlace a
+`app/views/posts/index.html.erb`, ubicándola encima de `<!-- <table> -->` tag:
 
 ```erb
 <%= link_to 'New post', :action => :new %>
 ```
 
-This link will allow you to bring up the form that lets you create a new post. You should also add a link to this template -- `app/views/posts/new.html.erb` -- to go back to the `index` action. Do this by adding this underneath the form in this template:
+Este enlace te permitirá abrir el formulario para crear un nuevo artículo. También deberías
+agregar un enlace a esta plantilla -- `app/views/posts/new.html.erb` -- para regresar a la
+acción `index`. Para hacer eso agregue el enlace debajo del formulario en esta plantilla:
 
 ```erb
 <%= form_for :post do |f| %>
@@ -735,7 +737,9 @@ This link will allow you to bring up the form that lets you create a new post. Y
 <%= link_to 'Back', :action => :index %>
 ```
 
-Finally, add another link to the `app/views/posts/show.html.erb` template to go back to the `index` action as well, so that people who are viewing a single post can go back and view the whole list again:
+Finalmente, agregue otro enlace a la plantilla `app/views/posts/show.html.erb` para regresar  
+a la acción `index`, de manera que la persona que está viendo un artículo pueda regresar
+y ver la lista completa nuevamente.
 
 ```html+erb
 <p>
@@ -751,13 +755,13 @@ Finally, add another link to the `app/views/posts/show.html.erb` template to go 
 <%= link_to 'Back', :action => :index %>
 ```
 
-TIP: If you want to link to an action in the same controller, you don't
-need to specify the `:controller` option, as Rails will use the current
-controller by default.
+CONSEJO: Si deseas crear un enlace a una acción dentro del mismo controlador
+no necesitas especificar la opción `:controller`, Rails usará el actual
+controlador por omisión.
 
-TIP: In development mode (which is what you're working in by default), Rails
-reloads your application with every browser request, so there's no need to stop
-and restart the web server when a change is made.
+CONSEJO: En modo de desarrollo (en la cual estás trabajdo por omisión), Rails recarga
+tu aplicación en cada requerimiento del navegador, por lo que no hay necesidad de
+reiniciar el servidor web cuando un cambio es realizado.
 
 ### Permitiendo la actualización de campos
 
