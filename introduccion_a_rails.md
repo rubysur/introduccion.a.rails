@@ -613,23 +613,23 @@ direccionamos al usuario a la acción `show` que definiremos más tarde.
 CONSEJO: Como veremos más tarde, `@post.save` devuelve un indicador que indica si el 
 modelo fue guardado o no.
 
-### Showing Posts
+### Mostrando artículos
 
-If you submit the form again now, Rails will complain about not finding
-the `show` action. That's not very useful though, so let's add the
-`show` action before proceeding. Open `config/routes.rb` and add the following route:
+Si envías el formulario de nuevo, Rails se quejará que no has definido la acción `show`.
+Esto no es muy útil así que vamos a agregar la acción `show` antes de continuar. Abra
+el archivo `config/routes.rb` y agregue la siguiente ruta:
 
 ```ruby
 get "posts/:id" => "posts#show"
 ```
 
-The special syntax `:id` tells rails that this route expects an `:id`
-parameter, which in our case will be the id of the post. Note that this
-time we had to specify the actual mapping, `posts#show` because
-otherwise Rails would not know which action to render.
+La sintaxis especial `:id` le dice a Rails que la ruta espera un parámetro `:id`,
+el cual en nuestro caso será el id del artículo. Note que en esta ocasión
+debemos indicar la asignación real `posts#show` porque de otra manera Rails no sabrá 
+que acción debe realizar.
 
-As we did before, we need to add the `show` action in the
-`posts_controller` and its respective view.
+Como dijimos anteriormente, necesitamos agregar la acción `show` en el `posts_controller` 
+y su respectiva vista.
 
 ```ruby
 def show
@@ -637,13 +637,12 @@ def show
 end
 ```
 
-A couple of things to note. We use `Post.find` to find the post we're
-interested in. We also use an instance variable (prefixed by `@`) to
-hold a reference to the post object. We do this because Rails will pass all instance
-variables to the view.
+Un par de cosas a tener en cuenta. Usamos `Post.find` para encontrar el artículo en el 
+cual estamos interesados. También usamos una variable de instancia (con el prefijo @)
+para contener una referencia al objeto `post`. Hacemos eso porque Rails pasará todas
+las variables de instancia a la vista.
 
-Now, create a new file `app/view/posts/show.html.erb` with the following
-content:
+Ahora, crea un nuevo archivo `app/view/posts/show.html.erb` con el siguiente contenido:
 
 ```html+erb
 <p>
@@ -657,9 +656,9 @@ content:
 </p>
 ```
 
-Finally, if you now go to
-[http://localhost:3000/posts/new](http://localhost:3000/posts/new) you'll
-be able to create a post. Try it!
+Finalmente, si vas a
+[http://localhost:3000/posts/new](http://localhost:3000/posts/new) serás capaz de 
+crear un artículo. ¡Inténtalo!
 
 ![Show action for posts](http://edgeguides.rubyonrails.org/images/getting_started/show_action_for_posts.png)
 
