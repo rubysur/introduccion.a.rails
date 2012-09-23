@@ -1034,10 +1034,10 @@ Y así es como nuestra aplicación se ve hasta el momento
 
 ![Index action with edit link](http://edgeguides.rubyonrails.org/images/getting_started/index_action_with_edit_link.png)
 
-### Using partials to clean up duplication in views
+### Usando parciales para eliminar la duplicidad en las vistas
 
-`partials` are what Rails uses to remove duplication in views. Here's a
-simple example:
+`partials` son lo que Rails usa para remover la duplicidad en las vistas. Aquí hay
+un ejemplo:
 
 ```html+erb
 # app/views/user/show.html.erb
@@ -1053,20 +1053,19 @@ simple example:
 <%= @user.about_me %>
 ```
 
-The `users/show` template will automatically include the content of the
-`users/_user_details` template. Note that partials are prefixed by an underscore,
-as to not be confused with regular views. However, you don't include the
-underscore when including them with the `helper` method.
+La plantilla `users/show` automáticamente incluirá el contenido de la plantilla
+`users/_user_details`. Nota que los parciales tienen como prefijo un subrayado,
+de manera de no confundirlas con vistas regulares. Sin embargo, no incluyas 
+el subrayado cuando las incluyas dentro del método `helper`.
 
-TIP: You can read more about partials in the
-[Layouts and Rendering in Rails](layouts_and_rendering.html) guide.
+CONSEJO: Puedes leer más acerca de parciales en la guía
+[Layouts and Rendering in Rails](layouts_and_rendering.html).
 
-Our `edit` action looks very similar to the `new` action, in fact they
-both share the same code for displaying the form. Lets clean them up by
-using a partial.
+Nuestra acción `edit` parece muy similar a la acción `new`, en efecto ellos
+comparten el mismo código para mostrar el formulario. Vamos a limpiarlo
+usando un parcial.
 
-Create a new file `app/views/posts/_form.html.erb` with the following
-content:
+Crea un nuevo archivo `app/views/posts/_form.html.erb` con el siguiente contenido:
 
 ```html+erb
 <%= form_for @post do |f| %>
@@ -1097,11 +1096,11 @@ content:
 <% end %>
 ```
 
-Everything except for the `form_for` declaration remained the same.
-How `form_for` can figure out the right `action` and `method` attributes
-when building the form will be explained in just a moment. For now, let's update the
-`app/views/posts/new.html.erb` view to use this new partial, rewriting it
-completely:
+Todo, excepto la declaración `form_for` permanece igual. Como `form_for` 
+puede averiguar la `action` y los atributos del `method` correcto
+cuando construye el formulario será explicado eun unos momentos.
+Por ahora, vamos a actualizar la vista
+`app/views/posts/new.html.erb` para usar el nuevo parcial, reescribiendo completamente:
 
 ```html+erb
 <h1>New post</h1>
@@ -1111,7 +1110,7 @@ completely:
 <%= link_to 'Back', :action => :index %>
 ```
 
-Then do the same for the `app/views/posts/edit.html.erb` view:
+Luego hacer lo mismo a la vista `app/views/posts/edit.html.erb`:
 
 ```html+erb
 <h1>Edit post</h1>
@@ -1121,27 +1120,25 @@ Then do the same for the `app/views/posts/edit.html.erb` view:
 <%= link_to 'Back', :action => :index %>
 ```
 
-Point your browser to [http://localhost:3000/posts/new](http://localhost:3000/posts/new) and
-try creating a new post. Everything still works. Now try editing the
-post and you'll receive the following error:
+Ve con tu navegador a [http://localhost:3000/posts/new](http://localhost:3000/posts/new) y
+trata de crear un nuevo artículo. Todo funciona todavía, Ahora tratemos de editar el 
+artículo y recibiremos el siguiente mensaje de error:
 
 ![Undefined method post_path](http://edgeguides.rubyonrails.org/images/getting_started/undefined_method_post_path.png)
 
-To understand this error, you need to understand how `form_for` works.
-When you pass an object to `form_for` and you don't specify a `:url`
-option, Rails will try to guess the `action` and `method` options by
-checking if the passed object is a new record or not. Rails follows the
-REST convention, so to create a new `Post` object it will look for a
-route named `posts_path`, and to update a `Post` object it will look for
-a route named `post_path` and pass the current object. Similarly, rails
-knows that it should create new objects via POST and update them via
-PUT.
+Para entender este error necesitamos conocer como funciona `form_for`.
+Cuando pasas un objeto a `form_for` y no especificas la opción de `:url`, 
+Rails trata de adivinar las opciones de `action` y `method` verificando
+si el objeto pasado es un nuevo registro o no. Rails sigue la convencion
+REST, de esta manera si se está creando un nuevo objeto `Post` buscará por una
+ruta llamada `post_path` y para actualizar un objeto `Post` buscará por una
+ruta llamada `post_path` y le pasará el objeto actual. Similarmente, Rails conoce
+que debe crear nuevos objetos a través de POST y actualizarlos a través de PUT.
 
-If you run `rake routes` from the console you'll see that we already
-have a `posts_path` route, which was created automatically by Rails when we
-defined the route for the index action.
-However, we don't have a `post_path` yet, which is the reason why we
-received an error before.
+Si ejecutas `rake routes` desde la consola verás que ya tenemos una ruta
+`posts_path`, la cual fue creada automáticamente por Rails cuando se definió la ruta 
+por la acción `index`. Sin embargo, no tenemos aún un `post_path`, la cual es la
+razón por la quje recibimos el error anterior.
 
 ```bash
 # rake routes
@@ -1155,20 +1152,20 @@ posts_new GET  /posts/new(.:format)        posts#new
      root      /                           welcome#index
 ```
 
-To fix this, open `config/routes.rb` and modify the `get "posts/:id"`
-line like this:
+Para arreglar eso, abrimos el archivo `config/routes.rb` y modificamos la línea `get "posts/:id"`
+a esto:
 
 ```ruby
 get "posts/:id" => "posts#show", :as => :post
 ```
 
-The `:as` option tells the `get` method that we want to make routing helpers
-called `post_url` and `post_path` available to our application. These are
-precisely the methods that the `form_for` needs when editing a post, and so now
-you'll be able to update posts again.
+La opción `:as` le dice al método `get` que queremos hacer que los asistentes
+de ruteo llamados `post_url` y `post_path` estén disponibles para nuestra aplicación. 
+Estos son los métodos que `form_for` necesita cuando estamos editando un artículo y que ahora 
+están disponibles para actualizar los artículos. 
 
-NOTE: The `:as` option is available on the `post`, `put`, `delete` and `match`
-routing methods also.
+NOTA: La opción `:as` esta disponible también en los métodos de ruteo 
+`post`, `put`, `delete` y `match`.
 
 ### Eliminando artículos
 
