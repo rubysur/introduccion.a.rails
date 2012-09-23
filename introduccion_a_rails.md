@@ -664,16 +664,16 @@ be able to create a post. Try it!
 
 ![Show action for posts](http://edgeguides.rubyonrails.org/images/getting_started/show_action_for_posts.png)
 
-### Listing all posts
+### Listando todos los artículos
 
-We still need a way to list all our posts, so let's do that. As usual,
-we'll need a route placed into `config/routes.rb`:
+Aún necesitamos una forma de listar todos los artículos, de manera que vamos a hacerlo.
+Como de costumbre, vamos a necesitar una ruta ubicada dentro de `config/routes.rb`:
 
 ```ruby
 get "posts" => "posts#index"
 ```
 
-And an action for that route inside the `PostsController` in the `app/controllers/posts_controller.rb` file:
+Y una acción para esa ruta dentro de `PostsController` en el archivo `app/controllers/posts_controller.rb`:
 
 ```ruby
 def index
@@ -681,7 +681,7 @@ def index
 end
 ```
 
-And then finally a view for this action, located at `app/views/posts/index.html.erb`:
+Y finalmente una vista para esta acción, ubicada en `app/views/posts/index.html.erb`:
 
 ```html+erb
 <h1>Listing posts</h1>
@@ -701,7 +701,7 @@ And then finally a view for this action, located at `app/views/posts/index.html.
 </table>
 ```
 
-Now if you go to `http://localhost:3000/posts` you will see a list of all the posts that you have created.
+Ahora si vamos a `http://localhost:3000/posts` veremos una lista con todos los artículos que has creado.
 
 ### Agregando enlaces
 
