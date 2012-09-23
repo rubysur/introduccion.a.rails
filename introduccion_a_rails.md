@@ -588,11 +588,11 @@ command will apply to the database defined in the `development` section of your
 environment, for instance in production, you must explicitly pass it when
 invoking the command: `rake db:migrate RAILS_ENV=production`.
 
-### Saving data in the controller
+### Salvando datos en el controlador
 
-Back in `posts_controller`, we need to change the `create` action
-to use the new `Post` model to save the data in the database. Open that file
-and change the `create` action to look like this:
+En `posts_controller` necesitamos cambiar la acción `create` para usar el nuevo modelo `Post` 
+y guardar los datos en la base de datos. Abra el archivo y cambie la acción `create`
+que debe verse de la siguiente manera:
 
 ```ruby
 def create
@@ -603,16 +603,15 @@ def create
 end
 ```
 
-Here's what's going on: every Rails model can be initialized with its
-respective attributes, which are automatically mapped to the respective
-database columns. In the first line we do just that (remember that
-`params[:post]` contains the attributes we're interested in). Then,
-`@post.save` is responsible for saving the model in the database.
-Finally, we redirect the user to the `show` action,
-which we'll define later.
+Esto es lo que sucede: cada modelo Rails puede ser inicializado con sus respectivos
+atributos, los cuales son automáticamente asignados a sus respectivas columnas de 
+base de datos. En la primera línea hacemos justamente eso (recuerda que
+`params[:post]` contiene los atributos en los cuales estamos interesados). Luego,
+`@post.save` es responsible de guardar el modelo en la base de datos. Finalmente, 
+direccionamos al usuario a la acción `show` que definiremos más tarde.
 
-TIP: As we'll see later, `@post.save` returns a boolean indicating
-wherever the model was saved or not.
+CONSEJO: Como veremos más tarde, `@post.save` devuelve un indicador que indica si el 
+modelo fue guardado o no.
 
 ### Showing Posts
 
