@@ -531,18 +531,18 @@ lo que significa que tú no tienes que declarar los atributos dentro
 de los modelos de Rails, ya que será realizado automáticamente por
 Active Record.
 
-### Running a Migration
+### Ejecutando una migración
 
-As we've just seen, `rails generate model` created a _database
-migration_ file inside the `db/migrate` directory.
-Migrations are Ruby classes that are designed to make it simple to
-create and modify database tables. Rails uses rake commands to run migrations,
-and it's possible to undo a migration after it's been applied to your database.
-Migration filenames include a timestamp to ensure that they're processed in the
-order that they were created.
+Como hemos visto, `rails generate model` crea un archivo _database
+migration_ dentro del directorio `db/migrate`.
+Migraciones son clases de Ruby que están diseñadas para hacer simple la
+creación y modificación de las tablas de la base de datos. Rails usa comandos rake
+para ejecutar migraciones, y es posible deshacer una migración despues que ha sido aplicada
+a la base de datos. Archivo de migraciones incluyen una marca de la fecha y hora para
+que sean procesadas en el orden que fueron creadas.
 
-If you look in the `db/migrate/20120419084633_create_posts.rb` file (remember,
-yours will have a slightly different name), here's what you'll find:
+Si miras dentro del archivo `db/migrate/20120419084633_create_posts.rb` (recuerda,
+tu archivo puede tener un nombre ligeramente diferente), esto es lo que encontrarás:
 
 ```ruby
 class CreatePosts < ActiveRecord::Migration
@@ -557,23 +557,22 @@ class CreatePosts < ActiveRecord::Migration
 end
 ```
 
-The above migration creates a method named `change` which will be called when you
-run this migration. The action defined in this method is also reversible, which
-means Rails knows how to reverse the change made by this migration, in case you
-want to reverse it later. When you run this migration it will create a
-`posts` table with one string column and a text column. It also creates two
-timestamp fields to allow Rails to track post creation and update times. More
-information about Rails migrations can be found in the "Rails Database
-Migrations":migrations.html guide.
+La migración de arriba crea un método llamado `change` el cual será llamado cuando ejecutes
+la migración. La acción definida en este método es reversible, lo cual significa que Rails
+conoce como deshacer los cambios realizados en esta migración en caso que necesites hacer eso
+más tarde. Cuando ejecutas esta migración se creará una tabla `post` con una columna tipo `string`
+y otra columna tipo `text`. También crea dos campos de fecha-hora para permitir a Rails realizar
+un seguimiento de las actualizaciones. Mayor información acerca de las migraciones en Rails
+pueden ser encontradas en la guía "Rails Database Migrations":migrations.html.
 
-At this point, you can use a rake command to run the migration:
+En este punto, puedes usar el comando rake para ejecutar la migración:
 
 ```bash
 $ rake db:migrate
 ```
 
-Rails will execute this migration command and tell you it created the Posts
-table.
+Rails ejecutará este comando de migración y te responderá lo siguiente cuando haya
+creado la tabla `Posts`.
 
 ```bash
 ==  CreatePosts: migrating ====================================================
@@ -582,11 +581,11 @@ table.
 ==  CreatePosts: migrated (0.0020s) ===========================================
 ```
 
-NOTE. Because you're working in the development environment by default, this
-command will apply to the database defined in the `development` section of your
-`config/database.yml` file. If you would like to execute migrations in another
-environment, for instance in production, you must explicitly pass it when
-invoking the command: `rake db:migrate RAILS_ENV=production`.
+NOTA. Debido a que estás trabajando en el ambiente de desarrollo por omisión,
+este comando se aplicará a la base de datos definida en la sección `development` 
+de tu archivo `config/database.yml`. Si deseas ejecutar migraciones en otro 
+ambiente, por ejemplo en producción, debes indicarlo en forma explícita cuando 
+invoques el comando: `rake db:migrate RAILS_ENV=production`.
 
 ### Salvando datos en el controlador
 
