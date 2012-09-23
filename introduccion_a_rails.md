@@ -503,9 +503,9 @@ If you re-submit the form one more time you'll now no longer get the missing tem
 
 This action is now displaying the parameters for the post that are coming in from the form. However, this isn't really all that helpful. Yes, you can see the parameters but nothing in particular is being done with them.
 
-### Creando el modelo Post
+### Creando el modelo post
 
-Los Modelos en Rails usan un nombre en singular, y sus correspondientes tablas
+Los modelos en Rails usan un nombre en singular, y sus correspondientes tablas
 de base de datos usan un nombre en plural. Rails provee un generador para crear
 modelos, el cual la mayoría de desarrolladores en Rails tienden a usar para
 crear nuevos modelos:
@@ -525,7 +525,7 @@ sólo estamos interesados en `app/models/post.rb` y
 diferente). Este último es responsable de crear la estructura de la base
 de datos, que es lo que revisaremos luego.
 
-TIP: Active Record es lo suficientemente inteligente para mapear
+CONSEJO: Active Record es lo suficientemente inteligente para asignar
 automáticamente el nombre de las columnas a atributos del modelo,
 lo que significa que tú no tienes que declarar los atributos dentro
 de los modelos de Rails, ya que será realizado automáticamente por
