@@ -486,8 +486,8 @@ class PostsController < ApplicationController
 end
 ```
 
-Si reenvias el formulario ahora, verás otro error común: falta una plantilla. Está bien, vamos a ignorar
-eso por ahora. Lo que la acción `create` debe hacer es salvar el nuevo artículo en ase.
+Si reenvías el formulario ahora, verás otro error común: falta una plantilla. Está bien, vamos a ignorar
+eso por ahora. Lo que la acción `create` debe hacer es salvar el nuevo artículo en la base de datos.
 
 Cuando un formulario es enviado, los campos del formulario son enviados a Rails como _parámetros_. Estos
 parámetros pueden ser referenciados dentro de las acciones del controlador, generalmente para realizar una
@@ -576,7 +576,7 @@ conoce como deshacer los cambios realizados en esta migración en caso que neces
 más tarde. Cuando ejecutas esta migración se creará una tabla `post` con una columna tipo `string`
 y otra columna tipo `text`. También crea dos campos de fecha-hora para permitir a Rails realizar
 un seguimiento de las actualizaciones. Mayor información acerca de las migraciones en Rails
-pueden ser encontradas en la guía "Rails Database Migrations":migrations.html.
+pueden ser encontradas en la guía [Rails Database Migrations](http://guides.rubyonrails.org/migrations.html).
 
 En este punto, puedes usar el comando rake para ejecutar la migración:
 
