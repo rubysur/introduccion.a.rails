@@ -468,9 +468,10 @@ With the form and its associated route defined, you will be able to fill in the 
 
 You now need to create the `create` action within the `PostsController` for this to work.
 
-### Creating posts
+### Creando artículos
 
-To make the "Unknown action" go away, you can define a `create` action within the `PostsController` class in `app/controllers/posts_controller.rb`, underneath the `new` action:
+Para hacer que "Unknown action" desaparezca, puedes definir una acción `create` 
+dentro de la clase `PostsController` en `app/controllers/posts_controller.rb`, debajo de la acción `new`:
 
 ```ruby
 class PostsController < ApplicationController
@@ -483,9 +484,12 @@ class PostsController < ApplicationController
 end
 ```
 
-If you re-submit the form now, you'll see another familiar error: a template is missing. That's ok, we can ignore that for now. What the `create` action should be doing is saving our new post to a database.
+Si reenvias el formulario ahora, verás otro error común: falta una plantilla. Está bien, vamos a ignorar
+eso por ahora. Lo que la acción `create` debe hacer es salvar el nuevo artículo en ase.
 
-When a form is submitted, the fields of the form are sent to Rails as _parameters_. These parameters can then be referenced inside the controller actions, typically to perform a particular task. To see what these parameters look like, change the `create` action to this:
+Cuando un formulario es enviado, los campos del formulario son enviados a Rails como _parámetros_. Estos
+parámetros pueden ser referenciados dentro de las acciones del controlador, generalmente para realizar una
+tarea determinada. Para ver que hacen estos parámetros, cambiar la acción `create` a esto:
 
 ```ruby
 def create
@@ -493,15 +497,22 @@ def create
 end
 ```
 
-The `render` method here is taking a very simple hash with a key of `text` and value of `params[:post].inspect`. The `params` method is the object which represents the parameters (or fields) coming in from the form. The `params` method returns a `HashWithIndifferentAccess` object, which allows you to access the keys of the hash using either strings or symbols. In this situation, the only parameters that matter are the ones from the form.
+El método `render` toma un simple hash con la clave `text` y el valor de `params[:post].inspect`. El
+método `params` es el objeto que representa a los parámetros (o campos) que vienen desde el formulario.
+El método `params` retorna un objeto `HashWithIndifferentAccess`, que te permite acceder a las claves del hash
+usando cadenas o símbolos. En esta situación los únicos parámetros que importan son los que vienen del 
+formulario.
 
-If you re-submit the form one more time you'll now no longer get the missing template error. Instead, you'll see something that looks like the following:
+Si reenvias el formulario una vez más, ya no obtendrás el error de plantilla faltante, en su lugar verás
+algo como lo que sigue: 
 
 ```ruby
 {"title"=>"First post!", "text"=>"This is my first post."}
 ```
 
-This action is now displaying the parameters for the post that are coming in from the form. However, this isn't really all that helpful. Yes, you can see the parameters but nothing in particular is being done with them.
+Esta acción muestra ahora los parámetros para el artículo que están llegando desde el formulario. Sin 
+embargo, esto no es realmente útil. Sí, puedes ver los parámetros, pero no hay nada en particular que se 
+está haciendo con ellos.
 
 ### Creando el modelo post
 
