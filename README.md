@@ -428,24 +428,38 @@ Missing template posts/new, application/new with {:locale=>[:en], :formats=>[:ht
 
 Eso es casi un montón de texto! Revisemos rápidamente para entender cuál es la función de cada parte.
 
-La primera parte identifica que plantilla está faltando. En este caso, es
-The first part identifies what template is missing. In this case, it's the `posts/new` template. Rails will first look for this template. If not found, then it will attempt to load a template called `application/new`. It looks for one here because the `PostsController` inherits from `ApplicationController`.
+La primera parte identifica que plantilla está faltando. En este caso, es la plantila `posts/new`.
+Rails primero buscará esta plantilla. Si no la encuentra, luego tratará de cargar la plantilla
+llamada `application/new`. Busca una aquí porque el `PostsController` hereda de `ApplicationController`.
 
-The next part of the message contains a hash. The `:locale` key in this hash simply indicates what spoken language template should be retrieved. By default, this is the English -- or "en" -- template. The next key, `:formats` specifies the format of template to be served in response . The default format is `:html`, and so Rails is looking for an HTML template. The final key, `:handlers`, is telling us what _template handlers_ could be used to render our template. `:erb` is most commonly used for HTML templates, `:builder` is used for XML templates, and `:coffee` uses CoffeeScript to build JavaScript templates.
+La siguiente parte del mensaje contiene un map (`hash` en inglés). La llave `:locale` en este map
+simplemente indica el lenguaje que debe contener la plantilla solicitada. Por defecto, está configurado
+en Inglés -- o "en" --. La siguiente llave, `:formats` especifica el formato de la plantilla que será
+servido en la respuesta. El formato por defecto es `:html`, es por eso que Rails busca una plantilla
+HTML. La llave final, `:handlers`, nos dice que _manejador de plantilla_ (o _template handler_ en inglés)
+puede ser usada para producir nuestra plantilla. `:erb` es el manejador más usado para plantillas HTML,
+`:builder` es usado para plantillas XML, y `:coffee` usa CoffeeScript para construir plantillas JavaScript.
 
-The final part of this message tells us where Rails has looked for the templates. Templates within a basic Rails application like this are kept in a single location, but in more complex applications it could be many different paths.
+La más simple plantilla que funcionaría en nuestro caso sería una localizada en `app/views/posts/new.html.erb`.
+La extensión de este nombre de archivo es importante: la primera extensión define el _formato_ de la plantilla,
+y la segunda extensión el _manejador de plantilla_ que será usado. Rails está tratando de encontrar una
+plantilla llamada `posts/new` en `app/views` para la aplicación. El formato para esta plantilla puede sólo
+ser `html` y el manejador debería ser `erb`, `builder` o `coffee`. Ya que tú quieres crear un nuevo
+formulario HTML, tú tendrás que usar el lenguaje `ERB`. Por lo tanto el archivo debería ser llamado
+`posts/new.html.erb` y necesita ser localizado dentro de la carpeta `app/views` de la aplicación.
 
-The simplest template that would work in this case would be one located at `app/views/posts/new.html.erb`. The extension of this file name is key: the first extension is the _format_ of the template, and the second extension is the _handler_ that will be used. Rails is attempting to find a template called `posts/new` within `app/views` for the application. The format for this template can only be `html` and the handler must be one of `erb`, `builder` or `coffee`. Because you want to create a new HTML form, you will be using the `ERB` language. Therefore the file should be called `posts/new.html.erb` and needs to be located inside the `app/views` directory of the application.
-
-Go ahead now and create a new file at `app/views/posts/new.html.erb` and write this content in it:
+Ahora ve y crea un nuevo archivo en `app/views/posts/new.html.erb` y escribe el siguiente
+contenido en él:
 
 ```html
 <h1>New Post</h1>
 ```
 
-When you refresh [http://localhost:3000/posts/new](http://localhost:3000/posts/new) you'll now see that the page has a title. The route, controller, action and view are now working harmoniously! It's time to create the form for a new post.
+Cuando refresques <http://localhost:3000/posts/new>, verás que la página tiene un título. La ruta,
+el controlador, la acción y la vista ahora están funcionando de manera armoniosa! Es hora de crear
+el formulario para un nuevo post.
 
-### The first form
+## The first form
 
 To create a form within this template, you will use a <em>form
 builder</em>. The primary form builder for Rails is provided by a helper
