@@ -459,11 +459,12 @@ Cuando refresques <http://localhost:3000/posts/new>, verás que la página tiene
 el controlador, la acción y la vista ahora están funcionando de manera armoniosa! Es hora de crear
 el formulario para un nuevo post.
 
-## The first form
+The first form
+--------------
 
-To create a form within this template, you will use a <em>form
-builder</em>. The primary form builder for Rails is provided by a helper
-method called `form_for`. To use this method, add this code into `app/views/posts/new.html.erb`:
+Para crear una formulario con esta plantilla usarás un _constructor de formularios_ (o _form builder_
+en inglés). El form builder primario de Rails está provisto por un método de ayuda llamado `form_for`.
+Para usar este método agrega este código a `app/views/posts/new.html.erb`:
 
 ```html+erb
 <%= form_for :post do |f| %>
@@ -483,39 +484,55 @@ method called `form_for`. To use this method, add this code into `app/views/post
 <% end %>
 ```
 
-If you refresh the page now, you'll see the exact same form as in the example. Building forms in Rails is really just that easy!
+Si refrescas la página ahora, verás el mismo formulario que en el ejemplo.
+Construir un formulario en Rails es así de sencillo!
 
-When you call `form_for`, you pass it an identifying object for this
-form. In this case, it's the symbol `:post`. This tells the `form_for`
-helper what this form is for. Inside the block for this method, the
-`FormBuilder` object -- represented by `f` -- is used to build two labels and two text fields, one each for the title and text of a post. Finally, a call to `submit` on the `f` object will create a submit button for the form.
+Cuando llamas a `form_for`, le pasas un objeto identificador para este
+formulario. En este caso, es el símbolo `:post`. Esto le indica al método
+`form_for` para quién es este formulario. Dentro del bloque para este método,
+el objeto `FormBuilder` - representado por `f` - es usado para construir dos
+etiquetas y dos cajas de texto, una de cada una para el título y el texto del
+post. Finalmente, la llamada al método `submit` en el objeto `f` creará un
+botón de submit en el formulario.
 
-There's one problem with this form though. If you inspect the HTML that is generated, by viewing the source of the page, you will see that the `action` attribute for the form is pointing at `/posts/new`. This is a problem because this route goes to the very page that you're on right at the moment, and that route should only be used to display the form for a new post.
+Sin embargo, existe un problema con este formulario. Si inspeccionas el código
+HTML generado, al ver la fuente de la página, verás que el atributo `action` de
+el formulario apunta a `/posts/new`. Ésto es un problema debido a que esta ruta
+va a la misma página donde te encuentras en este momento cuando en realidad la
+ruta debería sólo ser usada para mostrar el formulario para un nuevo post.
 
-The form needs to use a different URL in order to go somewhere else.
-This can be done quite simply with the `:url` option of `form_for`.
-Typically in Rails, the action that is used for new form submissions
-like this is called "create", and so the form should be pointed to that action.
+El formulario necesita usar un URL distinto para poder dirigirse hacia algún otro
+lugar. Ésto puede hacerse, de manera bastante sencilla, con la opción `:url` de
+`form_for`. En Rails la acción que se usa típicamente para nuevas entradas es llamada
+"create" (crear en español) por lo que el formulario debería ser apuntado hacia
+esa acción.
 
-Edit the `form_for` line inside `app/views/posts/new.html.erb` to look like this:
+Edita la linea de `form_for` siguiente: `app/views/posts/new.html.erb` para que
+se vea así:
 
 ```html+erb
 <%= form_for :post, :url => { :action => :create } do |f| %>
 ```
 
-In this example, a `Hash` object is passed to the `:url` option. What Rails will do with this is that it will point the form to the `create` action of the current controller, the `PostsController`, and will send a `POST` request to that route. For this to work, you will need to add a route to `config/routes.rb`, right underneath the one for "posts/new":
+En este ejemplo un objeto `Hash` es pasado a la opción `:url`. Lo que Rails hará con
+esto es apuntar el formulario a la acción `create` de el controlador actual, el `PostsController`.
+y enviará una petición de `POST` hacia esa ruta. Para que esto funcione necesitarás añadir
+una ruta a `config/routes.rb`, justo debajo de la de "post/new":
 
 ```ruby
 post "posts" => "posts#create"
 ```
 
-By using the `post` method rather than the `get` method, Rails will define a route that will only respond to POST methods. The POST method is the typical method used by forms all over the web.
+Al usar el método `post` en vez de `get`, Rails definirá una ruta que solo responderá a metodos POST.
+El método POST es el método típico utilizado por todos los formularios a lo largo de la red.
 
-With the form and its associated route defined, you will be able to fill in the form and then click the submit button to begin the process of creating a new post, so go ahead and do that. When you submit the form, you should see a familiar error:
+Con el formulario y su ruta asociada definidas, serás capaz de llenar el formulario y dar click en el
+botón de submit para empezar el proceso de creación de un nuevo post, así que ve y haz eso. Cuando
+des click al botón y envíes el formulario, te encontrarás con un error familiar.
 
 ![Unknown action create for PostsController](http://edgeguides.rubyonrails.org/images/getting_started/unknown_action_create_for_posts.png)
 
-You now need to create the `create` action within the `PostsController` for this to work.
+Ahora necesitas crear la acción `create` en `PostsController` para que funcione.
 
 ### Creando artículos
 
