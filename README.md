@@ -96,9 +96,8 @@ Para instalar Rails, usa el comando proporcionado por RubyGems `gem install`:
 ```
 
 TIP. Existen un número de herramientas que te ayudarán a instalar Ruby y
-Ruby on Rails de una manera rápida. Si eres usuario de Windows puedes usar
-[Rails Installer](http://railsinstaller.org/). Si eres usuario de Mac OS X
-puedes usar [Rails One Click](http://railsoneclick.com/).
+Ruby on Rails de una manera rápida. En nuestro [wiki](https://github.com/rubyperu/rubyperu.github.com/wiki)
+encontrarás información acerca de cómo instalar Ruby y Ruby on Rails.
 
 Para verificar que tu instalación esté correcta, deberías
 poder correr lo siguiente:
@@ -107,7 +106,7 @@ poder correr lo siguiente:
 $ rails --version
 ```
 
-Si dice algo como "Rails 4.0", estás listo para continuar.
+Si dice algo como "Rails 3.2", estás listo para continuar.
 
 ### Creando la aplicación de Blog
 
