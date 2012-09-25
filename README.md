@@ -355,61 +355,80 @@ de `config/routes.rb` -- que defina esta ruta. Por defecto, Rails no tiene rutas
 excepto por la ruta `root` que definimos anteriormente, es por esto que tú tendrás que definir
 tus rutas cuando las necesites.
 
-Para hacer esto, vas a necesitar crear una ruta dentro de el archivo `config/routes.rb`.
- To do this, you're going to need to create a route inside `config/routes.rb` file, on a new line between the `do` and the `end` for the `draw` method:
+Para hacer esto, vas a necesitar crear una ruta dentro de el archivo `config/routes.rb`, en
+una nueva línea entre el `do` y el `end` del método `draw`:
 
 ```ruby
 get "posts/new"
 ```
 
-This route is a super-simple route: it defines a new route that only responds to `GET` requests, and that the route is at `posts/new`. But how does it know where to go without the use of the `:to` option? Well, Rails uses a sensible default here: Rails will assume that you want this route to go to the new action inside the posts controller.
+Esta ruta es super simple: define una nueva ruta que sólo responderá a peticiones `GET`, y qye
+la ruta se encuentra en `posts/new`. Pero como sabe a donde ir sin haber usado la opción
+`:to`? Bueno, Rails usa una convención sensible aquí: Rails asumirá que lo que tú quieres
+es que esta ruta vaya a la acción `new` dentro de el controlador `posts`.
 
-With the route defined, requests can now be made to `/posts/new` in the application. Navigate to [http://localhost:3000/posts/new](http://localhost:3000/posts/new) and you'll see another routing error:
+Con esta ruta definidad, tus peticiones ahora se pueden hacer a través de `/posts/new` en
+la aplicación. Navega hacia: <http://localhost:3000/posts/new>. Verás otro error de ruteo:
 
 ![Another routing error, uninitialized constant PostsController](http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_controller.png)
 
-This error is happening because this route need a controller to be defined. The route is attempting to find that controller so it can serve the request, but with the controller undefined, it just can't do that. The solution to this particular problem is simple: you need to create a controller called `PostsController`. You can do this by running this command:
+Este error está pasando porque esta ruta necesita un controlador que esté definido. La ruta
+está tratando de encontrar el controlador para servir la petición, pero con el controlador
+no definido, simplemente no lo puede hacer. La solución para este caso en particular es simple:
+crea un controllador llamado `PostsController`. Puedes hacerlo ejecutando el siguiente comando:
 
 ```bash
 $ rails g controller posts
 ```
 
-If you open up the newly generated `app/controllers/posts_controller.rb` you'll see a fairly empty controller:
+Si abres el nuevo archivo generado `app/controllers/posts_controller.rb`,
+verás un controlador vacío:
 
 ```ruby
 class PostsController < ApplicationController
 end
 ```
 
-A controller is simply a class that is defined to inherit from `ApplicationController`. It's inside this class that you'll define methods that will become the actions for this controller. These actions will perform CRUD operations on the posts within our system.
+Un controlador es simple una clase que es definida para heredar de `ApplicationController`.
+Dentro de ésta, vas a definir los métodos que se convertirán en acciones para este controlador.
+Estas acciones van a ejecutar operaciones _CRUD_ sobre los posts dentro de nuestro sistema.
 
-If you refresh [http://localhost:3000/posts/new](http://localhost:3000/posts/new) now, you'll get a new error:
+Si refrescas la dirección <http://localhost:3000/posts/new> ahora, vas a tener un nuevo error:
 
 ![Unknown action new for PostsController!](http://edgeguides.rubyonrails.org/images/getting_started/unknown_action_new_for_posts.png)
 
-This error indicates that Rails cannot find the `new` action inside the `PostsController` that you just generated. This is because when controllers are generated in Rails they are empty by default, unless you tell it you wanted actions during the generation process.
+Este error indica que Rails no puede encontrar la acción `new` dentro de
+`PostsController` que recién has generado. Esto es porque cuando los controladores
+son generados en Rails están vacíos por defecto, a menos que le digas que acciones
+quieres durante el proceso de generación.
 
-To manually define an action inside a controller, all you need to do is to define a new method inside the controller. Open `app/controllers/posts_controller.rb` and inside the `PostsController` class, define a `new` method like this:
+Para definir manualmente una acción dentro de un controlador, todo lo que necesitas
+es definir un nuevo método dentro del controlador. Abre `app/controllers/posts_controller.rb`
+y dentro de la clase `PostsController`, define el método `new` así:
 
 ```ruby
 def new
 end
 ```
 
-With the `new` method defined in `PostsController`, if you refresh [http://localhost:3000/posts/new](http://localhost:3000/posts/new) you'll see another error:
+Con el método `new` definido en `PostsController`, si tú refrescas
+<http://localhost:3000/posts/new> verás otro error:
 
 ![Template is missing for posts/new](http://edgeguides.rubyonrails.org/images/getting_started/template_is_missing_posts_new.png)
 
-You're getting this error now because Rails expects plain actions like this one to have views associated with them to display their information. With no view available, Rails errors out.
+Estás obteniendo este error ahora porque Rails espera que las acciones planas
+como ésta tengan vistas asociadas a ellas para mostrar la información. Con ninguna
+vista disponible, Rails mostrará un error.
 
-In the above image, the bottom line has been truncated. Let's see what the full thing looks like:
+En la imagen de arriba, la línea de abajo fue eliminada. Vamos a ver como se el error completo:
 
 <blockquote>
 Missing template posts/new, application/new with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in: * "/path/to/blog/app/views"
 </blockquote>
 
-That's quite a lot of text! Let's quickly go through and understand what each part of it does.
+Eso es casi un montón de texto! Revisemos rápidamente para entender cuál es la función de cada parte.
 
+La primera parte identifica que plantilla está faltando. En este caso, es
 The first part identifies what template is missing. In this case, it's the `posts/new` template. Rails will first look for this template. If not found, then it will attempt to load a template called `application/new`. It looks for one here because the `PostsController` inherits from `ApplicationController`.
 
 The next part of the message contains a hash. The `:locale` key in this hash simply indicates what spoken language template should be retrieved. By default, this is the English -- or "en" -- template. The next key, `:formats` specifies the format of template to be served in response . The default format is `:html`, and so Rails is looking for an HTML template. The final key, `:handlers`, is telling us what _template handlers_ could be used to render our template. `:erb` is most commonly used for HTML templates, `:builder` is used for XML templates, and `:coffee` uses CoffeeScript to build JavaScript templates.
