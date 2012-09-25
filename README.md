@@ -321,27 +321,41 @@ renderizando la vista correctamente.
 NOTA: Para mayor información acerca del enrutamiento, ir a
 [Rails Routing from the Outside In](http://edgeguides.rubyonrails.org/routing.html).
 
-Getting Up and Running
-----------------------
+Poniendo todo en funcionamiento
+-------------------------------
 
-Now that you've seen how to create a controller, an action and a view, let's create something with a bit more substance.
+Ahora que has visto como crear un controlador, una acción y una vista, vamos a crear
+algo con un poco más de sentido.
 
-In the Blog application, you will now create a new _resource_. A resource is the term used for a collection of similar objects, such as posts, people or animals. You can create, read, update and destroy items for a resource and these operations are referred to as _CRUD_ operations.
+En la aplicación de Blog, tú vas a crear un nuevo recurso (_resource_). Un recurso
+es el término usado para una colección de objetos similares, como posts, personas o
+animales. Tú puedes crear, leer, actualizar y eliminar objetos para un recurso
+y estas operaciones son referedidas como operaciones _CRUD_.
 
-In the next section, you will add the ability to create new posts in your application and be able to view them. This is the "C" and the "R" from CRUD: creation and reading. The form for doing this will look like this:
+En la siguiente sección, tú añadirás la habilidad de crear nuevos posts en tu aplicación
+y poder verlos también. Ésto es la "C" y la "R" de _CRUD_: creación y lectura. La manera
+de hacer esto se vería de la siguiente manera:
 
 ![The new post form](http://edgeguides.rubyonrails.org/images/getting_started/new_post.png)
 
-It will look a little basic for now, but that's ok. We'll look at improving the styling for it afterwards.
+Se ve un poco básico por ahora, pero está bien. Ya veremos como mejorar el estilo.
 
-### Laying down the ground work
+Estableciendo la base
+---------------------
 
-The first thing that you are going to need to create a new post within the application is a place to do that. A great place for that would be at `/posts/new`. If you attempt to navigate to that now -- by visiting [http://localhost:3000/posts/new](http://localhost:3000/posts/new) -- Rails will give you a routing error:
+La primera cosa que necesitaremos para crear un nuevo post, es crear un espacio para hacer eso
+en nuestra aplicación. Un buen lugar podría ser `/posts/new`. Si tratas de navegar a esa
+dirección ahora -- visitando <http://localhost:3000/posts/new> -- Rails te dará un error de
+ruteo:
 
 ![A routing error, no route matches /posts/new](http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_route_matches.png)
 
-This is because there is nowhere inside the routes for the application -- defined inside `config/routes.rb` -- that defines this route. By default, Rails has no routes configured at all, besides the root route you defined earlier, and so you must define your routes as you need them.
+Esto es porque no en ningún lucar dentro de las rutas para la aplicación -- definidas dentro
+de `config/routes.rb` -- que defina esta ruta. Por defecto, Rails no tiene rutas configuradas,
+excepto por la ruta `root` que definimos anteriormente, es por esto que tú tendrás que definir
+tus rutas cuando las necesites.
 
+Para hacer esto, vas a necesitar crear una ruta dentro de el archivo `config/routes.rb`.
  To do this, you're going to need to create a route inside `config/routes.rb` file, on a new line between the `do` and the `end` for the `draw` method:
 
 ```ruby
