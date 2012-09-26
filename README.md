@@ -23,7 +23,7 @@ Antes de Empezar
 ----------------
 
 Esta guía está diseñada para principiantes que quieren comenzar con Rails
-desde cero. No asume que tú tienes alguna experiencia previa con Rails. Sin,
+desde cero. No asume que tú tienes alguna experiencia previa con Rails. Sin
 embargo, para obtener el máximo de ésta, tú debes de tener algunos
 pre-requisitos instalados:
 
