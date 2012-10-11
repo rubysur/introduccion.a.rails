@@ -350,7 +350,7 @@ ruteo:
 
 ![A routing error, no route matches /posts/new](http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_route_matches.png)
 
-Esto es porque no en ningún lucar dentro de las rutas para la aplicación -- definidas dentro
+Esto es porque no en ningún lugar dentro de las rutas para la aplicación -- definidas dentro
 de `config/routes.rb` -- que defina esta ruta. Por defecto, Rails no tiene rutas configuradas,
 excepto por la ruta `root` que definimos anteriormente, es por esto que tú tendrás que definir
 tus rutas cuando las necesites.
@@ -420,7 +420,7 @@ Estás obteniendo este error ahora porque Rails espera que las acciones planas
 como ésta tengan vistas asociadas a ellas para mostrar la información. Con ninguna
 vista disponible, Rails mostrará un error.
 
-En la imagen de arriba, la línea de abajo fue eliminada. Vamos a ver como se el error completo:
+En la imagen de arriba, la línea de abajo fue eliminada. Vamos a ver como se ve el error completo:
 
 <blockquote>
 Missing template posts/new, application/new with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in: * "/path/to/blog/app/views"
@@ -515,7 +515,7 @@ se vea así:
 ```
 
 En este ejemplo un objeto `Hash` es pasado a la opción `:url`. Lo que Rails hará con
-esto es apuntar el formulario a la acción `create` de el controlador actual, el `PostsController`.
+esto es apuntar el formulario a la acción `create` del controlador actual, el `PostsController`.
 y enviará una petición de `POST` hacia esa ruta. Para que esto funcione necesitarás añadir
 una ruta a `config/routes.rb`, justo debajo de la de "post/new":
 
@@ -683,7 +683,7 @@ Esto es lo que sucede: cada modelo Rails puede ser inicializado con sus respecti
 atributos, los cuales son automáticamente asignados a sus respectivas columnas de
 base de datos. En la primera línea hacemos justamente eso (recuerda que
 `params[:post]` contiene los atributos en los cuales estamos interesados). Luego,
-`@post.save` es responsible de guardar el modelo en la base de datos. Finalmente,
+`@post.save` es responsable de guardar el modelo en la base de datos. Finalmente,
 direccionamos al usuario a la acción `show` que definiremos más tarde.
 
 CONSEJO: Como veremos más tarde, `@post.save` devuelve un indicador que indica si el
