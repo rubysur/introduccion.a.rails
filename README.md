@@ -886,7 +886,7 @@ end
 Estos cambios asegurarán que todos los artículos tengan un título que sea al menos de cinco caracteres
 de longitud. Rails puede validar una variedad de condiciones en un modelo, incluyendo la presencia o
 la unicidad de columnas, sus formatos y la existencia de objetos asociados. Las validaciones están cubiertas
-en detalle en [Active Record Validations and Callbacks](active_record_validations_callbacks.html#validations-overview)
+en detalle en [Active Record Validations and Callbacks](http://edgeguides.rubyonrails.org/active_record_validations_callbacks.html).
 
 Con la validaciones agregadas, cuando llames a `@post.save` en un artículo inválido
 retornará `false`. Si abres el archivo `app/controllers/posts_controller.rb`
