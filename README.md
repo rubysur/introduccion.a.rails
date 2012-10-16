@@ -29,7 +29,7 @@ pre-requisitos instalados:
 
 * El lenguaje de programación [Ruby](http://www.ruby-lang.org/en/downloads) en
   su versión 1.9.3 o mayor.
-* El sistema de paquetes [RubyGems]([RubyGems](http://rubyforge.org/frs/?group_id=126).
+* El sistema de paquetes [RubyGems](http://rubyforge.org/frs/?group_id=126).
     * Si quieres aprender más acerca de RubyGems, puedes leer la guía en inglés:
       [RubyGems User Guide](http://docs.rubygems.org/read/book/1).
 * La base de datos [SQLite3](http://www.sqlite.org).
