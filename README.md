@@ -867,7 +867,7 @@ puedan editar los campos `text` y `title`.
 No será posible definir la edición de otro campo diferente a través de formularios.
 Por supuesto aún será posible definirlo usando el método `field=`.
 La accesibilidad de los atributos y el problema de la asignación masiva es cubierto
-en detalle en [Security guide](security.html#mass-assignment).
+en detalle en [Security guide](http://guides.rubyonrails.org/security.html).
 
 ### Agregando algunas validaciones
 
