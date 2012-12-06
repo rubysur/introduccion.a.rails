@@ -375,7 +375,7 @@ la aplicación. Navega hacia: <http://localhost:3000/posts/new>. Verás otro err
 Este error está pasando porque esta ruta necesita un controlador que esté definido. La ruta
 está tratando de encontrar el controlador para servir la petición, pero con el controlador
 no definido, simplemente no lo puede hacer. La solución para este caso en particular es simple:
-crea un controllador llamado `PostsController`. Puedes hacerlo ejecutando el siguiente comando:
+crea un controlador llamado `PostsController`. Puedes hacerlo ejecutando el siguiente comando:
 
 ```bash
 $ rails g controller posts
@@ -389,7 +389,7 @@ class PostsController < ApplicationController
 end
 ```
 
-Un controlador es simple una clase que es definida para heredar de `ApplicationController`.
+Un controlador es simplemente una clase que es definida para heredar de `ApplicationController`.
 Dentro de ésta, vas a definir los métodos que se convertirán en acciones para este controlador.
 Estas acciones van a ejecutar operaciones _CRUD_ sobre los posts dentro de nuestro sistema.
 
@@ -1216,7 +1216,7 @@ que debe crear nuevos objetos a través de POST y actualizarlos a través de PUT
 Si ejecutas `rake routes` desde la consola verás que ya tenemos una ruta
 `posts_path`, la cual fue creada automáticamente por Rails cuando se definió la ruta
 por la acción `index`. Sin embargo, no tenemos aún un `post_path`, la cual es la
-razón por la quje recibimos el error anterior.
+razón por la que recibimos el error anterior.
 
 ```bash
 # rake routes
@@ -1650,7 +1650,7 @@ así que agreguemos `app/views/posts/show.html.erb`.
 ```
 
 Ahora puedes agregar artículos y comentarios a tu blog, y hacer que se muestren
-en los lugares correoctos.
+en los lugares correctos.
 
 ![Artículo con Comentarios](http://edgeguides.rubyonrails.org/images/getting_started/post_with_comments.png)
 
@@ -1717,7 +1717,7 @@ manera:
 
 Ésto hará que el parcial en `app/views/comments/_comment.html.erb` se haga
 render una vez por cada comentario en la colección `@post.comments`. A medida
-que el método `render` itera sobre la coleción `@post.comments`, asigna cada
+que el método `render` itera sobre la colección `@post.comments`, asigna cada
 comentario a la variable local llamada igual que el parcial, en este caso
 `comment` que luego está disponible en el parcial para que la usemos.
 
