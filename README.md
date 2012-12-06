@@ -459,8 +459,8 @@ Cuando refresques <http://localhost:3000/posts/new>, verás que la página tiene
 el controlador, la acción y la vista ahora están funcionando de manera armoniosa! Es hora de crear
 el formulario para un nuevo post.
 
-The first form
---------------
+El primer formulario
+--------------------
 
 Para crear una formulario con esta plantilla usarás un _constructor de formularios_ (o _form builder_
 en inglés). El form builder primario de Rails está provisto por un método de ayuda llamado `form_for`.
