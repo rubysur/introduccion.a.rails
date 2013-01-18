@@ -1898,6 +1898,7 @@ consultar estos recursos:
 
 **Inglés**
 
+* El [Agile Web Development with Rails](http://pragprog.com/book/rails4/agile-web-development-with-rails)
 * Las [guías de Ruby on Rails](http://guides.rubyonrails.org).
 * El [tutorial de Ruby on Rails](http://railstutorial.org/book).
 * La [lista de correo de Ruby on Rails](http://groups.google.com/group/rubyonrails-talk).
