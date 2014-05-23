@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../../manifest.appcache">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Iniciando el servidor | Introducción a Rails</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="rubysur">
+        <meta name="description" content="Aprende a programar con Ruby">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../../capitulos/hola_rails/hola_mundo.html" />
+        
+        
+        <link rel="prev" href="../../capitulos/hola_rails/README.html" />
+        
+
+        <meta property="og:title" content="Iniciando el servidor | Introducción a Rails">
+        <meta property="og:site_name" content="Introducción a Rails">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/rubysur">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        
+
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="4.1" data-basepath="../.." data-revision="1400882743353">
+    <div class="book-header">
+    <!-- Actions Left -->
+    
+    <a href="https://github.com/rubysur/introduccion.a.rails" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+
+    
+    <a href="https://github.com/rubysur/introduccion.a.rails/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/rubysur/introduccion.a.rails/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../" >Introducción a Rails</a>
+    </h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        <li>
+            <a href="https://github.com/rubysur" target="blank" class="author-link">About the author</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/rubysur/introduccion.a.rails/issues" target="blank"class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/rubysur/introduccion.a.rails/edit/master/capitulos/hola_rails/iniciando_el_servidor.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
+        
+
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li class="chapter " data-level="1" data-path="capitulos/antes_de_empezar.html">
+                
+                <a href="../../capitulos/antes_de_empezar.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Antes de empezar
+                </a>
+                
+                
+            </li>
+        
+            <li class="chapter " data-level="2" data-path="capitulos/que_es_rails.html">
+                
+                <a href="../../capitulos/que_es_rails.html">
+                    <i class="fa fa-check"></i> <b>2.</b> ¿Qué es Rails?
+                </a>
+                
+                
+            </li>
+        
+            <li class="chapter " data-level="3" data-path="capitulos/creando_un_nuevo_proyecto/README.html">
+                
+                <a href="../../capitulos/creando_un_nuevo_proyecto/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Creando un nuevo proyecto
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="capitulos/creando_un_nuevo_proyecto/instalando_rails.html">
+                            
+                            <a href="../../capitulos/creando_un_nuevo_proyecto/instalando_rails.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Instalando Rails
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html">
+                            
+                            <a href="../../capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Creando la aplicación
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li class="chapter " data-level="4" data-path="capitulos/hola_rails/README.html">
+                
+                <a href="../../capitulos/hola_rails/README.html">
+                    <i class="fa fa-check"></i> <b>4.</b> Hola, Rails!
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" data-path="capitulos/hola_rails/iniciando_el_servidor.html">
+                            
+                            <a href="../../capitulos/hola_rails/iniciando_el_servidor.html">
+                                <i class="fa fa-check"></i> <b>4.1.</b> Iniciando el servidor
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.2" data-path="capitulos/hola_rails/hola_mundo.html">
+                            
+                            <a href="../../capitulos/hola_rails/hola_mundo.html">
+                                <i class="fa fa-check"></i> <b>4.2.</b> Hola Mundo
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.3" data-path="capitulos/hola_rails/hola_mundo.html">
+                            
+                            <a href="../../capitulos/hola_rails/hola_mundo.html">
+                                <i class="fa fa-check"></i> <b>4.3.</b> Estableciendo la página principal
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li class="chapter " data-level="5" data-path="capitulos/que_sigue.html">
+                
+                <a href="../../capitulos/que_sigue.html">
+                    <i class="fa fa-check"></i> <b>5.</b> ¿Qué sigue?
+                </a>
+                
+                
+            </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 77.77777777777777%;min-width: 66.66666666666667%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../capitulos/antes_de_empezar.html" title="Antes de empezar" class="chapter done new-chapter" data-progress="1" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../../capitulos/que_es_rails.html" title="¿Qué es Rails?" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../../capitulos/creando_un_nuevo_proyecto/README.html" title="Creando un nuevo proyecto" class="chapter done new-chapter" data-progress="3" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../../capitulos/creando_un_nuevo_proyecto/instalando_rails.html" title="Instalando Rails" class="chapter done " data-progress="3.1" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../../capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html" title="Creando la aplicación" class="chapter done " data-progress="3.2" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../../capitulos/hola_rails/README.html" title="Hola, Rails!" class="chapter done new-chapter" data-progress="4" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../../capitulos/hola_rails/iniciando_el_servidor.html" title="Iniciando el servidor" class="chapter done " data-progress="4.1" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../../capitulos/hola_rails/hola_mundo.html" title="Estableciendo la página principal" class="chapter  " data-progress="4.3" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../../capitulos/que_sigue.html" title="¿Qué sigue?" class="chapter  new-chapter" data-progress="5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_8">
+                    
+                        <h1 id="iniciando-el-servidor-web">Iniciando el Servidor Web</h1>
+<p>En realidad ya tienes una aplicación Rails funcional, Para verla, necesitas
+iniciar un servidor web en tu máquina de desarrollo. Puedes hacerlo ejecutando:</p>
+<pre><code class="lang-bash">$ rails server
+</code></pre>
+<p>TIP: Compilando CoffeeScript a JavaScript requiere un JavaScript runtime y la
+ausencia de éste dará un error de <code>execjs</code>. Usualmente Mac OS X y Windows vienen
+con un Javascript runtime instalado. Rails agrega la gema <code>therubyracer</code> al
+<code>Gemfile</code> en una línea comentada para nuevas aplicaciones y puedes descomentarla
+si la necesitas. <code>therubyrhino</code> es el runtime recomendado para usuarios de JRuby
+y es añadido por defecto al <code>Gemfile</code> en aplicaciones generadas bajo JRuby.
+Puedes investigar acerca de todos los runtimes soportados en
+<a href="https://github.com/sstephenson/execjs#readme" target="_blank">ExecJS</a>.</p>
+<p>Esto lanzará WEBrick, un servidor web incoporado en Ruby por defecto. Para ver
+tu aplicación en acción, abre tu navegador preferido e ingresa a la siguiente
+dirección <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>. Deberías ver la página
+de información por defecto de Rails.</p>
+<p><img src="http://edgeguides.rubyonrails.org/images/rails_welcome.png" alt="Welcome Aboard screenshot"></p>
+<p>TIP: Para detener el servidor web, presiona Ctrl+C en la ventana de la línea
+de comandos donde se esta ejecutando. En modo de desarrollo, Rails generalmente
+no requiere reiniciar el servidor web; los cambios realizados serán tomados
+automáticamente por el servidor.</p>
+<p>La página &quot;Welcome Aboard&quot; es la primera prueba para una nueva aplicación Rails:
+Ésta asegura que tienes el software configurado correctamente para servir una página.
+También puedes hacer click en el link <em>About your application&#39;s enviroment</em> para ver
+un resumen del entorno de tu aplicación.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../capitulos/hola_rails/README.html" class="navigation navigation-prev " aria-label="Previous page: Hola, Rails!"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../capitulos/hola_rails/hola_mundo.html" class="navigation navigation-next " aria-label="Next page: Hola Mundo"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"ga":{"token":"TOKEN"}};
+    gitbook.start(config);
+});
+</script>
+
+    </body>
+</html>

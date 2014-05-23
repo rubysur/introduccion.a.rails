@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../../manifest.appcache">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Creando la aplicación | Introducción a Rails</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="rubysur">
+        <meta name="description" content="Aprende a programar con Ruby">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../../capitulos/hola_rails/README.html" />
+        
+        
+        <link rel="prev" href="../../capitulos/creando_un_nuevo_proyecto/instalando_rails.html" />
+        
+
+        <meta property="og:title" content="Creando la aplicación | Introducción a Rails">
+        <meta property="og:site_name" content="Introducción a Rails">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/rubysur">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        
+
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="3.2" data-basepath="../.." data-revision="1400882743353">
+    <div class="book-header">
+    <!-- Actions Left -->
+    
+    <a href="https://github.com/rubysur/introduccion.a.rails" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+
+    
+    <a href="https://github.com/rubysur/introduccion.a.rails/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/rubysur/introduccion.a.rails/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../" >Introducción a Rails</a>
+    </h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        <li>
+            <a href="https://github.com/rubysur" target="blank" class="author-link">About the author</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/rubysur/introduccion.a.rails/issues" target="blank"class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/rubysur/introduccion.a.rails/edit/master/capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
+        
+
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li class="chapter " data-level="1" data-path="capitulos/antes_de_empezar.html">
+                
+                <a href="../../capitulos/antes_de_empezar.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Antes de empezar
+                </a>
+                
+                
+            </li>
+        
+            <li class="chapter " data-level="2" data-path="capitulos/que_es_rails.html">
+                
+                <a href="../../capitulos/que_es_rails.html">
+                    <i class="fa fa-check"></i> <b>2.</b> ¿Qué es Rails?
+                </a>
+                
+                
+            </li>
+        
+            <li class="chapter " data-level="3" data-path="capitulos/creando_un_nuevo_proyecto/README.html">
+                
+                <a href="../../capitulos/creando_un_nuevo_proyecto/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Creando un nuevo proyecto
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="capitulos/creando_un_nuevo_proyecto/instalando_rails.html">
+                            
+                            <a href="../../capitulos/creando_un_nuevo_proyecto/instalando_rails.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Instalando Rails
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html">
+                            
+                            <a href="../../capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Creando la aplicación
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li class="chapter " data-level="4" data-path="capitulos/hola_rails/README.html">
+                
+                <a href="../../capitulos/hola_rails/README.html">
+                    <i class="fa fa-check"></i> <b>4.</b> Hola, Rails!
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" data-path="capitulos/hola_rails/iniciando_el_servidor.html">
+                            
+                            <a href="../../capitulos/hola_rails/iniciando_el_servidor.html">
+                                <i class="fa fa-check"></i> <b>4.1.</b> Iniciando el servidor
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.2" data-path="capitulos/hola_rails/hola_mundo.html">
+                            
+                            <a href="../../capitulos/hola_rails/hola_mundo.html">
+                                <i class="fa fa-check"></i> <b>4.2.</b> Hola Mundo
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.3" data-path="capitulos/hola_rails/hola_mundo.html">
+                            
+                            <a href="../../capitulos/hola_rails/hola_mundo.html">
+                                <i class="fa fa-check"></i> <b>4.3.</b> Estableciendo la página principal
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li class="chapter " data-level="5" data-path="capitulos/que_sigue.html">
+                
+                <a href="../../capitulos/que_sigue.html">
+                    <i class="fa fa-check"></i> <b>5.</b> ¿Qué sigue?
+                </a>
+                
+                
+            </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 55.55555555555556%;min-width: 44.44444444444444%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../capitulos/antes_de_empezar.html" title="Antes de empezar" class="chapter done new-chapter" data-progress="1" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../../capitulos/que_es_rails.html" title="¿Qué es Rails?" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../../capitulos/creando_un_nuevo_proyecto/README.html" title="Creando un nuevo proyecto" class="chapter done new-chapter" data-progress="3" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../../capitulos/creando_un_nuevo_proyecto/instalando_rails.html" title="Instalando Rails" class="chapter done " data-progress="3.1" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../../capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html" title="Creando la aplicación" class="chapter done " data-progress="3.2" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../../capitulos/hola_rails/README.html" title="Hola, Rails!" class="chapter  new-chapter" data-progress="4" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../../capitulos/hola_rails/iniciando_el_servidor.html" title="Iniciando el servidor" class="chapter  " data-progress="4.1" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../../capitulos/hola_rails/hola_mundo.html" title="Estableciendo la página principal" class="chapter  " data-progress="4.3" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../../capitulos/que_sigue.html" title="¿Qué sigue?" class="chapter  new-chapter" data-progress="5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_4">
+                    
+                        <h2 id="creando-la-aplicaci-n-de-blog">Creando la aplicación de Blog</h2>
+<p>Rails viene con un número de generadores que están diseñados para hacer tu ciclo
+de desarrollo más fácil. Uno de esos es el generador de nuevas aplicaciones, el
+cual te proveerá con la estructura base de una aplicación Rails, así ya no
+tienes que escribirla por ti mismo.</p>
+<p>Para usar este generador, abre la terminal, navega hacia el directorio en donde
+tienes permiso para crear archivo, y escribe:</p>
+<pre><code class="lang-bash">$ rails new blog
+</code></pre>
+<p>Esto creará una aplicación Rails llamada <code>Blog</code> en un directorio llamado <code>blog</code>
+e instalará las dependencias (gemas) que están mencionadas en el <code>Gemfile</code> usando
+el comando <code>bundle install</code>.</p>
+<p>TIP: Puedes ver todas las opciones que el generador de nuevas aplicaciones
+provee, ejecutando <code>rails new -h</code>.</p>
+<p>Después de crear la aplicación, ingresa a su directorio para continuar trabajando
+directamente en la aplicación:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> blog
+</code></pre>
+<p>El comando <code>rails new blog</code> que acabamos de ejecutar, creó una carpeta en tu
+directorio de trabajo llamado <code>blog</code>. El directorio <code>blog</code> tiene un número
+de archivos auto generados y carpetas que conforman la estructura de una
+aplicación Rails. La mayoría del trabajo en este tutorial se llevará a cabo en
+la carpeta <code>app/</code>, pero acá hay una explicación básica de las funciones de
+cada archivo y carpetas que Rails creó por defecto:</p>
+<table>
+<thead>
+<tr>
+<th>Archivo/Carpeta</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app/</td>
+<td>Contiene los controllers, models, views, helpers, mailers y assets para tu aplicación. Te centrarás en esta carpeta por el resto de esta guía.</td>
+</tr>
+<tr>
+<td>config/</td>
+<td>Configura las reglas de ejecución de la aplicación, rutas, base de datos y más. Este tema es cubierto en mayor detalle en <a href="http://edgeguides.rubyonrails.org/configuring.html" target="_blank">Configuring Rails Applications</a>.</td>
+</tr>
+<tr>
+<td>config.ru</td>
+<td>Configuración Rack para servidores basados en Rack usados para iniciar la aplicación.</td>
+</tr>
+<tr>
+<td>db/</td>
+<td>Contiene el esquema actual de tu base de datos, así como las migraciones de la base de datos.</td>
+</tr>
+<tr>
+<td>doc/</td>
+<td>Documentación detallada de tu aplicación.</td>
+</tr>
+<tr>
+<td>Gemfile<br />Gemfile.lock</td>
+<td>Estos arhivos te permiten especificar que dependencias de gemas son necesitadas para tu aplicación Rails. Estos archivos son usados por la gema Bundler, ver <a href="http://gembundler.com" target="_blank">Sitio web de Bundler</a>.</td>
+</tr>
+<tr>
+<td>lib/</td>
+<td>Módulos extendidos para tu aplicación.</td>
+</tr>
+<tr>
+<td>log/</td>
+<td>Archivos de Log de tu aplicación.</td>
+</tr>
+<tr>
+<td>public/</td>
+<td>La única carpeta vista por el mundo tal como es. Contiene los archivos estáticos y assets compilados.</td>
+</tr>
+<tr>
+<td>Rakefile</td>
+<td>Este archivo localiza y carga tareas que pueden ser ejecutadas desde la línea de comandos. La lista de tareas son definidas a través de los componentes de Rails. En vez de cambiar el Rakefile, deberías agregar tus propias tareas, añadiendo archivos al directorio <code>lib/tasks</code> de tu aplicación.</td>
+</tr>
+<tr>
+<td>README.rdoc</td>
+<td>Este es un breve manual de instrucciones para tu aplicación. Deberías editar este archivo para comunicar a otros lo que tu aplicación hace, como configurala y demás.</td>
+</tr>
+<tr>
+<td>script/</td>
+<td>Contiene el script de Rails que inicia tu aplicación y contiene otros scripts usados para deployar o correr tu aplicación.</td>
+</tr>
+<tr>
+<td>test/</td>
+<td>Pruebas unitarias, fixtures y otras pruebas. Éstos son cubiertos en <a href="http://edgeguides.rubyonrails.org/testing.html" target="_blank">Testing Rails Applications</a>.</td>
+</tr>
+<tr>
+<td>tmp/</td>
+<td>Archivos temporales (como archivos de caché, pid y archivos de sesiones).</td>
+</tr>
+<tr>
+<td>vendor/</td>
+<td>Lugar para código de terceros. En una típica aplicación Rails, ésta incluye librerías y plugins.</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../capitulos/creando_un_nuevo_proyecto/instalando_rails.html" class="navigation navigation-prev " aria-label="Previous page: Instalando Rails"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../capitulos/hola_rails/README.html" class="navigation navigation-next " aria-label="Next page: Hola, Rails!"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"ga":{"token":"TOKEN"}};
+    gitbook.start(config);
+});
+</script>
+
+    </body>
+</html>
