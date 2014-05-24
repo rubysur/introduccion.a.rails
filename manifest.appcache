@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1400950094865
+# Revision 1400953413287
 
 CACHE:
 index.html
@@ -7,20 +7,36 @@ capitulos/antes_de_empezar.html
 capitulos/creando_un_nuevo_proyecto/README.html
 capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html
 capitulos/creando_un_nuevo_proyecto/instalando_rails.html
+capitulos/errores_comunes.html
 capitulos/hola_rails/README.html
 capitulos/hola_rails/hola_mundo.html
 capitulos/hola_rails/iniciando_el_servidor.html
+capitulos/puesta_en_marcha/eliminando_articulos.html
 capitulos/puesta_en_marcha/README.html
 capitulos/puesta_en_marcha/agregando_enlaces.html
+capitulos/puesta_en_marcha/agregando_validaciones.html
 capitulos/puesta_en_marcha/creando_articulos.html
 capitulos/puesta_en_marcha/creando_el_modelo_post.html
 capitulos/puesta_en_marcha/el_primer_formulario.html
+capitulos/puesta_en_marcha/actualizando_articulos.html
 capitulos/puesta_en_marcha/estableciendo_la_base.html
 capitulos/puesta_en_marcha/listando_todos_los_articulos.html
 capitulos/puesta_en_marcha/mostrando_articulos.html
+capitulos/puesta_en_marcha/permitiendo_la_actualizacion_de_campos.html
+capitulos/puesta_en_marcha/profundizando_en_rest.html
 capitulos/puesta_en_marcha/salvando_datos_en_el_controlador.html
+capitulos/puesta_en_marcha/usando_parciales_en_las_vistas.html
 capitulos/que_es_rails.html
 capitulos/que_sigue.html
+capitulos/seguridad.html
+capitulos/un_segundo_modelo/README.html
+capitulos/un_segundo_modelo/agregando_rutas_para_comentarios.html
+capitulos/un_segundo_modelo/asociando_modelos.html
+capitulos/un_segundo_modelo/creando_un_formulario.html
+capitulos/un_segundo_modelo/eliminando_objetos_asociados.html
+capitulos/un_segundo_modelo/generando_un_controlador.html
+capitulos/un_segundo_modelo/generando_un_modelo.html
+capitulos/un_segundo_modelo/usando_parciales.html
 gitbook/app.js
 gitbook/fonts/anonymouspro/400.woff
 gitbook/fonts/anonymouspro/400i.woff
