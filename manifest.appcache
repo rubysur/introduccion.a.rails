@@ -1,15 +1,24 @@
 CACHE MANIFEST
-# Revision 1400882743353
+# Revision 1400950094865
 
 CACHE:
-capitulos/antes_de_empezar.html
 index.html
+capitulos/antes_de_empezar.html
 capitulos/creando_un_nuevo_proyecto/README.html
 capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html
 capitulos/creando_un_nuevo_proyecto/instalando_rails.html
 capitulos/hola_rails/README.html
 capitulos/hola_rails/hola_mundo.html
 capitulos/hola_rails/iniciando_el_servidor.html
+capitulos/puesta_en_marcha/README.html
+capitulos/puesta_en_marcha/agregando_enlaces.html
+capitulos/puesta_en_marcha/creando_articulos.html
+capitulos/puesta_en_marcha/creando_el_modelo_post.html
+capitulos/puesta_en_marcha/el_primer_formulario.html
+capitulos/puesta_en_marcha/estableciendo_la_base.html
+capitulos/puesta_en_marcha/listando_todos_los_articulos.html
+capitulos/puesta_en_marcha/mostrando_articulos.html
+capitulos/puesta_en_marcha/salvando_datos_en_el_controlador.html
 capitulos/que_es_rails.html
 capitulos/que_sigue.html
 gitbook/app.js

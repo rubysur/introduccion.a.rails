@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Hola, Rails! | Introducción a Rails</title>
+        <title>Estableciendo la base | Introducción a Rails</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../capitulos/hola_rails/iniciando_el_servidor.html" />
+        <link rel="next" href="../../capitulos/puesta_en_marcha/el_primer_formulario.html" />
         
         
-        <link rel="prev" href="../../capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html" />
+        <link rel="prev" href="../../capitulos/puesta_en_marcha/README.html" />
         
 
-        <meta property="og:title" content="Hola, Rails! | Introducción a Rails">
+        <meta property="og:title" content="Estableciendo la base | Introducción a Rails">
         <meta property="og:site_name" content="Introducción a Rails">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="4" data-basepath="../.." data-revision="1400950094864">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.1" data-basepath="../.." data-revision="1400950094864">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -120,7 +120,7 @@
 
         
         <li>
-            <a href="https://github.com/rubysur/introduccion.a.rails/edit/master/capitulos/hola_rails/README.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/rubysur/introduccion.a.rails/edit/master/capitulos/puesta_en_marcha/estableciendo_la_base.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -315,7 +315,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 33.333333333333336%;min-width: 27.77777777777778%;"></div>
+        <div class="inner" style="width: 55.55555555555556%;min-width: 50%;"></div>
     </div>
     <div class="chapters">
     
@@ -333,13 +333,13 @@
     
         <a href="../../capitulos/hola_rails/README.html" title="Hola, Rails!" class="chapter done new-chapter" data-progress="4" style="left: 33.333333333333336%;"></a>
     
-        <a href="../../capitulos/hola_rails/iniciando_el_servidor.html" title="Iniciando el servidor" class="chapter  " data-progress="4.1" style="left: 38.888888888888886%;"></a>
+        <a href="../../capitulos/hola_rails/iniciando_el_servidor.html" title="Iniciando el servidor" class="chapter done " data-progress="4.1" style="left: 38.888888888888886%;"></a>
     
-        <a href="../../capitulos/hola_rails/hola_mundo.html" title="Estableciendo la página principal" class="chapter  " data-progress="4.3" style="left: 44.44444444444444%;"></a>
+        <a href="../../capitulos/hola_rails/hola_mundo.html" title="Estableciendo la página principal" class="chapter done " data-progress="4.3" style="left: 44.44444444444444%;"></a>
     
-        <a href="../../capitulos/puesta_en_marcha/README.html" title="Puesta en marcha" class="chapter  new-chapter" data-progress="5" style="left: 50%;"></a>
+        <a href="../../capitulos/puesta_en_marcha/README.html" title="Puesta en marcha" class="chapter done new-chapter" data-progress="5" style="left: 50%;"></a>
     
-        <a href="../../capitulos/puesta_en_marcha/estableciendo_la_base.html" title="Estableciendo la base" class="chapter  " data-progress="5.1" style="left: 55.55555555555556%;"></a>
+        <a href="../../capitulos/puesta_en_marcha/estableciendo_la_base.html" title="Estableciendo la base" class="chapter done " data-progress="5.1" style="left: 55.55555555555556%;"></a>
     
         <a href="../../capitulos/puesta_en_marcha/el_primer_formulario.html" title="El primer formulario" class="chapter  " data-progress="5.2" style="left: 61.111111111111114%;"></a>
     
@@ -362,11 +362,91 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_14">
                     
-                        <h1 id="hola-rails-">Hola, Rails!</h1>
-<p>Para comenzar, vamos a obtener un poco de texto en la pantalla rápidamente. Para
-hacer ésto, necesitas tener tu servidor de aplicación Rails corriendo.</p>
+                        <h1 id="estableciendo-la-base">Estableciendo la base</h1>
+<p>La primera cosa que necesitaremos para crear un nuevo post, es crear un espacio para hacer eso
+en nuestra aplicación. Un buen lugar podría ser <code>/posts/new</code>. Si tratas de navegar a esa
+dirección ahora -- visitando <a href="http://localhost:3000/posts/new" target="_blank">http://localhost:3000/posts/new</a> -- Rails te dará un error de
+ruteo:</p>
+<p><img src="http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_route_matches.png" alt="A routing error, no route matches /posts/new"></p>
+<p>Esto es porque no en ningún lugar dentro de las rutas para la aplicación -- definidas dentro
+de <code>config/routes.rb</code> -- que defina esta ruta. Por defecto, Rails no tiene rutas configuradas,
+excepto por la ruta <code>root</code> que definimos anteriormente, es por esto que tú tendrás que definir
+tus rutas cuando las necesites.</p>
+<p>Para hacer esto, vas a necesitar crear una ruta dentro de el archivo <code>config/routes.rb</code>, en
+una nueva línea entre el <code>do</code> y el <code>end</code> del método <code>draw</code>:</p>
+<pre><code class="lang-ruby">get <span class="hljs-string">"posts/new"</span>
+</code></pre>
+<p>Esta ruta es super simple: define una nueva ruta que sólo responderá a peticiones <code>GET</code>, y qye
+la ruta se encuentra en <code>posts/new</code>. Pero como sabe a donde ir sin haber usado la opción
+<code>:to</code>? Bueno, Rails usa una convención sensible aquí: Rails asumirá que lo que tú quieres
+es que esta ruta vaya a la acción <code>new</code> dentro de el controlador <code>posts</code>.</p>
+<p>Con esta ruta definidad, tus peticiones ahora se pueden hacer a través de <code>/posts/new</code> en
+la aplicación. Navega hacia: <a href="http://localhost:3000/posts/new" target="_blank">http://localhost:3000/posts/new</a>. Verás otro error de ruteo:</p>
+<p><img src="http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_controller.png" alt="Another routing error, uninitialized constant PostsController"></p>
+<p>Este error está pasando porque esta ruta necesita un controlador que esté definido. La ruta
+está tratando de encontrar el controlador para servir la petición, pero con el controlador
+no definido, simplemente no lo puede hacer. La solución para este caso en particular es simple:
+crea un controlador llamado <code>PostsController</code>. Puedes hacerlo ejecutando el siguiente comando:</p>
+<pre><code class="lang-bash">$ rails g controller posts
+</code></pre>
+<p>Si abres el nuevo archivo generado <code>app/controllers/posts_controller.rb</code>,
+verás un controlador vacío:</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostsController</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ApplicationController</span></span></span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Un controlador es simplemente una clase que es definida para heredar de <code>ApplicationController</code>.
+Dentro de ésta, vas a definir los métodos que se convertirán en acciones para este controlador.
+Estas acciones van a ejecutar operaciones <em>CRUD</em> sobre los posts dentro de nuestro sistema.</p>
+<p>Si refrescas la dirección <a href="http://localhost:3000/posts/new" target="_blank">http://localhost:3000/posts/new</a> ahora, vas a tener un nuevo error:</p>
+<p><img src="http://edgeguides.rubyonrails.org/images/getting_started/unknown_action_new_for_posts.png" alt="Unknown action new for PostsController!"></p>
+<p>Este error indica que Rails no puede encontrar la acción <code>new</code> dentro de
+<code>PostsController</code> que recién has generado. Esto es porque cuando los controladores
+son generados en Rails están vacíos por defecto, a menos que le digas que acciones
+quieres durante el proceso de generación.</p>
+<p>Para definir manualmente una acción dentro de un controlador, todo lo que necesitas
+es definir un nuevo método dentro del controlador. Abre <code>app/controllers/posts_controller.rb</code>
+y dentro de la clase <code>PostsController</code>, define el método <code>new</code> así:</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>new
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Con el método <code>new</code> definido en <code>PostsController</code>, si tú refrescas
+<a href="http://localhost:3000/posts/new" target="_blank">http://localhost:3000/posts/new</a> verás otro error:</p>
+<p><img src="http://edgeguides.rubyonrails.org/images/getting_started/template_is_missing_posts_new.png" alt="Template is missing for posts/new"></p>
+<p>Estás obteniendo este error ahora porque Rails espera que las acciones planas
+como ésta tengan vistas asociadas a ellas para mostrar la información. Con ninguna
+vista disponible, Rails mostrará un error.</p>
+<p>En la imagen de arriba, la línea de abajo fue eliminada. Vamos a ver como se ve el error completo:</p>
+<blockquote>
+Missing template posts/new, application/new with {:locale=&gt;[:en], :formats=&gt;[:html], :handlers=&gt;[:erb, :builder, :coffee]}. Searched in: * &quot;/path/to/blog/app/views&quot;
+</blockquote>
+
+<p>Eso es casi un montón de texto! Revisemos rápidamente para entender cuál es la función de cada parte.</p>
+<p>La primera parte identifica que plantilla está faltando. En este caso, es la plantila <code>posts/new</code>.
+Rails primero buscará esta plantilla. Si no la encuentra, luego tratará de cargar la plantilla
+llamada <code>application/new</code>. Busca una aquí porque el <code>PostsController</code> hereda de <code>ApplicationController</code>.</p>
+<p>La siguiente parte del mensaje contiene un map (<code>hash</code> en inglés). La llave <code>:locale</code> en este map
+simplemente indica el lenguaje que debe contener la plantilla solicitada. Por defecto, está configurado
+en Inglés -- o &quot;en&quot; --. La siguiente llave, <code>:formats</code> especifica el formato de la plantilla que será
+servido en la respuesta. El formato por defecto es <code>:html</code>, es por eso que Rails busca una plantilla
+HTML. La llave final, <code>:handlers</code>, nos dice que <em>manejador de plantilla</em> (o <em>template handler</em> en inglés)
+puede ser usada para producir nuestra plantilla. <code>:erb</code> es el manejador más usado para plantillas HTML,
+<code>:builder</code> es usado para plantillas XML, y <code>:coffee</code> usa CoffeeScript para construir plantillas JavaScript.</p>
+<p>La más simple plantilla que funcionaría en nuestro caso sería una localizada en <code>app/views/posts/new.html.erb</code>.
+La extensión de este nombre de archivo es importante: la primera extensión define el <em>formato</em> de la plantilla,
+y la segunda extensión el <em>manejador de plantilla</em> que será usado. Rails está tratando de encontrar una
+plantilla llamada <code>posts/new</code> en <code>app/views</code> para la aplicación. El formato para esta plantilla puede sólo
+ser <code>html</code> y el manejador debería ser <code>erb</code>, <code>builder</code> o <code>coffee</code>. Ya que tú quieres crear un nuevo
+formulario HTML, tú tendrás que usar el lenguaje <code>ERB</code>. Por lo tanto el archivo debería ser llamado
+<code>posts/new.html.erb</code> y necesita ser localizado dentro de la carpeta <code>app/views</code> de la aplicación.</p>
+<p>Ahora ve y crea un nuevo archivo en <code>app/views/posts/new.html.erb</code> y escribe el siguiente
+contenido en él:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>New Post<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+</code></pre>
+<p>Cuando refresques <a href="http://localhost:3000/posts/new" target="_blank">http://localhost:3000/posts/new</a>, verás que la página tiene un título. La ruta,
+el controlador, la acción y la vista ahora están funcionando de manera armoniosa! Es hora de crear
+el formulario para un nuevo post.</p>
 
                     
                     </section>
@@ -376,10 +456,10 @@ hacer ésto, necesitas tener tu servidor de aplicación Rails corriendo.</p>
         </div>
 
         
-        <a href="../../capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html" class="navigation navigation-prev " aria-label="Previous page: Creando la aplicación"><i class="fa fa-angle-left"></i></a>
+        <a href="../../capitulos/puesta_en_marcha/README.html" class="navigation navigation-prev " aria-label="Previous page: Puesta en marcha"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../capitulos/hola_rails/iniciando_el_servidor.html" class="navigation navigation-next " aria-label="Next page: Iniciando el servidor"><i class="fa fa-angle-right"></i></a>
+        <a href="../../capitulos/puesta_en_marcha/el_primer_formulario.html" class="navigation navigation-next " aria-label="Next page: El primer formulario"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
