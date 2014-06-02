@@ -1,5 +1,5 @@
-Dí "Hola" a mi pequeño amigo
-===============================
+Hola Mundo
+==========
 
 Para conseguir que Rails diga "Hola", necesitas crear como mínimo un _controlador_ y
 una _vista_.
