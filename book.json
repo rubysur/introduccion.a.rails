@@ -3,7 +3,7 @@
     "plugins": ["ga", "-mixpanel", "-mathjax"],
     "pluginsConfig": {
         "ga": {
-            "token": "TOKEN"
+            "token": "UA-50838803-3"
         }
     }
 }
