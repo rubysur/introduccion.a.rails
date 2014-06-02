@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.3" data-basepath="../.." data-revision="1400953413286">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.3" data-basepath="../.." data-revision="1401747808261">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -554,7 +554,7 @@ dentro de la clase <code>PostsController</code> en <code>app/controllers/posts_c
 eso por ahora. Lo que la acción <code>create</code> debe hacer es salvar el nuevo artículo en la base de datos.</p>
 <p>Cuando un formulario es enviado, los campos del formulario son enviados a Rails como <em>parámetros</em>. Estos
 parámetros pueden ser referenciados dentro de las acciones del controlador, generalmente para realizar una
-tarea determinada. Para ver que hacen estos parámetros, cambiar la acción <code>create</code> a esto:</p>
+tarea determinada. Para ver qué hacen estos parámetros, cambiar la acción <code>create</code> a esto:</p>
 <pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>create
   render <span class="hljs-symbol">:text</span> =&gt; params[<span class="hljs-symbol">:post</span>].inspect
 <span class="hljs-keyword">end</span>

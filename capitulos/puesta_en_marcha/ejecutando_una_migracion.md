@@ -3,10 +3,10 @@ Ejecutando una migración
 
 Como hemos visto, `rails generate model` crea un archivo _database
 migration_ dentro del directorio `db/migrate`.
-Migraciones son clases de Ruby que están diseñadas para hacer simple la
+Las migraciones son clases de Ruby que están diseñadas para hacer simple la
 creación y modificación de las tablas de la base de datos. Rails usa comandos rake
-para ejecutar migraciones, y es posible deshacer una migración despues que ha sido aplicada
-a la base de datos. Archivo de migraciones incluyen una marca de la fecha y hora para
+para ejecutar migraciones, y es posible deshacer una migración después de que ha sido aplicada
+a la base de datos. Los archivos de migraciones incluyen una marca de la fecha y hora para
 que sean procesadas en el orden que fueron creadas.
 
 Si miras dentro del archivo `db/migrate/20120419084633_create_posts.rb` (recuerda,
@@ -27,11 +27,11 @@ end
 
 La migración de arriba crea un método llamado `change` el cual será llamado cuando ejecutes
 la migración. La acción definida en este método es reversible, lo cual significa que Rails
-conoce como deshacer los cambios realizados en esta migración en caso que necesites hacer eso
+conoce cómo deshacer los cambios realizados en esta migración en caso que necesites hacerlo
 más tarde. Cuando ejecutas esta migración se creará una tabla `post` con una columna tipo `string`
 y otra columna tipo `text`. También crea dos campos de fecha-hora para permitir a Rails realizar
 un seguimiento de las actualizaciones. Mayor información acerca de las migraciones en Rails
-pueden ser encontradas en la guía [Rails Database Migrations](http://guides.rubyonrails.org/migrations.html).
+puede ser encontrada en la guía [Rails Database Migrations](http://guides.rubyonrails.org/migrations.html).
 
 En este punto, puedes usar el comando rake para ejecutar la migración:
 

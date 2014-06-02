@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.13" data-basepath="../.." data-revision="1400953413286">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.13" data-basepath="../.." data-revision="1401747808261">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -593,7 +593,7 @@ usando un parcial.</p>
 </code></pre>
 <p>Todo, excepto la declaración <code>form_for</code> permanece igual. Como <code>form_for</code>
 puede averiguar la <code>action</code> y los atributos del <code>method</code> correcto
-cuando construye el formulario será explicado eun unos momentos.
+cuando construye el formulario será explicado en unos momentos.
 Por ahora, vamos a actualizar la vista
 <code>app/views/posts/new.html.erb</code> para usar el nuevo parcial, reescribiendo completamente:</p>
 <pre><code class="lang-html+erb">&lt;h1&gt;New post&lt;/h1&gt;
@@ -610,13 +610,13 @@ Por ahora, vamos a actualizar la vista
 &lt;%= link_to &#39;Back&#39;, :action =&gt; :index %&gt;
 </code></pre>
 <p>Ve con tu navegador a <a href="http://localhost:3000/posts/new" target="_blank">http://localhost:3000/posts/new</a> y
-trata de crear un nuevo artículo. Todo funciona todavía, Ahora tratemos de editar el
+trata de crear un nuevo artículo. Todo funciona todavía, ahora tratemos de editar el
 artículo y recibiremos el siguiente mensaje de error:</p>
 <p><img src="http://edgeguides.rubyonrails.org/images/getting_started/undefined_method_post_path.png" alt="Undefined method post_path"></p>
-<p>Para entender este error necesitamos conocer como funciona <code>form_for</code>.
+<p>Para entender este error necesitamos conocer cómo funciona <code>form_for</code>.
 Cuando pasas un objeto a <code>form_for</code> y no especificas la opción de <code>:url</code>,
 Rails trata de adivinar las opciones de <code>action</code> y <code>method</code> verificando
-si el objeto pasado es un nuevo registro o no. Rails sigue la convencion
+si el objeto pasado es un nuevo registro o no. Rails sigue la convención
 REST, de esta manera si se está creando un nuevo objeto <code>Post</code> buscará por una
 ruta llamada <code>post_path</code> y para actualizar un objeto <code>Post</code> buscará por una
 ruta llamada <code>post_path</code> y le pasará el objeto actual. Similarmente, Rails conoce

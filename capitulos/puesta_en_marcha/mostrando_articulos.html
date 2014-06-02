@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.6" data-basepath="../.." data-revision="1400953413286">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.6" data-basepath="../.." data-revision="1401747808261">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -540,15 +540,15 @@
                     <section class="normal" id="section-gitbook_20">
                     
                         <h1 id="mostrando-art-culos">Mostrando artículos</h1>
-<p>Si envías el formulario de nuevo, Rails se quejará que no has definido la acción <code>show</code>.
-Esto no es muy útil así que vamos a agregar la acción <code>show</code> antes de continuar. Abra
-el archivo <code>config/routes.rb</code> y agregue la siguiente ruta:</p>
+<p>Si envías el formulario de nuevo, Rails se quejará de que no has definido la acción <code>show</code>.
+Esto no es muy útil así que vamos a agregar la acción <code>show</code> antes de continuar. Abre
+el archivo <code>config/routes.rb</code> y agrega la siguiente ruta:</p>
 <pre><code class="lang-ruby">get <span class="hljs-string">"posts/:id"</span> =&gt; <span class="hljs-string">"posts#show"</span>
 </code></pre>
 <p>La sintaxis especial <code>:id</code> le dice a Rails que la ruta espera un parámetro <code>:id</code>,
-el cual en nuestro caso será el id del artículo. Note que en esta ocasión
+el cual en nuestro caso será el id del artículo. Nota que en esta ocasión
 debemos indicar la asignación real <code>posts#show</code> porque de otra manera Rails no sabrá
-que acción debe realizar.</p>
+qué acción debe realizar.</p>
 <p>Como dijimos anteriormente, necesitamos agregar la acción <code>show</code> en el <code>posts_controller</code>
 y su respectiva vista.</p>
 <pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>show

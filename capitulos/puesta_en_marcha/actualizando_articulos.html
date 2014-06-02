@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.12" data-basepath="../.." data-revision="1400953413286">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.12" data-basepath="../.." data-revision="1401747808261">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -540,8 +540,8 @@
                     <section class="normal" id="section-gitbook_17">
                     
                         <h1 id="actualizando-art-culos">Actualizando artículos</h1>
-<p>Hemos cubierto la parte &quot;CR&quot; del acrónimo CRUD. Ahora nos enfocaremos en la parte &quot;U&quot;, actualización
-de artículos.</p>
+<p>Hemos cubierto la parte &quot;CR&quot; del acrónimo CRUD. Ahora nos enfocaremos en la
+parte &quot;U&quot;, actualización de artículos.</p>
 <p>El primer paso será agregar la acción <code>edit</code> al <code>posts_controller</code>.</p>
 <p>Empecemos agregando una ruta a <code>config/routes.rb</code>:</p>
 <pre><code class="lang-ruby">get <span class="hljs-string">"posts/:id/edit"</span> =&gt; <span class="hljs-string">"posts#edit"</span>
@@ -608,7 +608,7 @@ a través de <code>POST</code>.</p>
   <span class="hljs-keyword">end</span>
 <span class="hljs-keyword">end</span>
 </code></pre>
-<p>El nuevo método <code>update_attributes</code>, es usado cuando deseas acualizar un registro
+<p>El nuevo método <code>update_attributes</code>, es usado cuando deseas actualizar un registro
 que ya existe, y acepta un hash conteniendo los atributos que deseas actualizar.
 Como hicimos anteriormente, si hay un error actualizando el artículo queremos
 mostrar el formulario de regreso al usuario.</p>
@@ -617,7 +617,7 @@ ejemplo, si llamas a <code>@post.update_attributes(:title =&gt; &#39;A new title
 Rails solo actualizará el atributo <code>title</code> sin tocar los otros atributos.</p>
 <p>Finalmente, queremos mostrar un enlace a la acción <code>edit</code> en la lista de todos
 los artículos, de esta manera hacemos que ahora en <code>app/views/posts/index.html.erb</code>
-aparezca un nuevo enlace adicional al enlace &quot;Show&quot;:</p>
+aparezca un nuevo enlace adicional a la acción <code>show</code>:</p>
 <pre><code class="lang-html+erb">&lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;Title&lt;/th&gt;
@@ -643,7 +643,7 @@ haya un enlace &quot;Edit&quot; en la página del artículo. Agregar esto al fin
 &lt;%= link_to &#39;Back&#39;, :action =&gt; :index %&gt;
 | &lt;%= link_to &#39;Edit&#39;, :action =&gt; :edit, :id =&gt; @post.id %&gt;
 </code></pre>
-<p>Y así es como nuestra aplicación se ve hasta el momento</p>
+<p>Y así es cómo nuestra aplicación se ve hasta el momento</p>
 <p><img src="http://edgeguides.rubyonrails.org/images/getting_started/index_action_with_edit_link.png" alt="Index action with edit link"></p>
 
                     

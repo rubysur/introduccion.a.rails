@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.9" data-basepath="../.." data-revision="1400953413286">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.9" data-basepath="../.." data-revision="1401747808261">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -542,26 +542,27 @@
                         <h1 id="agregando-enlaces">Agregando enlaces</h1>
 <p>Hasta el momento puedes crear, mostrar y listar artículos. Ahora vamos a agregar
 algunos enlaces para navegar a través de las páginas.</p>
-<p>Abra <code>app/views/welcome/index.html.erb</code> y modifiquelo como se indica a continuación:</p>
+<p>Abre <code>app/views/welcome/index.html.erb</code> y modifîcalo como se indica a continuación:</p>
 <pre><code class="lang-html+erb">&lt;h1&gt;Hello, Rails!&lt;/h1&gt;
 &lt;%= link_to &quot;My Blog&quot;, :controller =&gt; &quot;posts&quot; %&gt;
 </code></pre>
-<p>El método <code>link_to</code> es uno de los asistentes de la vista incorporados en Rails. Este método crea el
-hipervínculo mostrando un texto e indicando donde irá, en este caso a la ubicación <code>post</code>.</p>
+<p>El método <code>link_to</code> es uno de los asistentes de la vista incorporados en Rails.
+Este método crea el hipervínculo mostrando un texto e indicando a dónde irá, en
+este caso a la ubicación <code>posts</code>.</p>
 <p>Vamos a agregar enlaces a las otras vistas, empezando por agregar a &quot;New Post&quot; el enlace a
-<code>app/views/posts/index.html.erb</code>, ubicándola encima de <code>&lt;!-- &lt;table&gt; --&gt;</code> tag:</p>
+<code>app/views/posts/index.html.erb</code>, ubicándola encima de la etiqueta <code>&lt;table&gt;</code>:</p>
 <pre><code class="lang-erb">&lt;%= link_to &#39;New post&#39;, :action =&gt; :new %&gt;
 </code></pre>
 <p>Este enlace te permitirá abrir el formulario para crear un nuevo artículo. También deberías
 agregar un enlace a esta plantilla -- <code>app/views/posts/new.html.erb</code> -- para regresar a la
-acción <code>index</code>. Para hacer eso agregue el enlace debajo del formulario en esta plantilla:</p>
+acción <code>index</code>. Para hacer eso agrega el enlace debajo del formulario en esta plantilla:</p>
 <pre><code class="lang-erb">&lt;%= form_for :post do |f| %&gt;
   ...
 &lt;% end %&gt;
 
 &lt;%= link_to &#39;Back&#39;, :action =&gt; :index %&gt;
 </code></pre>
-<p>Finalmente, agregue otro enlace a la plantilla <code>app/views/posts/show.html.erb</code> para regresar
+<p>Finalmente, agrega otro enlace a la plantilla <code>app/views/posts/show.html.erb</code> para regresar
 a la acción <code>index</code>, de manera que la persona que está viendo un artículo pueda regresar
 y ver la lista completa nuevamente.</p>
 <pre><code class="lang-html+erb">&lt;p&gt;
@@ -580,9 +581,9 @@ y ver la lista completa nuevamente.</p>
 <p><strong>TIP:</strong> Si deseas crear un enlace a una acción dentro del mismo controlador
 no necesitas especificar la opción <code>:controller</code>, Rails usará el actual
 controlador por omisión.</p>
-<p><strong>TIP:</strong> En modo de desarrollo (en la cual estás trabajdo por omisión), Rails recarga
-tu aplicación en cada requerimiento del navegador, por lo que no hay necesidad de
-reiniciar el servidor web cuando un cambio es realizado.</p>
+<p><strong>TIP:</strong> En modo de desarrollo (en la cual estás trabajando por omisión), Rails recarga
+los archivos de tu aplicación en cada petición del navegador, por lo que no hay
+necesidad de reiniciar el servidor web cuando un cambio es realizado.</p>
 </blockquote>
 
                     

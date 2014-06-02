@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.10" data-basepath="../.." data-revision="1400953413286">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.10" data-basepath="../.." data-revision="1401747808261">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -544,14 +544,14 @@
 <pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ActiveRecord::Base</span></span></span>
 <span class="hljs-keyword">end</span>
 </code></pre>
-<p>No hay mucho en ese archivo - pero noten que la clase <code>Post</code> hereda de
+<p>No hay mucho en ese archivo - pero nota que la clase <code>Post</code> hereda de
 <code>ActiveRecord::Base</code>. Active Record provee una gran cantidad de funcionalidad a los
 modelos de Rails de forma sencilla, incluyendo las operaciones básicas CRUD (del
 inglés Create, Read, Update, Destroy) de base de datos, validación de datos así
 como el soporte a búsquedas sofisticadas y la habilidad de relacionar múltiples
 modelos entre sí.</p>
 <p>Rails incluye métodos que ayudaran a asegurar los campos de tu modelo.
-Abra el archivo <code>app/models/post.rb</code> y complete según se indica:</p>
+Abre el archivo <code>app/models/post.rb</code> y complétalo de esta manera:</p>
 <pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Post</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">ActiveRecord::Base</span></span></span>
   attr_accessible <span class="hljs-symbol">:text</span>, <span class="hljs-symbol">:title</span>
 <span class="hljs-keyword">end</span>

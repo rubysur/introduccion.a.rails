@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="4.1" data-basepath="../.." data-revision="1400953413286">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="4.1" data-basepath="../.." data-revision="1401747808261">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -544,7 +544,8 @@
 iniciar un servidor web en tu máquina de desarrollo. Puedes hacerlo ejecutando:</p>
 <pre><code class="lang-bash">$ rails server
 </code></pre>
-<p>TIP: Compilando CoffeeScript a JavaScript requiere un JavaScript runtime y la
+<blockquote>
+<p><strong>TIP:</strong> Compilando CoffeeScript a JavaScript requiere un JavaScript runtime y la
 ausencia de éste dará un error de <code>execjs</code>. Usualmente Mac OS X y Windows vienen
 con un Javascript runtime instalado. Rails agrega la gema <code>therubyracer</code> al
 <code>Gemfile</code> en una línea comentada para nuevas aplicaciones y puedes descomentarla
@@ -552,15 +553,17 @@ si la necesitas. <code>therubyrhino</code> es el runtime recomendado para usuari
 y es añadido por defecto al <code>Gemfile</code> en aplicaciones generadas bajo JRuby.
 Puedes investigar acerca de todos los runtimes soportados en
 <a href="https://github.com/sstephenson/execjs#readme" target="_blank">ExecJS</a>.</p>
-<p>Esto lanzará WEBrick, un servidor web incoporado en Ruby por defecto. Para ver
-tu aplicación en acción, abre tu navegador preferido e ingresa a la siguiente
-dirección <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>. Deberías ver la página
-de información por defecto de Rails.</p>
+</blockquote>
+<p>Esto lanzará WEBrick, un servidor web incorporado en Ruby por defecto. Para ver
+tu aplicación en acción, abre tu navegador preferido e ingresa a <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>.
+Deberías ver la página de información por defecto de Rails.</p>
 <p><img src="http://edgeguides.rubyonrails.org/images/rails_welcome.png" alt="Welcome Aboard screenshot"></p>
-<p>TIP: Para detener el servidor web, presiona Ctrl+C en la ventana de la línea
-de comandos donde se esta ejecutando. En modo de desarrollo, Rails generalmente
+<blockquote>
+<p><strong>TIP:</strong> Para detener el servidor web, presiona Ctrl+C en la ventana de la línea
+de comandos donde se está ejecutando. En modo de desarrollo, Rails generalmente
 no requiere reiniciar el servidor web; los cambios realizados serán tomados
 automáticamente por el servidor.</p>
+</blockquote>
 <p>La página &quot;Welcome Aboard&quot; es la primera prueba para una nueva aplicación Rails:
 Ésta asegura que tienes el software configurado correctamente para servir una página.
 También puedes hacer click en el link <em>About your application&#39;s enviroment</em> para ver

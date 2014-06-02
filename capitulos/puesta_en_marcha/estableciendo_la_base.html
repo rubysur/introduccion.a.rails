@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.1" data-basepath="../.." data-revision="1400953413286">
+    <div class="book" data-github="rubysur/introduccion.a.rails" data-level="5.1" data-basepath="../.." data-revision="1401747808261">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -554,10 +554,10 @@ una nueva línea entre el <code>do</code> y el <code>end</code> del método <cod
 <pre><code class="lang-ruby">get <span class="hljs-string">"posts/new"</span>
 </code></pre>
 <p>Esta ruta es super simple: define una nueva ruta que sólo responderá a peticiones <code>GET</code>, y qye
-la ruta se encuentra en <code>posts/new</code>. Pero como sabe a donde ir sin haber usado la opción
+la ruta se encuentra en <code>posts/new</code>. Pero cómo sabe a donde ir sin haber usado la opción
 <code>:to</code>? Bueno, Rails usa una convención sensible aquí: Rails asumirá que lo que tú quieres
 es que esta ruta vaya a la acción <code>new</code> dentro de el controlador <code>posts</code>.</p>
-<p>Con esta ruta definidad, tus peticiones ahora se pueden hacer a través de <code>/posts/new</code> en
+<p>Con esta ruta definida, tus peticiones ahora se pueden hacer a través de <code>/posts/new</code> en
 la aplicación. Navega hacia: <a href="http://localhost:3000/posts/new" target="_blank">http://localhost:3000/posts/new</a>. Verás otro error de ruteo:</p>
 <p><img src="http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_controller.png" alt="Another routing error, uninitialized constant PostsController"></p>
 <p>Este error está pasando porque esta ruta necesita un controlador que esté definido. La ruta
@@ -599,13 +599,13 @@ Missing template posts/new, application/new with {:locale=&gt;[:en], :formats=&g
 
 <p>Eso es casi un montón de texto! Revisemos rápidamente para entender cuál es la función de cada parte.</p>
 <p>La primera parte identifica que plantilla está faltando. En este caso, es la plantila <code>posts/new</code>.
-Rails primero buscará esta plantilla. Si no la encuentra, luego tratará de cargar la plantilla
+Rails primero buscará esta plantilla, si no la encuentra, luego tratará de cargar la plantilla
 llamada <code>application/new</code>. Busca una aquí porque el <code>PostsController</code> hereda de <code>ApplicationController</code>.</p>
-<p>La siguiente parte del mensaje contiene un map (<code>hash</code> en inglés). La llave <code>:locale</code> en este map
+<p>La siguiente parte del mensaje contiene un map (<code>hash</code> en inglés). La clave <code>:locale</code> en este map
 simplemente indica el lenguaje que debe contener la plantilla solicitada. Por defecto, está configurado
-en Inglés -- o &quot;en&quot; --. La siguiente llave, <code>:formats</code> especifica el formato de la plantilla que será
+en Inglés -- o &quot;en&quot; --. La siguiente clave, <code>:formats</code> especifica el formato de la plantilla que será
 servido en la respuesta. El formato por defecto es <code>:html</code>, es por eso que Rails busca una plantilla
-HTML. La llave final, <code>:handlers</code>, nos dice que <em>manejador de plantilla</em> (o <em>template handler</em> en inglés)
+HTML. La clave final, <code>:handlers</code>, nos dice que <em>manejador de plantilla</em> (o <em>template handler</em> en inglés)
 puede ser usada para producir nuestra plantilla. <code>:erb</code> es el manejador más usado para plantillas HTML,
 <code>:builder</code> es usado para plantillas XML, y <code>:coffee</code> usa CoffeeScript para construir plantillas JavaScript.</p>
 <p>La más simple plantilla que funcionaría en nuestro caso sería una localizada en <code>app/views/posts/new.html.erb</code>.
@@ -613,7 +613,7 @@ La extensión de este nombre de archivo es importante: la primera extensión def
 y la segunda extensión el <em>manejador de plantilla</em> que será usado. Rails está tratando de encontrar una
 plantilla llamada <code>posts/new</code> en <code>app/views</code> para la aplicación. El formato para esta plantilla puede sólo
 ser <code>html</code> y el manejador debería ser <code>erb</code>, <code>builder</code> o <code>coffee</code>. Ya que tú quieres crear un nuevo
-formulario HTML, tú tendrás que usar el lenguaje <code>ERB</code>. Por lo tanto el archivo debería ser llamado
+formulario HTML, tendrás que usar el lenguaje <code>ERB</code>. Por lo tanto el archivo debería ser llamado
 <code>posts/new.html.erb</code> y necesita ser localizado dentro de la carpeta <code>app/views</code> de la aplicación.</p>
 <p>Ahora ve y crea un nuevo archivo en <code>app/views/posts/new.html.erb</code> y escribe el siguiente
 contenido en él:</p>
