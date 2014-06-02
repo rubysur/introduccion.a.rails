@@ -1,9 +1,9 @@
 CACHE MANIFEST
-# Revision 1401747808262
+# Revision 1401748148847
 
 CACHE:
-capitulos/antes_de_empezar.html
 index.html
+capitulos/antes_de_empezar.html
 capitulos/creando_un_nuevo_proyecto/README.html
 capitulos/creando_un_nuevo_proyecto/creando_la_aplicacion.html
 capitulos/creando_un_nuevo_proyecto/instalando_rails.html
