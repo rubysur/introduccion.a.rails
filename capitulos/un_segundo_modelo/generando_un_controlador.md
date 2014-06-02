@@ -59,7 +59,7 @@ Así que primero, vamos a armar la plantilla `show` del artículo
 <%= link_to 'Back to Posts', posts_path %>
 ```
 
-Ésto agrega un formulario en la vista `show` del artítculo que crea un
+Ésto agrega un formulario en la vista `show` del artículo que crea un
 comentario al llamar a la acción `create` en el `CommentsController`. Al llamar
 `form_for` se necesita pasar un arreglo, que construirá una ruta anidada,
 siguiendo el esquema `/posts/1/comments`.

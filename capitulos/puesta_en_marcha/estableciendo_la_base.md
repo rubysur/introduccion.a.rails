@@ -21,11 +21,11 @@ get "posts/new"
 ```
 
 Esta ruta es super simple: define una nueva ruta que sólo responderá a peticiones `GET`, y qye
-la ruta se encuentra en `posts/new`. Pero como sabe a donde ir sin haber usado la opción
+la ruta se encuentra en `posts/new`. Pero cómo sabe a donde ir sin haber usado la opción
 `:to`? Bueno, Rails usa una convención sensible aquí: Rails asumirá que lo que tú quieres
 es que esta ruta vaya a la acción `new` dentro de el controlador `posts`.
 
-Con esta ruta definidad, tus peticiones ahora se pueden hacer a través de `/posts/new` en
+Con esta ruta definida, tus peticiones ahora se pueden hacer a través de `/posts/new` en
 la aplicación. Navega hacia: <http://localhost:3000/posts/new>. Verás otro error de ruteo:
 
 ![Another routing error, uninitialized constant PostsController](http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_controller.png)
@@ -87,14 +87,14 @@ Missing template posts/new, application/new with {:locale=>[:en], :formats=>[:ht
 Eso es casi un montón de texto! Revisemos rápidamente para entender cuál es la función de cada parte.
 
 La primera parte identifica que plantilla está faltando. En este caso, es la plantila `posts/new`.
-Rails primero buscará esta plantilla. Si no la encuentra, luego tratará de cargar la plantilla
+Rails primero buscará esta plantilla, si no la encuentra, luego tratará de cargar la plantilla
 llamada `application/new`. Busca una aquí porque el `PostsController` hereda de `ApplicationController`.
 
-La siguiente parte del mensaje contiene un map (`hash` en inglés). La llave `:locale` en este map
+La siguiente parte del mensaje contiene un map (`hash` en inglés). La clave `:locale` en este map
 simplemente indica el lenguaje que debe contener la plantilla solicitada. Por defecto, está configurado
-en Inglés -- o "en" --. La siguiente llave, `:formats` especifica el formato de la plantilla que será
+en Inglés -- o "en" --. La siguiente clave, `:formats` especifica el formato de la plantilla que será
 servido en la respuesta. El formato por defecto es `:html`, es por eso que Rails busca una plantilla
-HTML. La llave final, `:handlers`, nos dice que _manejador de plantilla_ (o _template handler_ en inglés)
+HTML. La clave final, `:handlers`, nos dice que _manejador de plantilla_ (o _template handler_ en inglés)
 puede ser usada para producir nuestra plantilla. `:erb` es el manejador más usado para plantillas HTML,
 `:builder` es usado para plantillas XML, y `:coffee` usa CoffeeScript para construir plantillas JavaScript.
 
@@ -103,7 +103,7 @@ La extensión de este nombre de archivo es importante: la primera extensión def
 y la segunda extensión el _manejador de plantilla_ que será usado. Rails está tratando de encontrar una
 plantilla llamada `posts/new` en `app/views` para la aplicación. El formato para esta plantilla puede sólo
 ser `html` y el manejador debería ser `erb`, `builder` o `coffee`. Ya que tú quieres crear un nuevo
-formulario HTML, tú tendrás que usar el lenguaje `ERB`. Por lo tanto el archivo debería ser llamado
+formulario HTML, tendrás que usar el lenguaje `ERB`. Por lo tanto el archivo debería ser llamado
 `posts/new.html.erb` y necesita ser localizado dentro de la carpeta `app/views` de la aplicación.
 
 Ahora ve y crea un nuevo archivo en `app/views/posts/new.html.erb` y escribe el siguiente

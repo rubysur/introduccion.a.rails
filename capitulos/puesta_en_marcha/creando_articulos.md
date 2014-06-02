@@ -19,7 +19,7 @@ eso por ahora. Lo que la acción `create` debe hacer es salvar el nuevo artícul
 
 Cuando un formulario es enviado, los campos del formulario son enviados a Rails como _parámetros_. Estos
 parámetros pueden ser referenciados dentro de las acciones del controlador, generalmente para realizar una
-tarea determinada. Para ver que hacen estos parámetros, cambiar la acción `create` a esto:
+tarea determinada. Para ver qué hacen estos parámetros, cambiar la acción `create` a esto:
 
 ```ruby
 def create

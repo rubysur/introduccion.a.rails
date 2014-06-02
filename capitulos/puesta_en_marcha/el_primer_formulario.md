@@ -23,11 +23,11 @@ Para usar este método agrega este código a `app/views/posts/new.html.erb`:
 <% end %>
 ```
 
-Si refrescas la página ahora, verás el mismo formulario que en el ejemplo.
+Si refrescas la página, ahora verás el mismo formulario que en el ejemplo.
 Construir un formulario en Rails es así de sencillo!
 
 Cuando llamas a `form_for`, le pasas un objeto identificador para este
-formulario. En este caso, es el símbolo `:post`. Esto le indica al método
+formulario, que en este caso, es el símbolo `:post`. Esto le indica al método
 `form_for` para quién es este formulario. Dentro del bloque para este método,
 el objeto `FormBuilder` - representado por `f` - es usado para construir dos
 etiquetas y dos cajas de texto, una de cada una para el título y el texto del

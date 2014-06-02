@@ -1,13 +1,13 @@
-Say "Hello to my little friend"
+Dí "Hola" a mi pequeño amigo
 ===============================
 
 Para conseguir que Rails diga "Hola", necesitas crear como mínimo un _controlador_ y
 una _vista_.
 
-El propósito de un controlador es recibir peticiones específicas (requests) por la
-aplicación. El enrutamiento (_Routing_) decide que controlador recibe que petición.
+El propósito de un controlador es recibir peticiones específicas (requests) de la
+aplicación. El enrutamiento (_Routing_) decide qué controlador recibe qué petición.
 A menudo, hay más de una ruta para cada controlador, y diferentes rutas pueden
-ser servidas por diferentes acciones (_actions_). Cada propósito de la acción
+ser servidas por diferentes acciones (_actions_). El propósito de cada acción
 es recolectar información para posteriormente brindarla a la vista.
 
 El propósito de una vista es mostrar la información en un formato legible para
@@ -47,7 +47,7 @@ create      app/assets/stylesheets/welcome.css.scss
 ```
 
 Los más importantes de éstos son por supuesto el controlador, localizado en
-`app/controllers/welcome_controller.rb` y la vista, localizado en
+`app/controllers/welcome_controller.rb` y la vista, localizada en
 `app/views/welcome/index.html.erb`.
 
 Abre el archivo `app/views/welcome/index.html.erb` en tu editor de texto

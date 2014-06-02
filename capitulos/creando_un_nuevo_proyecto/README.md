@@ -11,6 +11,6 @@ simple weblog. Antes de que puedas comenzar a crear la aplicación, necesitas
 estar seguro de tener Rails instalado.
 
 > **TIP:** Los ejemplos que se muestran a continuación usan `#` y `$` para denotar un
-superuser y user regultar de una línea de comandos respectivamente en un sistema
+superuser y user regular de una línea de comandos respectivamente en un sistema
 operativo tipo UNIX. Si estás usando Windows, tú línea de comandos se verá como
 `c:\source_code>`.

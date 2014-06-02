@@ -1,8 +1,8 @@
 Actualizando artículos
 ======================
 
-Hemos cubierto la parte "CR" del acrónimo CRUD. Ahora nos enfocaremos en la parte "U", actualización
-de artículos.
+Hemos cubierto la parte "CR" del acrónimo CRUD. Ahora nos enfocaremos en la
+parte "U", actualización de artículos.
 
 El primer paso será agregar la acción `edit` al `posts_controller`.
 
@@ -89,7 +89,7 @@ def update
 end
 ```
 
-El nuevo método `update_attributes`, es usado cuando deseas acualizar un registro
+El nuevo método `update_attributes`, es usado cuando deseas actualizar un registro
 que ya existe, y acepta un hash conteniendo los atributos que deseas actualizar.
 Como hicimos anteriormente, si hay un error actualizando el artículo queremos
 mostrar el formulario de regreso al usuario.
@@ -100,7 +100,7 @@ Rails solo actualizará el atributo `title` sin tocar los otros atributos.
 
 Finalmente, queremos mostrar un enlace a la acción `edit` en la lista de todos
 los artículos, de esta manera hacemos que ahora en `app/views/posts/index.html.erb`
-aparezca un nuevo enlace adicional al enlace "Show":
+aparezca un nuevo enlace adicional a la acción `show`:
 
 ```html+erb
 <table>
@@ -132,6 +132,6 @@ haya un enlace "Edit" en la página del artículo. Agregar esto al final de tu p
 | <%= link_to 'Edit', :action => :edit, :id => @post.id %>
 ```
 
-Y así es como nuestra aplicación se ve hasta el momento
+Y así es cómo nuestra aplicación se ve hasta el momento
 
 ![Index action with edit link](http://edgeguides.rubyonrails.org/images/getting_started/index_action_with_edit_link.png)

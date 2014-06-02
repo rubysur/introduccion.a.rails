@@ -1,7 +1,7 @@
 Errores comunes de configuración
 ================================
 
-La forma más fácil de trabajar con Rails es guardando toda los datos externos
+La forma más fácil de trabajar con Rails es guardando todos los datos externos
 como UTF-8. Si no lo haces, por lo general las librerías de Ruby y Rails van a
 ser capaces de convertir tus datos nativos a UTF-8, pero esto no funciona en
 todos los casos, así que lo ideal es asegurarte que todos tus datos externos
