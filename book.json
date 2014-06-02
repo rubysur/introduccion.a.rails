@@ -1,5 +1,5 @@
 {
-    "description": "Aprende a programar con Ruby",
+    "description": "Aprende a desarrollar aplicaciones web con Ruby on Rails",
     "plugins": ["ga", "-mixpanel", "-mathjax"],
     "pluginsConfig": {
         "ga": {
