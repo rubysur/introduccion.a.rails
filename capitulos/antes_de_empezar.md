@@ -2,9 +2,9 @@ Antes de empezar
 ================
 
 Esta guía está diseñada para principiantes que quieren comenzar con Rails
-desde cero. No asume que tú tienes alguna experiencia previa con Rails. Sin
-embargo, para obtener el máximo de ésta, tú debes de tener algunos
-pre-requisitos instalados:
+desde cero. No asume que tú tengas alguna experiencia previa con Rails. Sin
+embargo, para obtener el máximo de ésta, debes de tener algunos
+prerrequisitos instalados:
 
 * El lenguaje de programación [Ruby](http://www.ruby-lang.org/en/downloads) en
   su versión 1.9.3 o mayor.

@@ -15,7 +15,7 @@ Este comando generará cuatro archivos:
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------|
 | db/migrate/20100207235629_create_comments.rb | Migración para crear la tabla de comentarios en tu base de datos (en tu caso con un timestamp diferente).|
 | app/models/comment.rb                        | El modelo Comment.                                                                                       |
-| test/unit/comment_test.rb                    | Prubas unitarias para el modelo de comentarios.                                                          |
+| test/unit/comment_test.rb                    | Pruebas unitarias para el modelo de comentarios.                                                         |
 | test/fixtures/comments.yml                   | Muestras de comentarios para usar de pruebas.                                                            |
 
 Primero, miremos `comment.rb`:
@@ -29,7 +29,7 @@ end
 
 Ésto es muy similar al modelo `post.rb` que vimos antes. La diferencia es la
 línea `belongs_to :post`, que establece una asociación de Active Record.
-Vas a aprender un poco más sobre asociaciones en la siguiente sección de esta
+Aprenderás un poco más sobre asociaciones en la siguiente sección de esta
 guía.
 
 Además del modelo, Rails hizo la migración para crear la tabla correspondiente

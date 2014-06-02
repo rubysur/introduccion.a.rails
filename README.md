@@ -12,7 +12,7 @@ lo siguiente:
 * La estructura general de una aplicación Rails.
 * Los principios básicos del patrón MVC (Modelo, Vista, Controlador) y
   Diseño RESTful.
-* Como generar rápidamente las primeras piezas de una aplicación Rails.
+* Cómo generar rápidamente las primeras piezas de una aplicación Rails.
 
 > **Nota:** Esta guía está basada en Rails 3.2. Algunas partes del código que
 se muestran aquí no van a funcionar en nuevas versiones de Rails.

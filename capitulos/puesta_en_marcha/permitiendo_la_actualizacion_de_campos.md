@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 end
 ```
 
-No hay mucho en ese archivo - pero noten que la clase `Post` hereda de
+No hay mucho en ese archivo - pero nota que la clase `Post` hereda de
 `ActiveRecord::Base`. Active Record provee una gran cantidad de funcionalidad a los
 modelos de Rails de forma sencilla, incluyendo las operaciones básicas CRUD (del
 inglés Create, Read, Update, Destroy) de base de datos, validación de datos así
@@ -16,7 +16,7 @@ como el soporte a búsquedas sofisticadas y la habilidad de relacionar múltiple
 modelos entre sí.
 
 Rails incluye métodos que ayudaran a asegurar los campos de tu modelo.
-Abra el archivo `app/models/post.rb` y complete según se indica:
+Abre el archivo `app/models/post.rb` y complétalo de esta manera:
 
 ```ruby
 class Post < ActiveRecord::Base

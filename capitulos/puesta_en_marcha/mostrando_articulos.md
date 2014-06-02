@@ -1,18 +1,18 @@
 Mostrando artículos
 ===================
 
-Si envías el formulario de nuevo, Rails se quejará que no has definido la acción `show`.
-Esto no es muy útil así que vamos a agregar la acción `show` antes de continuar. Abra
-el archivo `config/routes.rb` y agregue la siguiente ruta:
+Si envías el formulario de nuevo, Rails se quejará de que no has definido la acción `show`.
+Esto no es muy útil así que vamos a agregar la acción `show` antes de continuar. Abre
+el archivo `config/routes.rb` y agrega la siguiente ruta:
 
 ```ruby
 get "posts/:id" => "posts#show"
 ```
 
 La sintaxis especial `:id` le dice a Rails que la ruta espera un parámetro `:id`,
-el cual en nuestro caso será el id del artículo. Note que en esta ocasión
+el cual en nuestro caso será el id del artículo. Nota que en esta ocasión
 debemos indicar la asignación real `posts#show` porque de otra manera Rails no sabrá
-que acción debe realizar.
+qué acción debe realizar.
 
 Como dijimos anteriormente, necesitamos agregar la acción `show` en el `posts_controller`
 y su respectiva vista.

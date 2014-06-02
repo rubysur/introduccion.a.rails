@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
 # cortado por brevedad
 ```
 
-Ahora si intentamos crear un nuevo artículo, vas a ser recibido con una ventana
+Ahora si intentas crear un nuevo artículo, vas a ser recibido con una ventana
 de diálogo de autenticación HTTP básica.
 
 ![Ventana de diálogo de autenticación HTTP básica](http://edgeguides.rubyonrails.org/images/challenge.png)

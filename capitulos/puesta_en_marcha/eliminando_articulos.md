@@ -2,7 +2,7 @@ Eliminando artículos
 ====================
 
 Ahora estamos listos para cubrir la parte "D" del acrónimo CRUD: eliminar artículos
-en la base de datos. Siguiendo la convención REST, vamos a agregar una ruta para la
+de la base de datos. Siguiendo la convención REST, vamos a agregar una ruta para la
 eliminación de artículos a `config/routes.rb`:
 
 ```ruby

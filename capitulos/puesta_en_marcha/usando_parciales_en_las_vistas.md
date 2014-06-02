@@ -63,7 +63,7 @@ Crea un nuevo archivo `app/views/posts/_form.html.erb` con el siguiente contenid
 
 Todo, excepto la declaración `form_for` permanece igual. Como `form_for`
 puede averiguar la `action` y los atributos del `method` correcto
-cuando construye el formulario será explicado eun unos momentos.
+cuando construye el formulario será explicado en unos momentos.
 Por ahora, vamos a actualizar la vista
 `app/views/posts/new.html.erb` para usar el nuevo parcial, reescribiendo completamente:
 
@@ -86,15 +86,15 @@ Luego hacer lo mismo a la vista `app/views/posts/edit.html.erb`:
 ```
 
 Ve con tu navegador a [http://localhost:3000/posts/new](http://localhost:3000/posts/new) y
-trata de crear un nuevo artículo. Todo funciona todavía, Ahora tratemos de editar el
+trata de crear un nuevo artículo. Todo funciona todavía, ahora tratemos de editar el
 artículo y recibiremos el siguiente mensaje de error:
 
 ![Undefined method post_path](http://edgeguides.rubyonrails.org/images/getting_started/undefined_method_post_path.png)
 
-Para entender este error necesitamos conocer como funciona `form_for`.
+Para entender este error necesitamos conocer cómo funciona `form_for`.
 Cuando pasas un objeto a `form_for` y no especificas la opción de `:url`,
 Rails trata de adivinar las opciones de `action` y `method` verificando
-si el objeto pasado es un nuevo registro o no. Rails sigue la convencion
+si el objeto pasado es un nuevo registro o no. Rails sigue la convención
 REST, de esta manera si se está creando un nuevo objeto `Post` buscará por una
 ruta llamada `post_path` y para actualizar un objeto `Post` buscará por una
 ruta llamada `post_path` y le pasará el objeto actual. Similarmente, Rails conoce
@@ -131,5 +131,3 @@ están disponibles para actualizar los artículos.
 
 NOTA: La opción `:as` esta disponible también en los métodos de ruteo
 `post`, `put`, `delete` y `match`.
-
-

@@ -47,7 +47,7 @@ edit_post GET    /posts/:id/edit(.:format) posts#edit
 Además, si vas a través de las acciones de creación, actualización
 y eliminación de posts, la aplicación sigue funcionando como antes.
 
-TIP: En general, Rails fomenta el uso de recursos (`resources`) en lugar
+> **TIP:** En general, Rails fomenta el uso de recursos (`resources`) en lugar
 de declarar las rutas manualmente. Se hizo solamente en esta guía como
 un ejercicio de aprendizaje. Para más información acerca de _routing_,
 mira [Rails Routing from the Outside In](http://guides.rubyonrails.org/routing.html).

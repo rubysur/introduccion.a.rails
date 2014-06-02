@@ -2,7 +2,7 @@ Estableciendo la página principal
 =================================
 
 Ahora que hemos hecho el _controlador_ y la _vista_, necesitamos decirle a Rails
-cuando queremos que `Hello Rails` se muestre. En nuestro caso, deseamos mostrarlo
+cuándo queremos que `Hello Rails` se muestre. En nuestro caso, deseamos mostrarlo
 al ingresar a la raíz de nuestro sitio, <http://localhost:3000>. Por el momento,
 sin embargo, la página "Welcome Aboard" está ocupando ese lugar.
 
@@ -34,7 +34,7 @@ Blog::Application.routes.draw do
 ```
 
 Éste es el _archivo de enrutamiento_ de tu aplicación el cual mantiene entradas
-con un DSL especial (domain-specific language) que le dicen a Rails como conectar
+con un DSL especial (domain-specific language) que le dicen a Rails cómo conectar
 peticiones entrantes a _controladores_ y _acciones_. Este archivo contiene muchas
 rutas de ejemplo en líneas comentadas, y una de ellas en realidad muestra como
 conectar la raíz de tu sitio a un _controlador_ y _acción_ específico. Encuentra

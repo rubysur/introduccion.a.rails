@@ -7,7 +7,7 @@ cual te proveerá con la estructura base de una aplicación Rails, así ya no
 tienes que escribirla por ti mismo.
 
 Para usar este generador, abre la terminal, navega hacia el directorio en donde
-tienes permiso para crear archivo, y escribe:
+tienes permiso para crear archivos, y escribe:
 
 ```bash
 $ rails new blog
@@ -41,12 +41,12 @@ cada archivo y carpetas que Rails creó por defecto:
 |config.ru| Configuración Rack para servidores basados en Rack usados para iniciar la aplicación.|
 |db/|Contiene el esquema actual de tu base de datos, así como las migraciones de la base de datos.|
 |doc/|Documentación detallada de tu aplicación.|
-|Gemfile<br />Gemfile.lock| Estos arhivos te permiten especificar que dependencias de gemas son necesitadas para tu aplicación Rails. Estos archivos son usados por la gema Bundler, ver [Sitio web de Bundler](http://gembundler.com).|
+|Gemfile<br />Gemfile.lock| Estos arhivos te permiten especificar qué dependencias de gemas son necesitadas para tu aplicación Rails. Estos archivos son usados por la gema Bundler, ver [Sitio web de Bundler](http://gembundler.com).|
 |lib/|Módulos extendidos para tu aplicación.|
 |log/|Archivos de Log de tu aplicación.|
 |public/|La única carpeta vista por el mundo tal como es. Contiene los archivos estáticos y assets compilados.|
 |Rakefile|Este archivo localiza y carga tareas que pueden ser ejecutadas desde la línea de comandos. La lista de tareas son definidas a través de los componentes de Rails. En vez de cambiar el Rakefile, deberías agregar tus propias tareas, añadiendo archivos al directorio `lib/tasks` de tu aplicación.|
-|README.rdoc|Este es un breve manual de instrucciones para tu aplicación. Deberías editar este archivo para comunicar a otros lo que tu aplicación hace, como configurala y demás.|
+|README.rdoc|Este es un breve manual de instrucciones para tu aplicación. Deberías editar este archivo para comunicar a otros lo que tu aplicación hace, cómo configurala y demás.|
 |script/|Contiene el script de Rails que inicia tu aplicación y contiene otros scripts usados para deployar o correr tu aplicación.|
 |test/|Pruebas unitarias, fixtures y otras pruebas. Éstos son cubiertos en [Testing Rails Applications](http://edgeguides.rubyonrails.org/testing.html).|
 |tmp/|Archivos temporales (como archivos de caché, pid y archivos de sesiones).|

@@ -2,7 +2,7 @@ Salvando datos en el controlador
 ================================
 
 En `posts_controller` necesitamos cambiar la acción `create` para usar el nuevo modelo `Post`
-y guardar los datos en la base de datos. Abra el archivo y cambie la acción `create`
+y guardar los datos en la base de datos. Abre el archivo y cambia la acción `create`
 que debe verse de la siguiente manera:
 
 ```ruby
