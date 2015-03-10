@@ -21,3 +21,4 @@ algunos recursos gratis en la internet para aprender Ruby, incluyendo:
 * [Mr. Neighborly's Humble Little Ruby Book](http://www.humblelittlerubybook.com).
 * [Programming Ruby](http://www.ruby-doc.org/docs/ProgrammingRuby/).
 * [Why's (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/).
+* [Poignant Guide] (http://poignant.guide/).
