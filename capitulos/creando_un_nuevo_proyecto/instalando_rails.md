@@ -11,7 +11,7 @@ Para instalar Rails, usa el comando proporcionado por RubyGems `gem install`:
 Ruby on Rails de una manera rápida. En el [wiki de Ruby Perú](https://github.com/rubyperu/rubyperu.github.com/wiki)
 encontrarás información acerca de cómo instalar Ruby y Ruby on Rails.
 
-Para verificar que tu instalación esté correcta, deberías
+Para verificar que tu instalación está correcta, deberías
 poder correr lo siguiente:
 
 ```bash
