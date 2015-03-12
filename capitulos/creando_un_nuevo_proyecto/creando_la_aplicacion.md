@@ -46,8 +46,8 @@ cada archivo y carpetas que Rails creó por defecto:
 |log/|Archivos de Log de tu aplicación.|
 |public/|La única carpeta vista por el mundo tal como es. Contiene los archivos estáticos y assets compilados.|
 |Rakefile|Este archivo localiza y carga tareas que pueden ser ejecutadas desde la línea de comandos. La lista de tareas son definidas a través de los componentes de Rails. En vez de cambiar el Rakefile, deberías agregar tus propias tareas, añadiendo archivos al directorio `lib/tasks` de tu aplicación.|
-|README.rdoc|Este es un breve manual de instrucciones para tu aplicación. Deberías editar este archivo para comunicar a otros lo que tu aplicación hace, cómo configurala y demás.|
-|script/|Contiene el script de Rails que inicia tu aplicación y contiene otros scripts usados para deployar o correr tu aplicación.|
+|README.rdoc|Este es un breve manual de instrucciones para tu aplicación. Deberías editar este archivo para comunicar a otros lo que tu aplicación hace, cómo configurarla y demás.|
+|script/|Contiene el script de Rails que inicia tu aplicación y contiene otros scripts usados para desplegar o correr tu aplicación.|
 |test/|Pruebas unitarias, fixtures y otras pruebas. Éstos son cubiertos en [Testing Rails Applications](http://edgeguides.rubyonrails.org/testing.html).|
 |tmp/|Archivos temporales (como archivos de caché, pid y archivos de sesiones).|
-|vendor/|Lugar para código de terceros. En una típica aplicación Rails, ésta incluye librerías y plugins.|
+|vendor/|Lugar para código de terceros. En una típica aplicación Rails, esta incluye librerías y plugins.|
