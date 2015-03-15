@@ -15,7 +15,7 @@ inglés Create, Read, Update, Destroy) de base de datos, validación de datos as
 como el soporte a búsquedas sofisticadas y la habilidad de relacionar múltiples
 modelos entre sí.
 
-Rails incluye métodos que ayudaran a asegurar los campos de tu modelo.
+Rails incluye métodos que ayudarán a asegurar los campos de tu modelo.
 Abre el archivo `app/models/post.rb` y complétalo de esta manera:
 
 ```ruby
