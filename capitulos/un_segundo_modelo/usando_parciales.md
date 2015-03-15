@@ -1,7 +1,7 @@
 Usando parciales
 ================
 
-Primero, creemos el parcial de comentario para extraer el mostrar de todos los
+Primero, creemos el parcial de comentarios para extraer y mostrar todos los
 comentarios del artículo. Crea el archivo `app/views/comments/_comment.html.erb`
 y coloca lo siguiente:
 
@@ -53,7 +53,7 @@ manera:
 <%= link_to 'Back to Posts', posts_path %>
 ```
 
-Ésto hará que el parcial en `app/views/comments/_comment.html.erb` se haga
+Esto hará que el parcial en `app/views/comments/_comment.html.erb` se haga
 render una vez por cada comentario en la colección `@post.comments`. A medida
 que el método `render` itera sobre la colección `@post.comments`, asigna cada
 comentario a la variable local llamada igual que el parcial, en este caso
