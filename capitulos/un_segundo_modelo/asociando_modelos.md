@@ -5,10 +5,10 @@ Las asociaciones de Active Record te permiten declarar fácilmente la relación
 entre dos modelos. En el caso de los comentarios y artículos, puedes escribir la
 relación de esta manera:
 
-* Cada comentario pertence a un artículo.
+* Cada comentario pertenece a un artículo.
 * Un artículo puede tener muchos comentarios.
 
-De hecho, ésto es muy cercano a la sintáxis que usa Rails para declarar esta
+De hecho, esto es muy cercano a la sintaxis que usa Rails para declarar esta
 asociación. Ya has visto la línea de código en el modelo `Comment` que hace que
 cada comentario pertenezca a un artículo:
 
