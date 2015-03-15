@@ -1,29 +1,29 @@
 Estableciendo la base
 =====================
 
-La primera cosa que necesitaremos para crear un nuevo post, es crear un espacio para hacer eso
+La primera cosa que necesitaremos para crear un nuevo post, es crear un espacio 
 en nuestra aplicación. Un buen lugar podría ser `/posts/new`. Si tratas de navegar a esa
 dirección ahora -- visitando <http://localhost:3000/posts/new> -- Rails te dará un error de
 ruteo:
 
 ![A routing error, no route matches /posts/new](http://edgeguides.rubyonrails.org/images/getting_started/routing_error_no_route_matches.png)
 
-Esto es porque no en ningún lugar dentro de las rutas para la aplicación -- definidas dentro
-de `config/routes.rb` -- que defina esta ruta. Por defecto, Rails no tiene rutas configuradas,
-excepto por la ruta `root` que definimos anteriormente, es por esto que tú tendrás que definir
+Esto es porque no está definida en ningún lugar dentro de las rutas para la aplicación -- precisamente en 
+`config/routes.rb` --. Por defecto, Rails no tiene rutas configuradas,
+excepto la ruta `root` que definimos anteriormente, es por esto que tú tendrás que definir
 tus rutas cuando las necesites.
 
-Para hacer esto, vas a necesitar crear una ruta dentro de el archivo `config/routes.rb`, en
+Para hacer esto, vas a necesitar crear una ruta dentro del archivo `config/routes.rb`, en
 una nueva línea entre el `do` y el `end` del método `draw`:
 
 ```ruby
 get "posts/new"
 ```
 
-Esta ruta es super simple: define una nueva ruta que sólo responderá a peticiones `GET`, y qye
+Esta ruta es super simple: define una nueva ruta que sólo responderá a peticiones `GET`, y que
 la ruta se encuentra en `posts/new`. Pero cómo sabe a donde ir sin haber usado la opción
 `:to`? Bueno, Rails usa una convención sensible aquí: Rails asumirá que lo que tú quieres
-es que esta ruta vaya a la acción `new` dentro de el controlador `posts`.
+es que esta ruta vaya a la acción `new` dentro del controlador `posts`.
 
 Con esta ruta definida, tus peticiones ahora se pueden hacer a través de `/posts/new` en
 la aplicación. Navega hacia: <http://localhost:3000/posts/new>. Verás otro error de ruteo:
@@ -69,7 +69,7 @@ def new
 end
 ```
 
-Con el método `new` definido en `PostsController`, si tú refrescas
+Con el método `new` definido en `PostsController`, si tú actualizas
 <http://localhost:3000/posts/new> verás otro error:
 
 ![Template is missing for posts/new](http://edgeguides.rubyonrails.org/images/getting_started/template_is_missing_posts_new.png)
@@ -87,7 +87,7 @@ Missing template posts/new, application/new with {:locale=>[:en], :formats=>[:ht
 Eso es casi un montón de texto! Revisemos rápidamente para entender cuál es la función de cada parte.
 
 La primera parte identifica que plantilla está faltando. En este caso, es la plantila `posts/new`.
-Rails primero buscará esta plantilla, si no la encuentra, luego tratará de cargar la plantilla
+Rails primero buscará esta plantilla, si no la encuentra, tratará luego de cargar la plantilla
 llamada `application/new`. Busca una aquí porque el `PostsController` hereda de `ApplicationController`.
 
 La siguiente parte del mensaje contiene un map (`hash` en inglés). La clave `:locale` en este map
@@ -96,7 +96,7 @@ en Inglés -- o "en" --. La siguiente clave, `:formats` especifica el formato de
 servido en la respuesta. El formato por defecto es `:html`, es por eso que Rails busca una plantilla
 HTML. La clave final, `:handlers`, nos dice que _manejador de plantilla_ (o _template handler_ en inglés)
 puede ser usada para producir nuestra plantilla. `:erb` es el manejador más usado para plantillas HTML,
-`:builder` es usado para plantillas XML, y `:coffee` usa CoffeeScript para construir plantillas JavaScript.
+`:builder` es usado para plantillas XML, y `:coffee` utiliza CoffeeScript para construir plantillas JavaScript.
 
 La más simple plantilla que funcionaría en nuestro caso sería una localizada en `app/views/posts/new.html.erb`.
 La extensión de este nombre de archivo es importante: la primera extensión define el _formato_ de la plantilla,
