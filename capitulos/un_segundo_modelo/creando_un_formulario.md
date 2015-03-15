@@ -77,7 +77,7 @@ Primero, agreguemos el enlace para eliminar en el parcial
 ```
 
 Al hacer click en este nuevo enlace "Eliminar Comentario" se enviará un `DELETE
-/posts/:id/comments/:id` a nuestro `CommentsController`, que puede luego usar
+/posts/:id/comments/:id` a nuestro `CommentsController`, que puede luego usarse
 para ubicar el comentario que queremos eliminar, así que agreguemos una acción
 de eliminar a nuestro controlador:
 
