@@ -17,11 +17,11 @@ detectados y resueltos por Rails.
 
 Dos fuentes comunes de datos que no están en UTF-8:
 
-* Tu editor de texto: La mayoría de editores de texto (como TextMate, o Sublime
+* Tu editor de texto: La mayoría de editores de texto (como TextMate o Sublime
   Text), guardan los archivos en UTF-8 por defecto. Si tu editor no lo hace,
   esto puede resultar en los problemas mencionados arriba. Esto también aplica
   a los archivos de traducción para I18n. La mayoría de editores que no usan
-  UTF-8 por defecto (como algunas versionesde Dreamweaver) ofrecen una manera
+  UTF-8 por defecto (como algunas versiones de Dreamweaver) ofrecen una manera
   para cambiar la opción por defecto a UTF-8. Házlo!
 * Tu base de datos. Rails convierte los datos que intercambia con tu base de
   datos a UTF-8 por defecto. Sin embargo, si tu base de datos no está usando
