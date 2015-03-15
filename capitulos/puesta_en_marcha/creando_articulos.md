@@ -30,10 +30,10 @@ end
 El método `render` toma un simple hash con la clave `text` y el valor de `params[:post].inspect`. El
 método `params` es el objeto que representa a los parámetros (o campos) que vienen desde el formulario.
 El método `params` retorna un objeto `HashWithIndifferentAccess`, que te permite acceder a las claves del hash
-usando cadenas o símbolos. En esta situación los únicos parámetros que importan son los que vienen del
+usando cadenas o símbolos. En esta situación, los únicos parámetros que importan son los que vienen del
 formulario.
 
-Si reenvias el formulario una vez más, ya no obtendrás el error de plantilla faltante, en su lugar verás
+Si reenvías el formulario una vez más, ya no obtendrás el error de plantilla faltante, en su lugar verás
 algo como lo que sigue:
 
 ```ruby
