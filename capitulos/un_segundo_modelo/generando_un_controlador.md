@@ -22,7 +22,7 @@ Esto crea seis diferentes archivos y una carpeta vacía:
 
 Como con cualquier blog, nuestros lectores crearán sus comentarios directamente
 después de leer el artículo, y una vez que agregaron su comentario, serán
-enviados de vuelta al artículo para ver su comentario ahora listado. Debido a
+enviados de vuelta al artículo para ver su comentario ahora alistado. Debido a
 esto, nuestro `CommentsController` está ahí para proveer un método para crear
 comentarios y eliminar spam cuando aparezca.
 
@@ -84,10 +84,10 @@ en particular.
 
 Además, el código trata de tomar ventaja de algunos de los métodos disponibles
 a las asociaciones. Usamos el método `create` en `@post.comments` para crear y
-guardar el comentario. Esto asociará automaticamente el comentario el artículo
+guardar el comentario. Esto asociará automáticamente el comentario del artículo
 en particular.
 
-Una vez que hemos hecho el comentario nuevo, enviamos al usuario de vuelta al
+Una vez que hemos hecho el nuevo comentario , enviamos al usuario de vuelta al
 artículo original usando el helper `post_path(@post)`. Como hemos podido ver,
 ésto luego llama a la acción `show` en el `PostsController` que hace render con
 la plantilla `show.html.erb`. Aquí es donde queremos mostrar los comentarios,
