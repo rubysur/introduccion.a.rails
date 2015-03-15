@@ -61,12 +61,12 @@ Finalmente, agregamos un enlace a la plantilla de la acción `index`
 Usaremos aquí `link_to` de diferente manera. Empaquetaremos los atributos
 `:action` y `:id` en un hash de manera que podamos pasar las dos claves como uno
 en un solo argumento y finalmente las otras dos claves como otro argumento.
-Las opciones `:method` y `:'data-confirm'` son usadas como atributos HTML de manera de que cuando
+Las opciones `:method` `:data` y `:confirm` son usadas como atributos HTML de manera de que cuando
 se hace clic en el enlace Rails mostrará un diálogo de confirmación al usuario
 y luego direccionará al enlace con el método `delete`.
 Esto es realizado a través de un archivo JavaScript `jquery_ujs` el cual fue automáticamente
 incluido dentro del diseño de tu aplicación (`app/views/layouts/application.html.erb`) cuando
-la aplicación fue generada. Sin este archivo el diálogo de confirmación no aparecerá.
+la aplicación fue generada. Sin este archivo, el diálogo de confirmación no aparecerá.
 
 ![Confirm Dialog](http://edgeguides.rubyonrails.org/images/getting_started/confirm_dialog.png)
 
