@@ -24,9 +24,9 @@ de manera de no confundirlas con vistas regulares. Sin embargo, no incluyas
 el subrayado cuando las incluyas dentro del método `helper`.
 
 CONSEJO: Puedes leer más acerca de parciales en la guía
-[Layouts and Rendering in Rails](layouts_and_rendering.html).
+[Layouts and Rendering in Rails](http://guides.rubyonrails.org/layouts_and_rendering.html).
 
-Nuestra acción `edit` parece muy similar a la acción `new`, en efecto ellos
+Nuestra acción `edit` parece muy similar a la acción `new`, en efecto, ellos
 comparten el mismo código para mostrar el formulario. Vamos a limpiarlo
 usando un parcial.
 
@@ -61,9 +61,9 @@ Crea un nuevo archivo `app/views/posts/_form.html.erb` con el siguiente contenid
 <% end %>
 ```
 
-Todo, excepto la declaración `form_for` permanece igual. Como `form_for`
+Todo, excepto la declaración `form_for` permanece igual. ¿Cómo `form_for`
 puede averiguar la `action` y los atributos del `method` correcto
-cuando construye el formulario será explicado en unos momentos.
+cuando construye el formulario? Esto será explicado en unos momentos.
 Por ahora, vamos a actualizar la vista
 `app/views/posts/new.html.erb` para usar el nuevo parcial, reescribiendo completamente:
 
@@ -129,5 +129,5 @@ de ruteo llamados `post_url` y `post_path` estén disponibles para nuestra aplic
 Estos son los métodos que `form_for` necesita cuando estamos editando un artículo y que ahora
 están disponibles para actualizar los artículos.
 
-NOTA: La opción `:as` esta disponible también en los métodos de ruteo
+NOTA: La opción `:as` está disponible también en los métodos de ruteo
 `post`, `put`, `delete` y `match`.
