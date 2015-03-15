@@ -4,7 +4,7 @@ Agregando enlaces
 Hasta el momento puedes crear, mostrar y listar artículos. Ahora vamos a agregar
 algunos enlaces para navegar a través de las páginas.
 
-Abre `app/views/welcome/index.html.erb` y modifîcalo como se indica a continuación:
+Abre `app/views/welcome/index.html.erb` y modifícalo como se indica a continuación:
 
 ```html+erb
 <h1>Hello, Rails!</h1>
@@ -12,8 +12,8 @@ Abre `app/views/welcome/index.html.erb` y modifîcalo como se indica a continuac
 ```
 
 El método `link_to` es uno de los asistentes de la vista incorporados en Rails.
-Este método crea el hipervínculo mostrando un texto e indicando a dónde irá, en
-este caso a la ubicación `posts`.
+Este método crea el hipervínculo mostrando un texto e indicando adonde irá, en
+este caso, a la ubicación `posts`.
 
 Vamos a agregar enlaces a las otras vistas, empezando por agregar a "New Post" el enlace a
 `app/views/posts/index.html.erb`, ubicándola encima de la etiqueta `<table>`:
