@@ -65,7 +65,7 @@ La opción `:method => :put` le dice a Rails que queremos que este formulario se
 a través del método HTTP `PUT`, el cual es el método que tú esperas que se use para
 **actualizar** recursos de acuerdo al protocolo REST.
 
-CONSEJO: Por omisión los formularios construidos con el asistente `+form_for_` son enviados
+CONSEJO: Por omisión, los formularios construidos con el asistente `+form_for_` son enviados
 a través de `POST`.
 
 A continuación, necesitamos agregar la acción `update`. El archivo
@@ -91,7 +91,7 @@ end
 
 El nuevo método `update_attributes`, es usado cuando deseas actualizar un registro
 que ya existe, y acepta un hash conteniendo los atributos que deseas actualizar.
-Como hicimos anteriormente, si hay un error actualizando el artículo queremos
+Como hicimos anteriormente, si hay un error actualizando el artículo, queremos
 mostrar el formulario de regreso al usuario.
 
 CONSEJO: no necesitas enviar todos los atributos a `update_attributes`. Por
@@ -132,6 +132,6 @@ haya un enlace "Edit" en la página del artículo. Agregar esto al final de tu p
 | <%= link_to 'Edit', :action => :edit, :id => @post.id %>
 ```
 
-Y así es cómo nuestra aplicación se ve hasta el momento
+Y así es cómo nuestra aplicación se ve hasta el momento.
 
 ![Index action with edit link](http://edgeguides.rubyonrails.org/images/getting_started/index_action_with_edit_link.png)
