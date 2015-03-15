@@ -11,7 +11,7 @@ $ rails server
 > **TIP:** Compilando CoffeeScript a JavaScript requiere un JavaScript runtime y la
 ausencia de éste dará un error de `execjs`. Usualmente Mac OS X y Windows vienen
 con un Javascript runtime instalado. Rails agrega la gema `therubyracer` al
-`Gemfile` en una línea comentada para nuevas aplicaciones y puedes descomentarla
+`Gemfile` en una línea comentada para nuevas aplicaciones y puedes desconectarla
 si la necesitas. `therubyrhino` es el runtime recomendado para usuarios de JRuby
 y es añadido por defecto al `Gemfile` en aplicaciones generadas bajo JRuby.
 Puedes investigar acerca de todos los runtimes soportados en
@@ -30,5 +30,5 @@ automáticamente por el servidor.
 
 La página "Welcome Aboard" es la primera prueba para una nueva aplicación Rails:
 Ésta asegura que tienes el software configurado correctamente para servir una página.
-También puedes hacer click en el link _About your application's enviroment_ para ver
+También puedes hacer click en el link _About your application's environment_ para ver
 un resumen del entorno de tu aplicación.
