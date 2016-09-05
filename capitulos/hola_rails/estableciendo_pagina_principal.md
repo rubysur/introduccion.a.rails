@@ -19,7 +19,7 @@ pero sólo si existiera.
 
 A continuación, tienes que indicarle a Rails donde está ubicada tu página principal.
 
-Abre el archivo `config/routes` en tu editor.
+Abre el archivo `config/routes.rb` en tu editor.
 
 ```ruby
 Blog::Application.routes.draw do
@@ -41,10 +41,13 @@ conectar la raíz de tu sitio a un _controlador_ y _acción_ específico. Encuen
 la línea iniciando con `root :to` y descoméntala. Debería verse como lo siguiente:
 
 ```ruby
-root :to => "welcome#index"
+Blog::Application.routes.draw do
+  get "welcome/index"
+
+  root "welcome#index"
 ```
 
-El `root :to => "welcome#index"` le indica a Rails mapear peticiones de la raíz
+El `root "welcome#index"` le indica a Rails mapear peticiones de la raíz
 de la aplicación a la _acción_ `index` del _controlador_ `welcome` y
 `get "welcome/index"` le indica a Rails mapear peticiones de
 <http://localhost:3000/welcome/index> a la _acción_ `index` del _controlador_
@@ -58,4 +61,4 @@ realidad pasando a la _acción_ `index` del _controlador_ `Welcome` y está
 renderizando la vista correctamente.
 
 > **NOTA:** Para mayor información acerca del enrutamiento, ir a
-[Rails Routing from the Outside In](http://edgeguides.rubyonrails.org/routing.html).
+[Rails Routing from the Outside In](http://guides.rubyonrails.org/routing.html).

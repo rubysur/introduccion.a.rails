@@ -9,6 +9,17 @@ es el término usado para una colección de objetos similares, como posts, perso
 animales. Tú puedes crear, leer, actualizar y eliminar objetos para un recurso
 y estas operaciones son referidas como operaciones _CRUD_.
 
+Rails proporciona un método (_resource_) que se puede utilizar para declarar un recurso REST estándar.
+Es necesario agregar el (_article_)(_resource_) en `config/routes.rb` el archivo se verá de la siguiente manera:
+
+```ruby
+Blog.application.routes.draw do
+  resources :articles
+
+  root 'welcome#index'
+end
+```
+
 En la siguiente sección, tú añadirás la habilidad de crear nuevos posts en tu aplicación
 y poder verlos también. Ésto es la "C" y la "R" de _CRUD_: creación y lectura. La manera
 de hacer esto se vería de la siguiente manera:

@@ -21,7 +21,7 @@ Esto lanzará WEBrick, un servidor web incorporado en Ruby por defecto. Para ver
 tu aplicación en acción, abre tu navegador preferido e ingresa a [http://localhost:3000](http://localhost:3000).
 Deberías ver la página de información por defecto de Rails.
 
-![Welcome Aboard screenshot](http://edgeguides.rubyonrails.org/images/rails_welcome.png)
+![Welcome Aboard screenshot](http://guides.rubyonrails.org/images/getting_started/rails_welcome.png)
 
 > **TIP:** Para detener el servidor web, presiona Ctrl+C en la ventana de la línea
 de comandos donde se está ejecutando. En modo de desarrollo, Rails generalmente
