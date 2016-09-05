@@ -2,48 +2,49 @@ Mostrando artículos
 ===================
 
 Si envías el formulario de nuevo, Rails se quejará de que no has definido la acción `show`.
-Esto no es muy útil así que vamos a agregar la acción `show` antes de continuar. Abre
-el archivo `config/routes.rb` y agrega la siguiente ruta:
+Esto no es muy útil así que vamos a agregar la acción `show` antes de continuar.
 
-```ruby
-get "posts/:id" => "posts#show"
+Como viste en la salida del comando `rails routes`, la ruta de la acción `show` tiene este aspecto:
+
+```bash
+article GET    /articles/:id(.:format)      articles#show
 ```
 
-La sintaxis especial `:id` le dice a Rails que la ruta espera un parámetro `:id`,
-el cual en nuestro caso será el id del artículo. Nota que en esta ocasión
-debemos indicar la asignación real `posts#show` porque de otra manera Rails no sabrá
-qué acción debe realizar.
+La sintaxis `:id` de la ruta indica a Rails que esta ruta espera un parámetro llamado `:id`, que en este caso será el atributo id del artículo que se quiere ver.
 
-Como dijimos anteriormente, necesitamos agregar la acción `show` en el `posts_controller`
-y su respectiva vista.
+Como hicimos anteriormente, es necesario añadir una nueva acción en el archivo `app/controllers/articles_controller.rb` y también hay que crear su vista correspondiente.
+
+Vamos a añadir la acción show, de la siguiente manera:
 
 ```ruby
-def show
-  @post = Post.find(params[:id])
-end
+class ArticlesController < ApplicationController
+  def show
+    @article = Article.find(params[:id])
+  end
+
+  def new
+  end
 ```
+Un par de cosas que debes tener en cuenta: usamos `Article.find` para encontrar el artículo que nos interesa, pasándole el valor `params[:id]` para obtener el parámetro `:id` directamente de la petición. También usamos una variable de instancia (con el prefijo @) para guardar una referencia al objeto del artículo. Hacemos eso porque Rails pasa automáticamente todas las variables de instancia a la vista.
 
-Un par de cosas a tener en cuenta. Usamos `Post.find` para encontrar el artículo en el
-cual estamos interesados. También usamos una variable de instancia (con el prefijo @)
-para contener una referencia al objeto `post`. Hacemos eso porque Rails pasará todas
-las variables de instancia a la vista.
+Ahora, crea un nuevo archivo `app/view/articles/show.html.erb` con el siguiente contenido:
 
-Ahora, crea un nuevo archivo `app/view/posts/show.html.erb` con el siguiente contenido:
+Abre el archivo `config/routes.rb` y agrega la siguiente ruta:
 
-```html+erb
+```ruby
 <p>
   <strong>Title:</strong>
-  <%= @post.title %>
+  <%= @article.title %>
 </p>
 
 <p>
   <strong>Text:</strong>
-  <%= @post.text %>
+  <%= @article.text %>
 </p>
 ```
 
 Finalmente, si vas a
-[http://localhost:3000/posts/new](http://localhost:3000/posts/new) serás capaz de
+[http://localhost:3000/posts/new](http://localhost:3000/articles/new) serás capaz de
 crear un artículo. ¡Inténtalo!
 
-![Show action for posts](http://edgeguides.rubyonrails.org/images/getting_started/show_action_for_posts.png)
+![Show action for posts](http://guides.rubyonrails.org/images/getting_started/show_action_for_articles.png)
