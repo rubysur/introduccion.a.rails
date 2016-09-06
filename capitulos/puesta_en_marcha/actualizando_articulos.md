@@ -4,42 +4,53 @@ Actualizando artículos
 Hemos cubierto la parte "CR" del acrónimo CRUD. Ahora nos enfocaremos en la
 parte "U", actualización de artículos.
 
-El primer paso será agregar la acción `edit` al `posts_controller`.
+El primer paso será agregar la acción `edit` al `ArticlesController`, generalmente
+entre las acciones `new` and `create`:
 
-Empecemos agregando una ruta a `config/routes.rb`:
-
-```ruby
-get "posts/:id/edit" => "posts#edit"
-```
-
-Y luego agregar la acción al controlador:
 
 ```ruby
+def new
+  @article = Article.new
+end
+
 def edit
-  @post = Post.find(params[:id])
+  @article = Article.find(params[:id])
+end
+
+def create
+  @article = Article.new(article_params)
+
+  if @article.save
+    redirect_to @article
+  else
+    render 'new'
+  end
 end
 ```
 
 La vista contendrá un formulario similar al que usamos cuando creamos
-nuevos artículos. Crea un archivo llamado `app/views/posts/edit.html.erb` que contenga
-lo siguiente:
+nuevos artículos. Crea un archivo llamado `app/views/articles/edit.html.erb` que
+contenga lo siguiente:
 
 ```html+erb
-<h1>Editing post</h1>
+<h1>Editing article</h1>
 
-<%= form_for :post, :url => { :action => :update, :id => @post.id },
-:method => :put do |f| %>
-  <% if @post.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
-      this post from being saved:</h2>
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
+<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
+
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -53,53 +64,69 @@ lo siguiente:
   <p>
     <%= f.submit %>
   </p>
+
 <% end %>
 
-<%= link_to 'Back', :action => :index %>
+<%= link_to 'Back', articles_path %>
 ```
 
 Esta vez indicamos al formulario la acción `update`, la cual no está definido aún
 pero pronto lo estará.
 
-La opción `:method => :put` le dice a Rails que queremos que este formulario sea enviado
-a través del método HTTP `PUT`, el cual es el método que tú esperas que se use para
-**actualizar** recursos de acuerdo al protocolo REST.
+La opción `method: :patch` le dice a Rails que queremos que este formulario sea
+enviado a través del método HTTP `PATCH HTTP`, el cual es el método que tú esperas
+que se use para **actualizar** recursos de acuerdo al protocolo REST.
 
-CONSEJO: Por omisión los formularios construidos con el asistente `+form_for_` son enviados
-a través de `POST`.
+El primer parámetro de form_for puede ser un objeto, por ejemplo `@article`, que
+se utiliza para rellenar los campos del formulario. Si pasas un símbolo
+(ejemplo `:article`) cuyo nombre sea idéntico al de una variable de instancia
+(`@article`) el funcionamiento es el mismo. Esto es precisamente lo que está
+pasando en este ejemplo. Consulta la documentación de form_for para conocer más
+detalles.
 
-A continuación, necesitamos agregar la acción `update`. El archivo
-`config/routes.rb` necesitará una línea más:
-
-```ruby
-put "posts/:id" => "posts#update"
-```
-
-Y luego crear la acción `update` en `app/controllers/posts_controller.rb`:
+A continuación, crea la acción update en el archivo `app/controllers/articles_controller.rb`.
+Agregar esto entre la accion `create` y el metodo `private`:
 
 ```ruby
+def create
+  @article = Article.new(article_params)
+
+  if @article.save
+    redirect_to @article
+  else
+    render 'new'
+  end
+end
+
 def update
-  @post = Post.find(params[:id])
+  @article = Article.find(params[:id])
 
-  if @post.update_attributes(params[:post])
-    redirect_to :action => :show, :id => @post.id
+  if @article.update(article_params)
+    redirect_to @article
   else
     render 'edit'
   end
 end
+
+private
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
 ```
 
-El nuevo método `update_attributes`, es usado cuando deseas actualizar un registro
+El nuevo método `update`, es usado cuando deseas actualizar un registro
 que ya existe, y acepta un hash conteniendo los atributos que deseas actualizar.
 Como hicimos anteriormente, si hay un error actualizando el artículo queremos
 mostrar el formulario de regreso al usuario.
+Para ello se reutiliza el método `article_params` definido anteriormente para la
+acción `create`.
 
-CONSEJO: no necesitas enviar todos los atributos a `update_attributes`. Por
-ejemplo, si llamas a `@post.update_attributes(:title => 'A new title')`
+CONSEJO: no necesitas enviar todos los atributos a `update`. Por
+ejemplo, si llamas a `@article.update(title: 'A new title')`
 Rails solo actualizará el atributo `title` sin tocar los otros atributos.
 
 Finalmente, queremos mostrar un enlace a la acción `edit` en la lista de todos
-los artículos, de esta manera hacemos que ahora en `app/views/posts/index.html.erb`
+los artículos, de esta manera hacemos que ahora en `app/views/articles/index.html.erb`
 aparezca un nuevo enlace adicional a la acción `show`:
 
 ```html+erb
@@ -107,31 +134,29 @@ aparezca un nuevo enlace adicional a la acción `show`:
   <tr>
     <th>Title</th>
     <th>Text</th>
-    <th></th>
-    <th></th>
+    <th colspan="2"></th>
   </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.text %></td>
-    <td><%= link_to 'Show', :action => :show, :id => post.id %></td>
-    <td><%= link_to 'Edit', :action => :edit, :id => post.id %></td>
-  </tr>
-<% end %>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    </tr>
+  <% end %>
 </table>
 ```
 
-Y también la agregaremos en la plantilla `app/views/posts/show.html.erb` de manera que
+Y también la agregaremos en la plantilla `app/views/articles/show.html.erb` de manera que
 haya un enlace "Edit" en la página del artículo. Agregar esto al final de tu plantilla:
 
 ```html+erb
 ...
-
-<%= link_to 'Back', :action => :index %>
-| <%= link_to 'Edit', :action => :edit, :id => @post.id %>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
 ```
 
 Y así es cómo nuestra aplicación se ve hasta el momento
 
-![Index action with edit link](http://edgeguides.rubyonrails.org/images/getting_started/index_action_with_edit_link.png)
+![Index action with edit link](http://guides.rubyonrails.org/images/getting_started/index_action_with_edit_link.png)

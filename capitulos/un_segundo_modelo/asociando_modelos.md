@@ -9,31 +9,30 @@ relación de esta manera:
 * Un artículo puede tener muchos comentarios.
 
 De hecho, ésto es muy cercano a la sintáxis que usa Rails para declarar esta
-asociación. Ya has visto la línea de código en el modelo `Comment` que hace que
-cada comentario pertenezca a un artículo:
+asociación. Ya has visto la línea de código en el modelo `Comment (app/models/comment.rb)`  
+que hace que cada comentario pertenezca a un artículo:
 
 ```ruby
-class Comment < ActiveRecord::Base
-  belongs_to :post
+class Comment < ApplicationRecord
+  belongs_to :article
 end
 ```
 
-Vas a tener que editar el archivo `post.rb` para agregar el otro lado de la
-asociación:
+Vas a tener que editar el archivo `app/models/article.rb` para agregar el otro
+lado de la asociación:
 
 ```ruby
-class Post < ActiveRecord::Base
-  validates :title, :presence => true,
-                    :length => { :minimum => 5 }
-
+class Article < ApplicationRecord
   has_many :comments
+  validates :title, presence: true,
+                    length: { minimum: 5 }
 end
 ```
 
 Estas dos declaraciones permiten bastante comportamiento automatizado. Por
-ejemplo, si tienes una variable de instancia `@post` conteniendo un artículo,
+ejemplo, si tienes una variable de instancia `@article` conteniendo un artículo,
 puedes obtener todos los comentarios que pertenecen a ese artículo como un
-arreglo usando `@post.comments`.
+arreglo usando `@article.comments`.
 
 SUGERENCIA: Para más información sobre las asociaciones de Active Record, revisa
 la guía [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)

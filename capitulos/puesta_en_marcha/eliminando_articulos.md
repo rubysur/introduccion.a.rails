@@ -3,29 +3,86 @@ Eliminando artículos
 
 Ahora estamos listos para cubrir la parte "D" del acrónimo CRUD: eliminar artículos
 de la base de datos. Siguiendo la convención REST, vamos a agregar una ruta para la
-eliminación de artículos a `config/routes.rb`:
+eliminación de artículos a `bin/rails routes`:
 
-```ruby
-delete "posts/:id" => "posts#destroy"
+```bash
+DELETE /articles/:id(.:format)      articles#destroy
 ```
+
 El método de enrutamiento `delete` debe ser usado para métodos que destruyen recursos.
 Si se deja como un típico comando de ruteo `get`, es posible que se puedan enviar
 URLs malintencionadas como estas:
 
 ```html
-<a href='http://yoursite.com/posts/1/destroy'>look at this cat!</a>
+<a href='http://example.com/articles/1/destroy'>look at this cat!</a>
 ```
 
 Nosotros usamos el método `delete` para destruir recursos y este ruteo está enlazado
-con la acción `destroy` dentro de `app/controllers/posts_controller.rb`, la cual no existe
-aún pero que se muestra a continuación:
+con la acción `destroy` dentro de `app/controllers/articles_controller.rb`, la
+cual no existe todavia. El metodo `destroy` es generalmente la ultima accion en el
+CRUD en el controlador, y como las otras acciones CRUD publicas, debe estar antes
+de cualquiera de los metodos privados o protegidos.
 
 ```ruby
 def destroy
-  @post = Post.find(params[:id])
-  @post.destroy
+  @article = Article.find(params[:id])
+  @article.destroy
 
-  redirect_to :action => :index
+  redirect_to articles_path
+end
+```
+El `ArticlesController` completo en `app/controllers/articles_controller.rb` debería
+tener este aspecto:
+
+```ruby
+class ArticlesController < ApplicationController
+  def index
+    @articles = Article.all
+  end
+
+  def show
+    @article = Article.find(params[:id])
+  end
+
+  def new
+    @article = Article.new
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def create
+    @article = Article.new(article_params)
+
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to articles_path
+  end
+
+  private
+    def article_params
+      params.require(:article).permit(:title, :text)
+    end
 end
 ```
 
@@ -34,43 +91,40 @@ base de datos. Hay que tener en cuenta que no necesitas agregar una vista para e
 estamos siendo redireccionados a la acción `index`.
 
 Finalmente, agregamos un enlace a la plantilla de la acción `index`
-(`app/views/posts/index.html.erb`) para completar todo.
+(`app/views/articles/index.html.erb`) para completar todo.
 
 ```html+erb
-<h1>Listing Posts</h1>
+<h1>Listing Articles</h1>
+<%= link_to 'New article', new_article_path %>
 <table>
   <tr>
     <th>Title</th>
     <th>Text</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3"></th>
   </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.text %></td>
-    <td><%= link_to 'Show', :action => :show, :id => post.id %></td>
-    <td><%= link_to 'Edit', :action => :edit, :id => post.id %></td>
-    <td><%= link_to 'Destroy', { :action => :destroy, :id => post.id }, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
 </table>
 ```
-Usaremos aquí `link_to` de diferente manera. Empaquetaremos los atributos
-`:action` y `:id` en un hash de manera que podamos pasar las dos claves como uno
-en un solo argumento y finalmente las otras dos claves como otro argumento.
-Las opciones `:method` y `:'data-confirm'` son usadas como atributos HTML de manera de que cuando
-se hace clic en el enlace Rails mostrará un diálogo de confirmación al usuario
-y luego direccionará al enlace con el método `delete`.
-Esto es realizado a través de un archivo JavaScript `jquery_ujs` el cual fue automáticamente
-incluido dentro del diseño de tu aplicación (`app/views/layouts/application.html.erb`) cuando
-la aplicación fue generada. Sin este archivo el diálogo de confirmación no aparecerá.
+En esta plantilla se utiliza `link_to` de una manera diferente. El nombre de la
+ruta se pasa como segundo argumento y después se indican las opciones mediante otro
+argumento. Las opciones `method: :delete` and `data: { confirm: 'Are you sure?' }`
+se utilizan como atributos HTML5 para que cuando se hace click sobre el enlace Rails muestre
+un mensaje de confirmación al usuario, y luego enviar el metodo `delete`.
 
-![Confirm Dialog](http://edgeguides.rubyonrails.org/images/getting_started/confirm_dialog.png)
+Este comportamiento es posible gracias al archivo JavaScript llamado jquery_ujs, que se incluye automáticamente en el layout de la aplicación (app/views/layouts/application.html.erb) que se creó al generar la aplicación Rails. Si no se incluye este archivo, el mensaje de confirmación no se muestra.
+
+![Confirm Dialog](http://guides.rubyonrails.org/images/getting_started/confirm_dialog.png)
 
 Felicitaciones, ahora puedes crear, mostrar, enumerar, actualizar y eliminar
-artículos. En la siguiente sección veremos cómo Rails puede ayudarnos en la creación de
-aplicaciones REST, y cómo podemos refactorizar nuestro Blog  para tomar
-ventaja de ello.
+artículos.
