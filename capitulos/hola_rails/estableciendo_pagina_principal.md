@@ -22,7 +22,7 @@ A continuación, tienes que indicarle a Rails donde está ubicada tu página pri
 Abre el archivo `config/routes.rb` en tu editor.
 
 ```ruby
-Blog::Application.routes.draw do
+Rails::Application.routes.draw do
   get "welcome/index"
 
   # The priority is based upon order of creation:
@@ -41,7 +41,7 @@ conectar la raíz de tu sitio a un _controlador_ y _acción_ específico. Encuen
 la línea iniciando con `root :to` y descoméntala. Debería verse como lo siguiente:
 
 ```ruby
-Blog::Application.routes.draw do
+Rails::Application.routes.draw do
   get "welcome/index"
 
   root "welcome#index"
