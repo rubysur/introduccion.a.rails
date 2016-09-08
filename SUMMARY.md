@@ -9,7 +9,7 @@ Summary
 * [Hola, Rails!](capitulos/hola_rails/README.md)
   * [Iniciando el servidor](capitulos/hola_rails/iniciando_el_servidor.md)
   * [Hola Mundo](capitulos/hola_rails/hola_mundo.md)
-  * [Estableciendo la página principal](capitulos/hola_rails/hola_mundo.md)
+  * [Estableciendo la página principal](capitulos/hola_rails/estableciendo_pagina_principal.md)
 * [Puesta en marcha](capitulos/puesta_en_marcha/README.md)
   * [Estableciendo la base](capitulos/puesta_en_marcha/estableciendo_la_base.md)
   * [El primer formulario](capitulos/puesta_en_marcha/el_primer_formulario.md)

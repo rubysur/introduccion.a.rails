@@ -26,7 +26,7 @@ Un controlador es simplemente una clase que es definida para heredar de `Applica
 Dentro de ésta, vas a definir los métodos que se convertirán en acciones para este controlador.
 Estas acciones van a ejecutar operaciones _CRUD_ sobre los posts dentro de nuestro sistema.
 
-Si refrescas la dirección <http://localhost:3000/posts/new> ahora, vas a tener un nuevo error:
+Si refrescas la dirección <http://localhost:3000/articles/new> ahora, vas a tener un nuevo error:
 
 ![Unknown action new for PostsController!](http://guides.rubyonrails.org/images/getting_started/unknown_action_new_for_articles.png)
 
