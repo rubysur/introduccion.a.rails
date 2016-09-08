@@ -1,15 +1,16 @@
 Eliminando Objetos Asociados
 ============================
 
-Si eliminas un artículo entonces sus comentarios asociados necesitan ser
-eliminados también. Si no lo haces, simplemente van a ocupar espacio en la base
-de datos. Rails te permite usar la opción `dependent` en las asociaciones para
-lograrlo. Modifica el modelo Post, en `app/models/post.rb`, de esta manera:
+Si borras un artículo, todos sus comentarios también derían borrarse para que no
+ocupen un espacio innecesario en la base de datos. Rails permite configurar este
+comportamiento mediante la opción `dependent` de la asociación entre modelos.
+Para ello, modifica el modelo `Article` cambiando el contenido del archivo
+`app/models/article.rb` por lo siguiente:
 
 ```ruby
-class Post < ActiveRecord::Base
-  validates :title, :presence => true,
-                    :length => { :minimum => 5 }
-  has_many :comments, :dependent => :destroy
+class Article < ApplicationRecord
+  has_many :comments, dependent: :destroy
+  validates :title, presence: true,
+                    length: { minimum: 5 }
 end
 ```

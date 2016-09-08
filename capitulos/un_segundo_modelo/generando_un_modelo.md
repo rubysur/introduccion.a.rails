@@ -1,62 +1,64 @@
 Generando un Modelo
 ===================
 
-Vamos a usar el mismo generador que usamos antes al crear el modelo `Post`. Esta
+Vamos a usar el mismo generador que usamos antes al crear el modelo `Article`. Esta
 vez crearemos el modelo `Comment` para los comentarios del artículo. Ejecuta
 esto en tu terminal:
 
 ```bash
-$ rails generate model Comment commenter:string body:text post:references
+$ rails generate model Comment commenter:string body:text article:references
 ```
 
 Este comando generará cuatro archivos:
 
 | Archivo                                      | Propósito                                                                                                |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------|
-| db/migrate/20100207235629_create_comments.rb | Migración para crear la tabla de comentarios en tu base de datos (en tu caso con un timestamp diferente).|
+| db/migrate/20140120201010_create_comments.rb | Migración para crear la tabla de comentarios en tu base de datos |
 | app/models/comment.rb                        | El modelo Comment.                                                                                       |
-| test/unit/comment_test.rb                    | Pruebas unitarias para el modelo de comentarios.                                                         |
+| test/models/comment_test.rb                  | Pruebas unitarias para el modelo de comentarios.                                                         |
 | test/fixtures/comments.yml                   | Muestras de comentarios para usar de pruebas.                                                            |
 
-Primero, miremos `comment.rb`:
+Primero, miremos `app/models/comment.rb`:
 
 ```ruby
-class Comment < ActiveRecord::Base
-  belongs_to :post
-  attr_accessible :body, :commenter
+class Comment < ApplicationRecord
+  belongs_to :article
 end
 ```
 
-Ésto es muy similar al modelo `post.rb` que vimos antes. La diferencia es la
-línea `belongs_to :post`, que establece una asociación de Active Record.
+Ésto es muy similar al modelo `Article` que vimos antes. La diferencia es la
+línea `belongs_to :article`, que establece una asociación de Active Record.
 Aprenderás un poco más sobre asociaciones en la siguiente sección de esta
 guía.
+
+La palabra clave (`:references`) utilizada en el comando bash es un tipo estacial
+de datos para los modelos. Se crea una nueva columna en la tabla de base de datos
+con el nombre del modelo proporcionado con un `_id` que puede contener valores
+enteros. Se puede obtener una mejor comprensión después de analizar el archivo
+`db/schema.rb` a continuación.
 
 Además del modelo, Rails hizo la migración para crear la tabla correspondiente
 en la base de datos:
 
 ```ruby
-class CreateComments < ActiveRecord::Migration
+class CreateComments < ActiveRecord::Migration[5.0]
   def change
     create_table :comments do |t|
       t.string :commenter
       t.text :body
-      t.references :post
+      t.references :article, foreign_key: true
 
       t.timestamps
     end
-
-    add_index :comments, :post_id
   end
 end
 ```
-
-La línea `t.references` establece una columna _foreign key_ para la asociación
-entre los dos modelos. La línea `add_index` establece un index para esta columna
-de la asociación. Corre la migración:
+La línea de `t.references` crea una columna entera llamada `article_id`, un índice,
+y una restricción de `foreign key` que apunta a la columna id de la tabla `articles`.
+Corre la migración:
 
 ```bash
-$ rake db:migrate
+$ rails db:migrate
 ```
 
 Rails es suficientemente listo para sólo ejecutar las migraciones que no se han
@@ -65,8 +67,6 @@ ejecutado todavía en la base de datos actual, así que en este caso sólo verá
 ```bash
 ==  CreateComments: migrating =================================================
 -- create_table(:comments)
-   -> 0.0008s
--- add_index(:comments, :post_id)
-   -> 0.0003s
-==  CreateComments: migrated (0.0012s) ========================================
+   -> 0.0115s
+==  CreateComments: migrated (0.0119s) ========================================
 ```

@@ -14,5 +14,5 @@ lo siguiente:
   Diseño RESTful.
 * Cómo generar rápidamente las primeras piezas de una aplicación Rails.
 
-> **Nota:** Esta guía está basada en Rails 3.2. Algunas partes del código que
-se muestran aquí no van a funcionar en nuevas versiones de Rails.
+> **Nota:** Esta guía está basada en Rails 5.0.0. Algunas partes del código que
+se muestran aquí no van a funcionar en nuevas versiones de Rails o en anteriores.

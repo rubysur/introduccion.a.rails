@@ -7,7 +7,7 @@ embargo, para obtener el máximo de ésta, debes de tener algunos
 prerrequisitos instalados:
 
 * El lenguaje de programación [Ruby](http://www.ruby-lang.org/en/downloads) en
-  su versión 1.9.3 o mayor.
+  su versión 2.2.2 o mayor.
 * El sistema de paquetes [RubyGems](http://rubyforge.org/frs/?group_id=126).
     * Si quieres aprender más acerca de RubyGems, puedes leer la guía en inglés:
       [RubyGems User Guide](http://docs.rubygems.org/read/book/1).

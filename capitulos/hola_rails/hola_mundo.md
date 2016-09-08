@@ -14,7 +14,7 @@ El propósito de una vista es mostrar la información en un formato legible para
 los humanos. Una distinción importante que hacer es que es el _controlador_, y
 no la vista, donde la información es recolectada. La vista sólo debería mostrar
 la información. Por defecto, las plantillas de las vistas están escritas en un
-lenguaje llamado _ERB_ (Embedded Ruby), el cual es convertido por cada ciclo
+lenguaje llamado _eRuby_ (Embedded Ruby), el cual es convertido por cada ciclo
 de un request en Rails antes de ser enviado al usuario.
 
 Para crear un nuevo controlador, necesitas correr el generador de controladores
@@ -37,13 +37,11 @@ invoke  test_unit
 create    test/functional/welcome_controller_test.rb
 invoke  helper
 create    app/helpers/welcome_helper.rb
-invoke    test_unit
-create      test/unit/helpers/welcome_helper_test.rb
 invoke  assets
 invoke    coffee
-create      app/assets/javascripts/welcome.js.coffee
+create      app/assets/javascripts/welcome.coffee
 invoke    scss
-create      app/assets/stylesheets/welcome.css.scss
+create      app/assets/stylesheets/welcome.scss
 ```
 
 Los más importantes de éstos son por supuesto el controlador, localizado en
